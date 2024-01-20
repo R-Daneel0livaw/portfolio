@@ -1,5 +1,6 @@
 import "../css/main.css"
 import AboutMe from "./AboutMe";
+import Blog from "./Blog";
 import Contact from "./Contact";
 import Home from "./Home";
 import Navigation from "./Navigation";
@@ -14,6 +15,7 @@ export default function Portfolio() {
       <AboutMe />
       <Skills />
       <Projects />
+      <Blog />
       <Contact />
     </>
   );
