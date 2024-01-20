@@ -1,19 +1,28 @@
+import { Link } from "react-router-dom";
+
 export default function Navigation() {
   return (
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="about">About Me</Link>
+        </li>
+        <li>
+          <Link to="skills">Skills</Link>
+        </li>
+        <li>
+          <Link to="projects">Projects</Link>
+        </li>
+        <li>
+          <Link to="blog">Blog</Link>
+        </li>
+        <li>
+          <Link to="contact">Contact</Link>
+        </li>
+      </ul>
+    </nav>
   );
 }
