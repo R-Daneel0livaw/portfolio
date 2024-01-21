@@ -1,26 +1,28 @@
 import { Link } from "react-router-dom";
+import PathConstants from "../routes/pathConstants";
 
 export default function Navigation() {
   return (
     <nav>
+      <h1>Eric Hine</h1>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to={PathConstants.HOME}>Home</Link>
         </li>
         <li>
-          <Link to="about">About Me</Link>
+          <Link to={PathConstants.ABOUT}>About Me</Link>
         </li>
         <li>
-          <Link to="skills">Skills</Link>
+          <Link to={PathConstants.SKILLS}>Skills</Link>
         </li>
         <li>
-          <Link to="projects">Projects</Link>
+          <Link to={PathConstants.PROJECTS}>Projects</Link>
         </li>
         <li>
-          <Link to="blog">Blog</Link>
+          <Link to={PathConstants.BLOG}>Blog</Link>
         </li>
         <li>
-          <Link to="contact">Contact</Link>
+          <Link to={PathConstants.CONTACT}>Contact</Link>
         </li>
       </ul>
     </nav>
