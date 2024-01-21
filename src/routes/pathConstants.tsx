@@ -5,6 +5,8 @@ const PathConstants = {
   PROJECTS: "/projects",
   BLOG: "/blog",
   CONTACT: "/contact",
+  ERROR: "/error",
+  DEFAULT: "*",
 };
 
 export default PathConstants;

@@ -32,6 +32,11 @@ function getContact() {
   return <Contact />;
 }
 
+function getError() {
+  const ErrorPage = lazy(() => import("../pages/ErrorPage"));
+  return <ErrorPage />;
+}
+
 const routes = [
   {
     path: PathConstants.HOME,
@@ -58,8 +63,13 @@ const routes = [
     element: getContact(),
   },
   {
-    path: "*",
-    element: <Navigate to="/" replace />,
+    path: PathConstants.ERROR,
+    element: getError(),
+    loader: () => {throw new Error("Self-initiated Failure.");},
+  },
+  {
+    path: PathConstants.DEFAULT,
+    element: <Navigate to={PathConstants.HOME} replace />,
   },
 ];
 
