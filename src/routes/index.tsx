@@ -1,5 +1,6 @@
 import { lazy } from "react";
 import PathConstants from "./pathConstants";
+import { Navigate } from "react-router-dom";
 
 function getHome() {
   const Home = lazy(() => import("../pages/Home"));
@@ -55,6 +56,10 @@ const routes = [
   {
     path: PathConstants.CONTACT,
     element: getContact(),
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" replace />,
   },
 ];
 
