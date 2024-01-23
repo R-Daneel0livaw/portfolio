@@ -85,40 +85,4 @@ const routes = [
   },
 ];
 
-// const routes = [
-//   {
-//     path: PathConstants.HOME,
-//     element: getHome(),
-//   },
-//   {
-//     path: PathConstants.ABOUT,
-//     element: getAboutMe(),
-//   },
-//   {
-//     path: PathConstants.SKILLS,
-//     element: getSkills(),
-//   },
-//   {
-//     path: PathConstants.PROJECTS,
-//     element: getProjects(),
-//   },
-//   {
-//     path: PathConstants.BLOG,
-//     element: getBlog(),
-//   },
-//   {
-//     path: PathConstants.CONTACT,
-//     element: getContact(),
-//   },
-//   {
-//     path: PathConstants.ERROR,
-//     element: getError(),
-//     loader: () => {throw new Error("Self-initiated Failure.");},
-//   },
-//   {
-//     path: PathConstants.DEFAULT,
-//     element: <Navigate to={PathConstants.HOME} replace />,
-//   },
-// ];
-
 export default routes;
