@@ -1,6 +1,8 @@
 import { lazy } from "react";
 import PathConstants from "./pathConstants";
 import { Navigate } from "react-router-dom";
+import SplitLayout from "../components/SplitLayout";
+import SingleLayout from "../components/SingleLayout";
 
 function getHome() {
   const Home = lazy(() => import("../pages/Home"));
@@ -39,38 +41,84 @@ function getError() {
 
 const routes = [
   {
-    path: PathConstants.HOME,
-    element: getHome(),
+    element: <SplitLayout />,
+    children: [
+      {
+        path: PathConstants.HOME,
+        element: getHome(),
+      },
+      {
+        path: PathConstants.ABOUT,
+        element: getAboutMe(),
+      },
+      {
+        path: PathConstants.SKILLS,
+        element: getSkills(),
+      },
+      {
+        path: PathConstants.CONTACT,
+        element: getContact(),
+      },
+      {
+        path: PathConstants.DEFAULT,
+        element: <Navigate to={PathConstants.HOME} replace />,
+      },
+    ]
   },
   {
-    path: PathConstants.ABOUT,
-    element: getAboutMe(),
-  },
-  {
-    path: PathConstants.SKILLS,
-    element: getSkills(),
-  },
-  {
-    path: PathConstants.PROJECTS,
-    element: getProjects(),
-  },
-  {
-    path: PathConstants.BLOG,
-    element: getBlog(),
-  },
-  {
-    path: PathConstants.CONTACT,
-    element: getContact(),
-  },
-  {
-    path: PathConstants.ERROR,
-    element: getError(),
-    loader: () => {throw new Error("Self-initiated Failure.");},
-  },
-  {
-    path: PathConstants.DEFAULT,
-    element: <Navigate to={PathConstants.HOME} replace />,
+    element: <SingleLayout />,
+    children: [
+      {
+        path: PathConstants.PROJECTS,
+        element: getProjects(),
+      },
+      {
+        path: PathConstants.BLOG,
+        element: getBlog(),
+      },
+      {
+        path: PathConstants.ERROR,
+        element: getError(),
+        loader: () => {throw new Error("Self-initiated Failure.");},
+      },
+    ]
   },
 ];
+
+// const routes = [
+//   {
+//     path: PathConstants.HOME,
+//     element: getHome(),
+//   },
+//   {
+//     path: PathConstants.ABOUT,
+//     element: getAboutMe(),
+//   },
+//   {
+//     path: PathConstants.SKILLS,
+//     element: getSkills(),
+//   },
+//   {
+//     path: PathConstants.PROJECTS,
+//     element: getProjects(),
+//   },
+//   {
+//     path: PathConstants.BLOG,
+//     element: getBlog(),
+//   },
+//   {
+//     path: PathConstants.CONTACT,
+//     element: getContact(),
+//   },
+//   {
+//     path: PathConstants.ERROR,
+//     element: getError(),
+//     loader: () => {throw new Error("Self-initiated Failure.");},
+//   },
+//   {
+//     path: PathConstants.DEFAULT,
+//     element: <Navigate to={PathConstants.HOME} replace />,
+//   },
+// ];
 
 export default routes;
