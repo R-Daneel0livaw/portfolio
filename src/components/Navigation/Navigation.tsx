@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import PathConstants from "../routes/pathConstants";
+import PathConstants from "../../routes/pathConstants";
+import styles from "./Navigation.module.css";
 
 export default function Navigation() {
   return (
-    <nav>
-      <h1>Eric Hine</h1>
+    <nav className={styles.sidebar}>
       <ul>
         <li>
           <Link to={PathConstants.HOME}>Home</Link>

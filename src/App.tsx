@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Layout from "./components/Layout";
+import Layout from "./components/Main/Layout";
 import routes from "./routes";
 import ErrorPage from "./pages/ErrorPage";
 
@@ -11,7 +11,7 @@ export default function App() {
         errorElement: <ErrorPage />,
         children: routes,
       },
-    ],
+    ]
     // {
     //   basename: "/portfolio",
     // }
