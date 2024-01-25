@@ -9,7 +9,7 @@ export default function Layout() {
     <>
       <div className={styles.gridContainer}>
         <Navigation />
-        <main>
+        <main className={styles.layoutContainer}>
           <Suspense fallback={<Loading />}>
             <Outlet />
           </Suspense>

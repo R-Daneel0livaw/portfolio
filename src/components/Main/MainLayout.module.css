@@ -1,8 +1,15 @@
 .gridContainer {
     display: grid;
     grid-template-columns: 200px 1fr;
-    gap: 20px;
+    gap: 1.5rem;
     padding: 3rem 0 0;
     padding-left: 0;
     height: 100%;
+}
+
+.layoutContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 0 2rem 0 2rem;
 }

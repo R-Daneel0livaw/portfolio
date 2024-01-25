@@ -23,8 +23,12 @@ ul {
     margin: 0;
 }
 
-li {
-    margin-bottom: 3rem;
+.navHeader {
+    font-weight: bold;
+}
+
+.navHeader, li {
+    margin-top: 3rem;
 }
 
 li:hover {

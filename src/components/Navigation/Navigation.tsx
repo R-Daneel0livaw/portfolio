@@ -5,6 +5,7 @@ import styles from "./Navigation.module.css";
 export default function Navigation() {
   return (
     <nav className={styles.sidebar}>
+      <h2 className={styles.navHeader}>Eric Hine</h2>
       <ul>
         <li>
           <Link to={PathConstants.HOME}>Home</Link>
