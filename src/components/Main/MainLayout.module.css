@@ -2,5 +2,7 @@
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 20px;
-    padding: 20px;
+    padding: 3rem 0 0;
+    padding-left: 0;
+    height: 100%;
 }
