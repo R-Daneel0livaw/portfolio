@@ -1,4 +1,6 @@
 import styles from "./Home.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faYoutube, faMastodon, faXTwitter, faInstagram, faLinkedin, faTwitch } from '@fortawesome/free-brands-svg-icons';
 
 export default function Home() {
   return (
@@ -40,12 +42,13 @@ export default function Home() {
         </button>
       </div>
       <div className={styles.socialMedia}>
-        <a>GH</a>
-        <a>MA</a>
-        <a>X</a>
-        <a>FB</a>
-        <a>IG</a>
-        <a>YT</a>
+        <i><FontAwesomeIcon icon={faGithub} size="lg"/></i>
+        <i><FontAwesomeIcon icon={faLinkedin} size="lg"/></i>
+        <i><FontAwesomeIcon icon={faYoutube} size="lg"/></i>
+        <i><FontAwesomeIcon icon={faTwitch} size="lg"/></i>
+        <i><FontAwesomeIcon icon={faMastodon} size="lg"/></i>
+        <i><FontAwesomeIcon icon={faXTwitter} size="lg"/></i>
+        <i><FontAwesomeIcon icon={faInstagram} size="lg"/></i>
       </div>
     </section>
   );
