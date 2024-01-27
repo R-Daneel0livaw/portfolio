@@ -1,0 +1,51 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.homeContentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.homeIntroContainer {
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #4f4f4f;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #ff416c;
+}
+
+.dedication {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.title {
+    font-weight: bold;
+    color: #ff416c;
+}
+
+.socialMedia {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hireButton {
+    align-self: center;
+    width: fit-content;
+    background-color: #ff416c;
+    color: #fff;
+    padding: 0.3rem 2rem;
+    border: none;
+    border-radius: 1rem;
+}

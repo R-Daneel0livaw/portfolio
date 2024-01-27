@@ -5,7 +5,7 @@ import SplitLayout from "../components/SplitLayout";
 import SingleLayout from "../components/SingleLayout";
 
 function getHome() {
-  const Home = lazy(() => import("../pages/Home"));
+  const Home = lazy(() => import("../pages/Home/Home"));
   return <Home />
 }
 
