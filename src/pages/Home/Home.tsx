@@ -14,7 +14,7 @@ export default function Home() {
         <div className={styles.homeContentContainer}>
           <p>
             Welcome to the gateway of my professional narrative! With over a
-            decade of dedicated experience as a Full Stack Developer, I bring an
+            decade of dedicated experience as a Full-Stack Developer, I bring an
             unwavering passion for transforming ideas into seamless digital
             experiences. This platform is not just a portfolio; it's a living
             testament to my journey—a dynamic canvas that illustrates the
@@ -36,6 +36,7 @@ export default function Home() {
           <a>MA</a>
           <a>X</a>
           <a>FB</a>
+          <a>IG</a>
         </div>
       </div>
       <button
