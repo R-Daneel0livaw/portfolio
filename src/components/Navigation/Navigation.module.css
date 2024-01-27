@@ -3,6 +3,7 @@
     background-color: #189AD3;
     color: white;
     padding: 20px;
+    filter: drop-shadow(0px 3px 2px #4f4f4f);
 }
 
 .sidebar a {

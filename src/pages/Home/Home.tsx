@@ -37,6 +37,7 @@ export default function Home() {
           <a>X</a>
           <a>FB</a>
           <a>IG</a>
+          <a>YT</a>
         </div>
       </div>
       <button
