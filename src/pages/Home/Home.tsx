@@ -35,20 +35,39 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <button
-          className={[styles.homeContentContainer, styles.hireButton].join(" ")}
-        >
-          Hire Me
-        </button>
+        <div className={styles.buttonContainer}>
+          <p className={styles.signature}>Eric Hine</p>
+          <button
+            className={[styles.homeContentContainer, styles.hireButton].join(
+              " "
+            )}
+          >
+            Hire Me
+          </button>
+        </div>
       </div>
       <div className={styles.socialMedia}>
-        <i><FontAwesomeIcon icon={faGithub} size="lg"/></i>
-        <i><FontAwesomeIcon icon={faLinkedin} size="lg"/></i>
-        <i><FontAwesomeIcon icon={faYoutube} size="lg"/></i>
-        <i><FontAwesomeIcon icon={faTwitch} size="lg"/></i>
-        <i><FontAwesomeIcon icon={faMastodon} size="lg"/></i>
-        <i><FontAwesomeIcon icon={faXTwitter} size="lg"/></i>
-        <i><FontAwesomeIcon icon={faInstagram} size="lg"/></i>
+        <i>
+          <FontAwesomeIcon icon={faGithub} size="lg" />
+        </i>
+        <i>
+          <FontAwesomeIcon icon={faLinkedin} size="lg" />
+        </i>
+        <i>
+          <FontAwesomeIcon icon={faYoutube} size="lg" />
+        </i>
+        <i>
+          <FontAwesomeIcon icon={faTwitch} size="lg" />
+        </i>
+        <i>
+          <FontAwesomeIcon icon={faMastodon} size="lg" />
+        </i>
+        <i>
+          <FontAwesomeIcon icon={faXTwitter} size="lg" />
+        </i>
+        <i>
+          <FontAwesomeIcon icon={faInstagram} size="lg" />
+        </i>
       </div>
     </section>
   );
