@@ -8,6 +8,7 @@
 
 .sidebar a {
     color: #FFF;
+    font-size: 1.2rem;
 }
 
 nav {
@@ -26,6 +27,7 @@ ul {
 
 .navHeader {
     font-weight: bold;
+    font-size: 1.7rem;
 }
 
 .navHeader, li {

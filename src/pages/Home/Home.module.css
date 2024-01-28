@@ -65,6 +65,7 @@
 .signature {
     font-family: "Euphoria Script", cursive;
     font-size: 48px;
+    padding-bottom: 0.5rem;
 }
 
 .hireButton {
