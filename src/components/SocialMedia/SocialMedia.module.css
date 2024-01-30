@@ -1,0 +1,17 @@
+.socialMediaContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 200px;
+    padding-top: 2rem;
+    color: #4f4f4f;
+}
+
+.socialMediaContainer i {
+    cursor: pointer;
+}
+
+.socialMediaContainer i:hover {
+    color: black;
+}
