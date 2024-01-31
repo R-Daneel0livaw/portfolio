@@ -1,13 +1,13 @@
-li {
+.navItem {
     display: flex;
     align-items: center;
     margin-top: 3rem;
 }
 
-i {
-    width: 1.6rem;
+.navItem:hover {
+    text-decoration: underline;
 }
 
-li:hover {
-    text-decoration: underline;
+.navItemIcon {
+    width: 1.6rem;
 }

@@ -7,7 +7,7 @@ export default function Navigation() {
   return (
     <nav className={styles.sidebar}>
       <h2 className={styles.navHeader}>Eric Hine</h2>
-      <ul>
+      <ul className={styles.navList}>
         <NavItem icon={faHouse} to={PathConstants.HOME}>
           Home
         </NavItem>
