@@ -27,23 +27,9 @@ ul {
     align-self: center;
 }
 
-li {
-    display: flex;
-    align-items: center;
-    margin-top: 3rem;
-}
-
-i {
-    width: 1.6rem;
-}
-
 .navHeader {
     font-weight: bold;
     font-size: 1.7rem;
     margin-top: 2rem;
     align-self: center;
-}
-
-li:hover {
-    text-decoration: underline;
 }

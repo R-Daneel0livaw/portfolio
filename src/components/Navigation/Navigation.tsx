@@ -1,50 +1,31 @@
-import { Link } from "react-router-dom";
 import PathConstants from "../../routes/pathConstants";
 import styles from "./Navigation.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faUser, faCheck, faDiagramProject, faBook, faMessage } from "@fortawesome/free-solid-svg-icons";
+import NavItem from "./NavItem/NavItem";
 
 export default function Navigation() {
   return (
     <nav className={styles.sidebar}>
       <h2 className={styles.navHeader}>Eric Hine</h2>
       <ul>
-        <li>
-          <i>
-            <FontAwesomeIcon icon={faHouse} />
-          </i>
-          <Link to={PathConstants.HOME}>Home</Link>
-        </li>
-        <li>
-          <i>
-            <FontAwesomeIcon icon={faUser} />
-          </i>
-          <Link to={PathConstants.ABOUT}>About Me</Link>
-        </li>
-        <li>
-          <i>
-            <FontAwesomeIcon icon={faCheck} />
-          </i>
-          <Link to={PathConstants.SKILLS}>Skills</Link>
-        </li>
-        <li>
-          <i>
-            <FontAwesomeIcon icon={faDiagramProject} />
-          </i>
-          <Link to={PathConstants.PROJECTS}>Projects</Link>
-        </li>
-        <li>
-          <i>
-            <FontAwesomeIcon icon={faBook} />
-          </i>
-          <Link to={PathConstants.BLOG}>Blog</Link>
-        </li>
-        <li>
-          <i>
-            <FontAwesomeIcon icon={faMessage} />
-          </i>
-          <Link to={PathConstants.CONTACT}>Contact</Link>
-        </li>
+        <NavItem icon={faHouse} to={PathConstants.HOME}>
+          Home
+        </NavItem>
+        <NavItem icon={faUser} to={PathConstants.ABOUT}>
+          About Me
+        </NavItem>
+        <NavItem icon={faCheck} to={PathConstants.SKILLS}>
+          Skills
+        </NavItem>
+        <NavItem icon={faDiagramProject} to={PathConstants.PROJECTS}>
+          Projects
+        </NavItem>
+        <NavItem icon={faBook} to={PathConstants.BLOG}>
+          Blog
+        </NavItem>
+        <NavItem icon={faMessage} to={PathConstants.CONTACT}>
+          Contact
+        </NavItem>
       </ul>
     </nav>
   );

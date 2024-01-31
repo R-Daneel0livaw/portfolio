@@ -1,0 +1,13 @@
+li {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+i {
+    width: 1.6rem;
+}
+
+li:hover {
+    text-decoration: underline;
+}
