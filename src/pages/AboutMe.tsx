@@ -1,16 +1,24 @@
+import PageHeader from "../components/PageHeader/PageHeader";
+import styles from "../components/PageHeader/PageHeader.module.css";
+
 export default function AboutMe() {
   return (
     <section id="about">
-      <header>
-      </header>
-
       <section id="introduction">
-        <h1>Eric Hine</h1>
-        <p>
-          Greetings! I'm a seasoned professional in the tech
-          industry with a passion for continuous learning and a diverse range of
-          interests.
-        </p>
+        <PageHeader
+          title="Eric Hine"
+          description={
+            <p>
+              Greetings! I'm a{" "}
+              <span className={styles.title}>seasoned professional</span> in the{" "}
+              <span className={styles.title}>tech industry</span> with a{" "}
+              <span className={styles.title}>
+                passion for continuous learning
+              </span>{" "}
+              and a diverse range of interests.
+            </p>
+          }
+        />
       </section>
 
       <section id="education-and-professional-journey">
@@ -52,9 +60,9 @@ export default function AboutMe() {
         <p>
           Outside the world of coding and technology, I have a deep love for
           literature. You might find me engrossed in a good book or exploring
-          the realms of knowledge through audiobooks. History, Philosophy, Logic, and
-          Robotics are subjects that captivate my curiosity, and I'm always eager
-          to delve into their depths.
+          the realms of knowledge through audiobooks. History, Philosophy,
+          Logic, and Robotics are subjects that captivate my curiosity, and I'm
+          always eager to delve into their depths.
         </p>
       </section>
 
