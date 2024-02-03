@@ -1,4 +1,6 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
+import { faCaretDown, faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./AboutMe.module.css";
 
 export default function AboutMe() {
@@ -22,9 +24,15 @@ export default function AboutMe() {
       </section>
 
       <section className={styles.sectionSpacer}>
-        <h2 className={styles.sectionHeading}>
-          Education and Professional Journey
-        </h2>
+        <div className={styles.sectionHeadingContainer}>
+          <FontAwesomeIcon
+            icon={faCaretDown}
+            className={styles.sectionHeadingArrow}
+          />
+          <h2 className={styles.sectionHeading}>
+            Education and Professional Journey
+          </h2>
+        </div>
         <p className={styles.sectionContent}>
           I earned my Bachelor's degree in Computer Science, complemented by a
           minor in Mathematics, from the esteemed SUNY Brockport. With nearly 15
@@ -37,9 +45,15 @@ export default function AboutMe() {
       </section>
 
       <section className={styles.sectionSpacer}>
-        <h2 className={styles.sectionHeading}>
-          Tech Enthusiast and Lifelong Learner
-        </h2>
+        <div className={styles.sectionHeadingContainer}>
+          <FontAwesomeIcon
+            icon={faCaretRight}
+            className={styles.sectionHeadingArrow}
+          />
+          <h2 className={styles.sectionHeading}>
+            Tech Enthusiast and Lifelong Learner
+          </h2>
+        </div>
         <p className={styles.sectionContent}>
           My enthusiasm for technology extends beyond the workplace. I'm not
           only a tech professional but also a dedicated lifelong learner.
@@ -50,7 +64,13 @@ export default function AboutMe() {
       </section>
 
       <section className={styles.sectionSpacer}>
-        <h2 className={styles.sectionHeading}>Freelance Web Development</h2>
+        <div className={styles.sectionHeadingContainer}>
+          <FontAwesomeIcon
+            icon={faCaretRight}
+            className={styles.sectionHeadingArrow}
+          />
+          <h2 className={styles.sectionHeading}>Freelance Web Development</h2>
+        </div>
         <p className={styles.sectionContent}>
           In addition to my corporate experience, I've ventured into the realm
           of freelance web development. Building websites has been a rewarding
@@ -60,7 +80,13 @@ export default function AboutMe() {
       </section>
 
       <section className={styles.sectionSpacer}>
-        <h2 className={styles.sectionHeading}>Hobbies: A Balanced Blend</h2>
+        <div className={styles.sectionHeadingContainer}>
+          <FontAwesomeIcon
+            icon={faCaretRight}
+            className={styles.sectionHeadingArrow}
+          />
+          <h2 className={styles.sectionHeading}>Hobbies: A Balanced Blend</h2>
+        </div>
         <p className={styles.sectionContent}>
           Outside the world of coding and technology, I have a deep love for
           literature. You might find me engrossed in a good book or exploring
@@ -88,7 +114,7 @@ export default function AboutMe() {
       </section>
 
       <footer>
-        <p className={styles.sectionContent} >
+        <p className={styles.sectionContent}>
           Thank you for visiting my corner of the web. I invite you to connect,
           share ideas, and explore the exciting intersections of technology,
           learning, and life.
