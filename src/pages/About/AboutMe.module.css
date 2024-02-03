@@ -1,3 +1,8 @@
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 .highlight {
     font-weight: bold;
     color: #ff416c;
@@ -5,6 +10,10 @@
 
 .sectionSpacer {
     margin-top: 1rem;
+}
+
+.details {
+    margin-bottom: 2rem;
 }
 
 .sectionHeadingContainer {
@@ -25,4 +34,11 @@
 
 .sectionContent {
     line-height: 1.7em;
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
 }
