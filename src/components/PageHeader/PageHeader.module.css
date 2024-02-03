@@ -1,15 +1,17 @@
-.name {
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.title {
     font-weight: bold;
     font-size: 2rem;
     color: #ff416c;
 }
 
-.dedication {
+.description {
     font-weight: bold;
     font-size: 1.2rem;
-}
-
-.title {
-    font-weight: bold;
-    color: #ff416c;
 }

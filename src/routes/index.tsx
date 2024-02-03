@@ -6,11 +6,11 @@ import SingleLayout from "../components/SingleLayout";
 
 function getHome() {
   const Home = lazy(() => import("../pages/Home/Home"));
-  return <Home />
+  return <Home />;
 }
 
 function getAboutMe() {
-  const AboutMe = lazy(() => import("../pages/AboutMe"));
+  const AboutMe = lazy(() => import("../pages/About/AboutMe"));
   return <AboutMe />;
 }
 
@@ -63,7 +63,7 @@ const routes = [
         path: PathConstants.DEFAULT,
         element: <Navigate to={PathConstants.HOME} replace />,
       },
-    ]
+    ],
   },
   {
     element: <SingleLayout />,
@@ -79,9 +79,11 @@ const routes = [
       {
         path: PathConstants.ERROR,
         element: getError(),
-        loader: () => {throw new Error("Self-initiated Failure.");},
+        loader: () => {
+          throw new Error("Self-initiated Failure.");
+        },
       },
-    ]
+    ],
   },
 ];
 

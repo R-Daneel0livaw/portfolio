@@ -1,0 +1,17 @@
+.highlight {
+    font-weight: bold;
+    color: #ff416c;
+}
+
+.sectionSpacer {
+    margin-bottom: 1rem;
+}
+
+.sectionHeading {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.sectionContent {
+    line-height: 1.7em;
+}

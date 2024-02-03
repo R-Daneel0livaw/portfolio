@@ -1,3 +1,4 @@
+import PageHeader from "../../components/PageHeader/PageHeader";
 import SignatureWithHireButton from "../../components/SignatureWithHireButton/SignatureWithHireButton";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import styles from "./Home.module.css";
@@ -6,13 +7,15 @@ export default function Home() {
   return (
     <section id="home" className={styles.homeContainer}>
       <div className={styles.information}>
-        <div className={styles.homeContentContainer}>
-          <h1 className={styles.name}>Eric Hine</h1>
-          <p className={styles.dedication}>
-            I'm a Dedicated{" "}
-            <span className={styles.title}>Full-Stack Developer</span>
-          </p>
-        </div>
+        <PageHeader
+          title="Eric Hine"
+          description={
+            <p>
+              I'm a Dedicated{" "}
+              <span className={styles.highlight}>Full-Stack Developer</span>
+            </p>
+          }
+        />
         <div
           className={[styles.homeContentContainer, styles.introduction].join(
             " "

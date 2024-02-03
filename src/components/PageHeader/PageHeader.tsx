@@ -8,11 +8,9 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, description }: PageHeaderProps) {
   return (
-    <div>
-      <h1 className={styles.name}>{title}</h1>
-      <div className={styles.dedication}>
-        {description}
-      </div>
+    <div className={styles.headerContainer}>
+      <h1 className={styles.title}>{title}</h1>
+      <div className={styles.description}>{description}</div>
     </div>
   );
 }
