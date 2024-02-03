@@ -19,11 +19,13 @@
 .sectionHeadingContainer {
     display: flex;
     align-items: flex-start;
+    cursor: pointer;
 }
 
 .sectionHeadingArrow {
     font-size: 1.5rem;
     color: #189ad3;
+    transition: transform 0.3s ease;
 }
 
 .sectionHeading {
@@ -32,8 +34,12 @@
     font-size: 1.1rem;
 }
 
-.sectionContent {
+.sectionContent, .seeMore {
     line-height: 1.7em;
+}
+
+.seeMore:last-of-type {
+    margin-top: 1rem;
 }
 
 .footerContainer {
@@ -41,4 +47,8 @@
     flex-direction: column;
     gap: 1rem;
     margin-top: 1rem;
+}
+
+.expanded {
+    transform: rotate(90deg);
 }
