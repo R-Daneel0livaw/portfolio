@@ -2,6 +2,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import { faCaretDown, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./AboutMe.module.css";
+import SignatureWithButton from "../../components/SignatureWithButton/SignatureWithButton";
 
 export default function AboutMe() {
   return (
@@ -121,6 +122,7 @@ export default function AboutMe() {
           share ideas, and explore the exciting intersections of technology,
           learning, and life.
         </p>
+        <SignatureWithButton buttonText="Connect"/>
       </footer>
     </section>
   );

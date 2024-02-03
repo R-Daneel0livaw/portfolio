@@ -1,5 +1,5 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
-import SignatureWithHireButton from "../../components/SignatureWithHireButton/SignatureWithHireButton";
+import SignatureWithButton from "../../components/SignatureWithButton/SignatureWithButton";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import styles from "./Home.module.css";
 
@@ -40,9 +40,7 @@ export default function Home() {
             professional and personal pursuits.
           </p>
         </div>
-        <div className={styles.buttonContainer}>
-          <SignatureWithHireButton />
-        </div>
+        <SignatureWithButton buttonText="Hire Me"/>
       </div>
       <SocialMedia />
     </section>
