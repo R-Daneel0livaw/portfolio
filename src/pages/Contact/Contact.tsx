@@ -1,3 +1,4 @@
+import ContactForm from "../../components/ContactForm/ContactForm";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import styles from "./Contact.module.css";
@@ -25,6 +26,8 @@ export default function Contact() {
           create something great together!
         </p>
       </section>
+
+      <ContactForm />
 
       {/* <footer className={styles.footerContainer}>
           <p className={styles.seeMore}>
