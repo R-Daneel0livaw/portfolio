@@ -5,22 +5,23 @@ import styles from "./AboutMe.module.css";
 import SignatureWithButton from "../../components/SignatureWithButton/SignatureWithButton";
 import { useState } from "react";
 
+type ToggleFunction = (sectionTitle: string | null) => void;
+
 interface SectionProps {
   title: string;
   content: string;
-  defaultExpanded: boolean
+  isExpanded: boolean;
+  onToggle: ToggleFunction;
 }
 
-const CollapsibleSection = ({ title, content, defaultExpanded }: SectionProps) => {
-  const [isExpanded, setIsExpanded] = useState(defaultExpanded);
-
-  const toggleSection = () => {
-    setIsExpanded(!isExpanded);
+const CollapsibleSection = ({ title, content, isExpanded, onToggle }: SectionProps) => {
+  const handleToggle = () => {
+    onToggle(null);
   };
 
   return (
     <section className={styles.sectionSpacer}>
-      <div className={styles.sectionHeadingContainer} onClick={toggleSection}>
+      <div className={styles.sectionHeadingContainer} onClick={handleToggle}>
         <FontAwesomeIcon
           icon={faCaretRight}
           className={`${styles.sectionHeadingArrow} ${
@@ -35,6 +36,12 @@ const CollapsibleSection = ({ title, content, defaultExpanded }: SectionProps) =
 };
 
 export default function AboutMe() {
+  const [expandedSection, setExpandedSection] = useState<string | null>("Section 1");
+
+  const handleToggle: ToggleFunction = (sectionTitle) => {
+    setExpandedSection(sectionTitle === expandedSection ? null : sectionTitle);
+  };
+
   return (
     <section id="about" className={styles.aboutContainer}>
       <div>
@@ -75,25 +82,29 @@ export default function AboutMe() {
         <CollapsibleSection
           title="Education and Professional Journey"
           content="I earned my Bachelor's degree in Computer Science, complemented by a minor in Mathematics, from the esteemed SUNY Brockport. With nearly 15 years of professional experience, my journey has been shaped by meaningful contributions to the Financial and Retirement industry. I've had the privilege of working with some of the world's largest retirement providers, gaining valuable insights and expertise along the way."
-          defaultExpanded={true}
+          isExpanded={expandedSection === "Section 1"}
+          onToggle={() => handleToggle("Section 1")}
         />
 
         <CollapsibleSection
           title="Tech Enthusiast and Lifelong Learner"
           content="My enthusiasm for technology extends beyond the workplace. I'm not only a tech professional but also a dedicated lifelong learner. Whether it's staying abreast of the latest industry trends or delving into new programming languages, I find joy in the continuous evolution of the tech landscape."
-          defaultExpanded={false}
+          isExpanded={expandedSection === "Section 2"}
+          onToggle={() => handleToggle("Section 2")}
         />
 
         <CollapsibleSection
           title="Freelance Web Development"
           content="In addition to my corporate experience, I've ventured into the realm of freelance web development. Building websites has been a rewarding journey, allowing me to leverage my skills and creativity to deliver impactful digital solutions."
-          defaultExpanded={false}
+          isExpanded={expandedSection === "Section 3"}
+          onToggle={() => handleToggle("Section 3")}
         />
 
         <CollapsibleSection
           title="Hobbies: A Balanced Blend"
           content="Outside the world of coding and technology, I have a deep love for literature. You might find me engrossed in a good book or exploring the realms of knowledge through audiobooks. History, Philosophy, Logic, and Robotics are subjects that captivate my curiosity, and I'm always eager to delve into their depths."
-          defaultExpanded={false}
+          isExpanded={expandedSection === "Section 4"}
+          onToggle={() => handleToggle("Section 4")}
         />
       </div>
 
