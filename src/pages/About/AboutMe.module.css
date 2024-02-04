@@ -52,3 +52,16 @@
 .expanded {
     transform: rotate(90deg);
 }
+
+.linkedIn {
+    color: #189ad3;
+    font-weight: bold;
+}
+
+.linkedIn:hover {
+    color: #ff416c;
+}
+
+.linkedInIcon {
+    margin-right: 0.25rem;
+}

@@ -1,5 +1,6 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./AboutMe.module.css";
 import SignatureWithButton from "../../components/SignatureWithButton/SignatureWithButton";
@@ -68,11 +69,15 @@ export default function AboutMe() {
             If you're interested in the details of my professional journey, feel
             free to explore the rest of my portfolio, as well as my{" "}
             <a
-              href="your-linkedin-profile"
+              href="https://www.linkedin.com/in/eric-hine-3b6b1a100/"
               target="_blank"
               rel="noopener noreferrer"
+              className={styles.linkedIn}
             >
-              LinkedIn profile
+              <i className={styles.linkedInIcon}>
+                <FontAwesomeIcon icon={faLinkedin} size="sm" />
+              </i>
+              LinkedIn Profile
             </a>
             . They're a comprehensive showcase of my work, experiences, and the
             professional milestones I've achieved.
