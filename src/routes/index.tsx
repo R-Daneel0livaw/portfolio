@@ -30,7 +30,7 @@ function getBlog() {
 }
 
 function getContact() {
-  const Contact = lazy(() => import("../pages/Contact"));
+  const Contact = lazy(() => import("../pages/Contact/Contact"));
   return <Contact />;
 }
 
