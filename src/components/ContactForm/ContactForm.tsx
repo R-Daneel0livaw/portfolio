@@ -1,8 +1,11 @@
 import { useState } from "react";
+import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
   const [contactType, setContactType] = useState("individual");
   const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [topic, setTopic] = useState("Job");
   const [message, setMessage] = useState("");
@@ -17,6 +20,8 @@ const ContactForm = () => {
 
     console.log("Form submitted:", {
       contactType,
+      firstName,
+      lastName,
       name,
       email,
       topic,
@@ -25,13 +30,15 @@ const ContactForm = () => {
 
     setContactType("individual");
     setName("");
+    setFirstName("");
+    setLastName("");
     setEmail("");
     setTopic("Job");
     setMessage("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.contactFormContainer} onSubmit={handleSubmit}>
       <label>
         Contact Type:
         <select
@@ -43,34 +50,49 @@ const ContactForm = () => {
         </select>
       </label>
 
-      {contactType === "business" && (
+      <div>
+        {contactType === "business" && (
+          <label>
+            Business Name:
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+        )}
+
+        {contactType == "individual" && (
+          <label>
+            First Name:
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </label>
+        )}
+
+        {contactType == "individual" && (
+          <label>
+            Last Name:
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </label>
+        )}
+
         <label>
-          Business Name:
+          Email:
           <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-      )}
-
-      <label>
-        Name:
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
-
-      <label>
-        Email:
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </label>
+      </div>
 
       <label>
         Topic:
