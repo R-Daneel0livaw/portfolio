@@ -40,7 +40,7 @@ const ContactForm = () => {
   return (
     <form className={styles.contactFormContainer} onSubmit={handleSubmit}>
       <label>
-        Contact Type:
+        Contact Type
         <select
           value={contactType}
           onChange={(e) => setContactType(e.target.value)}
@@ -53,7 +53,7 @@ const ContactForm = () => {
       <div>
         {contactType === "business" && (
           <label>
-            Business Name:
+            Business Name
             <input
               type="text"
               value={name}
@@ -64,7 +64,7 @@ const ContactForm = () => {
 
         {contactType == "individual" && (
           <label>
-            First Name:
+            First Name
             <input
               type="text"
               value={firstName}
@@ -75,7 +75,7 @@ const ContactForm = () => {
 
         {contactType == "individual" && (
           <label>
-            Last Name:
+            Last Name
             <input
               type="text"
               value={lastName}
@@ -85,7 +85,7 @@ const ContactForm = () => {
         )}
 
         <label>
-          Email:
+          E-mail
           <input
             type="email"
             value={email}
@@ -94,8 +94,13 @@ const ContactForm = () => {
         </label>
       </div>
 
+      <div className={styles.fieldHolder}>
+        <input className={styles.innerInput} type="email" name="email" id="email" required/>
+        <label className={styles.innerLabel} htmlFor="email">E-mail</label>
+      </div>
+
       <label>
-        Topic:
+        Topic
         <select value={topic} onChange={(e) => setTopic(e.target.value)}>
           <option value="Job">Job</option>
           <option value="Collaboration">Collaboration</option>
@@ -104,7 +109,7 @@ const ContactForm = () => {
       </label>
 
       <label>
-        Message:
+        Message
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}

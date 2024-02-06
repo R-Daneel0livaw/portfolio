@@ -5,7 +5,7 @@ import styles from "./Contact.module.css";
 
 export default function Contact() {
   return (
-    <section id="contact">
+    <section id="contact" className={styles.contactContainer}>
       <section id="introduction">
         <PageHeader
           title="Contact"
