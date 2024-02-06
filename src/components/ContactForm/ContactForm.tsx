@@ -2,12 +2,12 @@ import { useState } from "react";
 import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
-  const [contactType, setContactType] = useState("none");
+  const [contactType, setContactType] = useState("");
   const [name, setName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [topic, setTopic] = useState("none");
+  const [topic, setTopic] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,33 +28,38 @@ const ContactForm = () => {
       message,
     });
 
-    setContactType("none");
+    setContactType("");
     setName("");
     setFirstName("");
     setLastName("");
     setEmail("");
-    setTopic("none");
+    setTopic("");
     setMessage("");
   };
 
   return (
     <form className={styles.contactFormContainer} onSubmit={handleSubmit}>
-      <label>
-        Contact Type
+      <div className={`${styles.fieldHolder} ${styles.identificationChild}`}>
         <select
           value={contactType}
+          id="contactType"
+          className={styles.innerInput}
           onChange={(e) => setContactType(e.target.value)}
+          required
         >
           <option
             disabled
+            value=""
             selected
-            value="none"
             className={styles.displayNone}
           ></option>
           <option value="individual">Individual</option>
           <option value="business">Business</option>
         </select>
-      </label>
+        <label className={styles.innerLabel} htmlFor="contactType">
+          Contact Type
+        </label>
+      </div>
 
       <div className={styles.identification}>
         {contactType === "business" && (
@@ -130,20 +135,28 @@ const ContactForm = () => {
         </div>
       </div>
 
-      <label>
-        Topic
-        <select value={topic} onChange={(e) => setTopic(e.target.value)}>
+      <div className={`${styles.fieldHolder} ${styles.identificationChild}`}>
+        <select
+          value={topic}
+          id="topic"
+          className={styles.innerInput}
+          onChange={(e) => setTopic(e.target.value)}
+          required
+        >
           <option
             disabled
+            value=""
             selected
-            value="none"
             className={styles.displayNone}
           ></option>
           <option value="Job">Job</option>
           <option value="Collaboration">Collaboration</option>
           <option value="Other">Other</option>
         </select>
-      </label>
+        <label className={styles.innerLabel} htmlFor="topic">
+          Topic
+        </label>
+      </div>
 
       <label>
         Message
