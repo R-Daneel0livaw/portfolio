@@ -5,6 +5,22 @@
 
 .contactContainer {
     display: flex;
-    flex-direction: column;
     gap: 2rem;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionSpacer {
+    margin-top: 1rem;
+}
+
+.details {
+    margin-bottom: 2rem;
+}
+
+.seeMore {
+    line-height: 1.7em;
 }
