@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./ContactForm.module.css";
+import SignatureWithButton from "../SignatureWithButton/SignatureWithButton";
 
 const ContactForm = () => {
   const [contactType, setContactType] = useState("");
@@ -165,7 +166,7 @@ const ContactForm = () => {
         />
       </label>
 
-      <button type="submit">Send Message</button>
+      <SignatureWithButton buttonText="Send Message"/>
     </form>
   );
 };

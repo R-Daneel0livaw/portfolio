@@ -9,7 +9,7 @@ export default function SignatureWithButton({ buttonText }: ButtonProps) {
     <>
       <div className={styles.container}>
         <p className={styles.signature}>Eric Hine</p>
-        <button className={styles.button}>{buttonText}</button>
+        <button type="submit" className={styles.button}>{buttonText}</button>
       </div>
     </>
   );
