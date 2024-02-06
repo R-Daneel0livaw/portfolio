@@ -48,15 +48,14 @@ const ContactForm = () => {
           onChange={(e) => setContactType(e.target.value)}
           required
         >
-          <option
-            disabled
-            value=""
-            className={styles.displayNone}
-          ></option>
+          <option disabled value="" className={styles.displayNone}></option>
           <option value="individual">Individual</option>
           <option value="business">Business</option>
         </select>
-        <label className={`${styles.innerLabel} ${styles.innerSelect}`} htmlFor="contactType">
+        <label
+          className={`${styles.innerLabel} ${styles.innerSelect}`}
+          htmlFor="contactType"
+        >
           Contact Type
         </label>
       </div>
@@ -143,30 +142,33 @@ const ContactForm = () => {
           onChange={(e) => setTopic(e.target.value)}
           required
         >
-          <option
-            disabled
-            value=""
-            className={styles.displayNone}
-          ></option>
+          <option disabled value="" className={styles.displayNone}></option>
           <option value="Job">Job</option>
           <option value="Collaboration">Collaboration</option>
           <option value="Other">Other</option>
         </select>
-        <label className={`${styles.innerLabel} ${styles.innerSelect}`} htmlFor="topic">
+        <label
+          className={`${styles.innerLabel} ${styles.innerSelect}`}
+          htmlFor="topic"
+        >
           Topic
         </label>
       </div>
 
-      <label>
-        Provide Details
+      <div className={`${styles.fieldHolder} ${styles.identificationChild}`}>
         <textarea
+          className={`${styles.innerInput} ${styles.innerTextarea}`}
+          id="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
         />
-      </label>
+        <label className={styles.innerLabel} htmlFor="message">
+          Provide Details
+        </label>
+      </div>
 
-      <SignatureWithButton buttonText="Send Message"/>
+      <SignatureWithButton buttonText="Send Message" />
     </form>
   );
 };

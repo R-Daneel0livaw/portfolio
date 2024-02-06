@@ -45,6 +45,10 @@ label {
     cursor: default;
 }
 
+.innerTextarea {
+    height: 1.85rem;
+}
+
 .innerInput {
     width: 100%;
 }
