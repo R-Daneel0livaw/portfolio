@@ -50,53 +50,78 @@ const ContactForm = () => {
         </select>
       </label>
 
-      <div>
+      <div className={styles.identification}>
         {contactType === "business" && (
-          <label>
-            Business Name
+          <div
+            className={`${styles.fieldHolder} ${styles.identificationChild}`}
+          >
             <input
+              className={styles.innerInput}
               type="text"
+              name="name"
+              id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
-          </label>
+            <label className={styles.innerLabel} htmlFor="name">
+              Business Name
+            </label>
+          </div>
         )}
 
         {contactType == "individual" && (
-          <label>
-            First Name
+          <div
+            className={`${styles.fieldHolder} ${styles.identificationChild}`}
+          >
             <input
+              className={styles.innerInput}
               type="text"
+              name="firstName"
+              id="firstName"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
+              required
             />
-          </label>
+            <label className={styles.innerLabel} htmlFor="firstName">
+              First Name
+            </label>
+          </div>
         )}
 
         {contactType == "individual" && (
-          <label>
-            Last Name
+          <div
+            className={`${styles.fieldHolder} ${styles.identificationChild}`}
+          >
             <input
+              className={styles.innerInput}
               type="text"
+              name="lastName"
+              id="lastName"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
+              required
             />
-          </label>
+            <label className={styles.innerLabel} htmlFor="lastName">
+              Last Name
+            </label>
+          </div>
         )}
 
-        <label>
-          E-mail
+        <div className={`${styles.fieldHolder} ${styles.identificationChild}`}>
           <input
+            className={styles.innerInput}
             type="email"
+            name="email"
+            id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
-        </label>
-      </div>
-
-      <div className={styles.fieldHolder}>
-        <input className={styles.innerInput} type="email" name="email" id="email" required/>
-        <label className={styles.innerLabel} htmlFor="email">E-mail</label>
+          <label className={styles.innerLabel} htmlFor="email">
+            E-mail
+          </label>
+        </div>
       </div>
 
       <label>
