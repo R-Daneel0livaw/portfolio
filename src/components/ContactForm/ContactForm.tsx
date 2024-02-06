@@ -81,7 +81,7 @@ const ContactForm = () => {
           </div>
         )}
 
-        {contactType == "individual" && (
+        {(contactType == "individual" || contactType == "") && (
           <div
             className={`${styles.fieldHolder} ${styles.identificationChild}`}
           >
@@ -100,7 +100,7 @@ const ContactForm = () => {
           </div>
         )}
 
-        {contactType == "individual" && (
+        {(contactType == "individual" || contactType == "") && (
           <div
             className={`${styles.fieldHolder} ${styles.identificationChild}`}
           >
@@ -163,6 +163,7 @@ const ContactForm = () => {
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          required
         />
       </label>
 
