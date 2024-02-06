@@ -2,12 +2,12 @@ import { useState } from "react";
 import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
-  const [contactType, setContactType] = useState("individual");
+  const [contactType, setContactType] = useState("none");
   const [name, setName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [topic, setTopic] = useState("Job");
+  const [topic, setTopic] = useState("none");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,12 +28,12 @@ const ContactForm = () => {
       message,
     });
 
-    setContactType("individual");
+    setContactType("none");
     setName("");
     setFirstName("");
     setLastName("");
     setEmail("");
-    setTopic("Job");
+    setTopic("none");
     setMessage("");
   };
 
@@ -45,6 +45,12 @@ const ContactForm = () => {
           value={contactType}
           onChange={(e) => setContactType(e.target.value)}
         >
+          <option
+            disabled
+            selected
+            value="none"
+            className={styles.displayNone}
+          ></option>
           <option value="individual">Individual</option>
           <option value="business">Business</option>
         </select>
@@ -127,6 +133,12 @@ const ContactForm = () => {
       <label>
         Topic
         <select value={topic} onChange={(e) => setTopic(e.target.value)}>
+          <option
+            disabled
+            selected
+            value="none"
+            className={styles.displayNone}
+          ></option>
           <option value="Job">Job</option>
           <option value="Collaboration">Collaboration</option>
           <option value="Other">Other</option>

@@ -1,10 +1,8 @@
 .contactFormContainer {
     display: flex;
     flex-direction: column;
-    /* align-self: center; */
     gap: 3.5rem;
     margin-top: 1rem;
-    /* width: 75%; */
 }
 
 input, select, textarea {
@@ -12,6 +10,7 @@ input, select, textarea {
     border-bottom: 2px solid black;
     outline: none;
     font-weight: normal;
+    width: 100%;
 }
 
 label {
@@ -62,4 +61,8 @@ label {
 .fieldHolder {
     position: relative;
     margin-bottom: 1.25rem;
+}
+
+.displayNone {
+    display: none;
 }
