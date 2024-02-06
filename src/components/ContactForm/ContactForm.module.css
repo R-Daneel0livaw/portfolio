@@ -41,6 +41,10 @@ label {
     transition: .3s ease-in-out;
 }
 
+.innerSelect {
+    cursor: default;
+}
+
 .innerInput {
     width: 100%;
 }

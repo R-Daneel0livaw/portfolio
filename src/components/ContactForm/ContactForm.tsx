@@ -55,7 +55,7 @@ const ContactForm = () => {
           <option value="individual">Individual</option>
           <option value="business">Business</option>
         </select>
-        <label className={styles.innerLabel} htmlFor="contactType">
+        <label className={`${styles.innerLabel} ${styles.innerSelect}`} htmlFor="contactType">
           Contact Type
         </label>
       </div>
@@ -151,13 +151,13 @@ const ContactForm = () => {
           <option value="Collaboration">Collaboration</option>
           <option value="Other">Other</option>
         </select>
-        <label className={styles.innerLabel} htmlFor="topic">
+        <label className={`${styles.innerLabel} ${styles.innerSelect}`} htmlFor="topic">
           Topic
         </label>
       </div>
 
       <label>
-        Message
+        Provide Details
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -165,7 +165,7 @@ const ContactForm = () => {
         />
       </label>
 
-      <button type="submit">Send</button>
+      <button type="submit">Send Message</button>
     </form>
   );
 };
