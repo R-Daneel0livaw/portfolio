@@ -50,7 +50,6 @@ const ContactForm = () => {
           <option
             disabled
             value=""
-            selected
             className={styles.displayNone}
           ></option>
           <option value="individual">Individual</option>
@@ -146,7 +145,6 @@ const ContactForm = () => {
           <option
             disabled
             value=""
-            selected
             className={styles.displayNone}
           ></option>
           <option value="Job">Job</option>
