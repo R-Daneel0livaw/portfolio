@@ -6,7 +6,7 @@
 .homeContentContainer {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     padding-bottom: 1rem;
 }
 
@@ -37,8 +37,6 @@
 }
 
 .introduction {
-    /* font-size: 1.1rem; */
     line-height: 1.7em;
     color: #4f4f4f;
-
 }
