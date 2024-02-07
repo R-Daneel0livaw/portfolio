@@ -40,7 +40,7 @@ export default function Home() {
             professional and personal pursuits.
           </p>
         </div>
-        <SignatureWithButton buttonText="Hire Me"/>
+        <SignatureWithButton buttonText="Hire Me" includeSignature={true}/>
       </div>
       <SocialMedia />
     </section>

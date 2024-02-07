@@ -130,7 +130,7 @@ export default function AboutMe() {
             connect, share ideas, and explore the exciting intersections of
             technology, learning, and life.
           </p>
-          <SignatureWithButton buttonText="Connect" />
+          <SignatureWithButton buttonText="Connect" includeSignature={true}/>
         </footer>
       </div>
       <SocialMedia />

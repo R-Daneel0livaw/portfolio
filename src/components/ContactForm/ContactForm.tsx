@@ -168,7 +168,7 @@ const ContactForm = () => {
         </label>
       </div>
 
-      <SignatureWithButton buttonText="Send Message" />
+      <SignatureWithButton buttonText="Send Message" includeSignature={false} />
     </form>
   );
 };
