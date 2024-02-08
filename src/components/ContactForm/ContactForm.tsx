@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./ContactForm.module.css";
 import SignatureWithButton from "../SignatureWithButton/SignatureWithButton";
+import TextArea from "./TextArea";
 
 const ContactForm = () => {
   const [contactType, setContactType] = useState("");
@@ -167,6 +168,8 @@ const ContactForm = () => {
           Provide Details
         </label>
       </div>
+
+      <TextArea />
 
       <SignatureWithButton buttonText="Send Message" includeSignature={false} />
     </form>

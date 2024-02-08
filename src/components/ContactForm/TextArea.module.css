@@ -1,0 +1,5 @@
+.autoHeightTextarea {
+    resize: none;
+    overflow-y: hidden;
+    height: 1.85rem;
+}
