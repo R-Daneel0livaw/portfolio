@@ -3,3 +3,11 @@
     overflow-y: hidden;
     height: 1.85rem;
 }
+
+textarea:focus + label,
+textarea:valid + label {
+    color: #ff416c;
+    font-size: .75rem;
+    top: -25px;
+    pointer-events: none;
+}

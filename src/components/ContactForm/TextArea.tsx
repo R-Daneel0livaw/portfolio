@@ -25,6 +25,7 @@ const TextArea = () => {
       value={value}
       onChange={handleChange}
       style={{ height: textareaHeight }}
+      required
     />
   );
 };

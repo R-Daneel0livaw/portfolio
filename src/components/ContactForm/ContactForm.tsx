@@ -157,19 +157,18 @@ const ContactForm = () => {
       </div>
 
       <div className={`${styles.fieldHolder} ${styles.identificationChild}`}>
-        <textarea
+        {/* <textarea
           className={`${styles.innerInput} ${styles.innerTextarea}`}
           id="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
-        />
+        /> */}
+        <TextArea />
         <label className={styles.innerLabel} htmlFor="message">
           Provide Details
         </label>
       </div>
-
-      <TextArea />
 
       <SignatureWithButton buttonText="Send Message" includeSignature={false} />
     </form>
