@@ -31,6 +31,12 @@ label {
     flex: 2;
 } 
 
+.autoHeightTextarea {
+    resize: none;
+    overflow-y: hidden;
+    height: 1.85rem;
+}
+
 .innerLabel {
     position: absolute;
     top: 0;

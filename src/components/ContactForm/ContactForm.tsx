@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import styles from "./ContactForm.module.css";
 import SignatureWithButton from "../SignatureWithButton/SignatureWithButton";
-import TextArea from "./TextArea";
 
 const ContactForm = () => {
   const [contactType, setContactType] = useState("");
@@ -11,6 +10,30 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [topic, setTopic] = useState("");
   const [message, setMessage] = useState("");
+  const [value, setValue] = useState("");
+  const [textareaHeight, setTextareaHeight] = useState("1.85rem");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const { scrollHeight } = event.target;
+    const maxHeight = 200;
+
+    setValue(event.target.value);
+    if (event.target.value === "") {
+      setTextareaHeight("1.85rem");
+    } else {
+      setTextareaHeight(
+        scrollHeight < maxHeight ? scrollHeight + "px" : maxHeight + "px"
+      );
+    }
+    setMessage(event.target.value);
+  };
+
+  const handleLabelClick = () => {
+    if (textareaRef.current) {
+      textareaRef.current.focus();
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -157,15 +180,15 @@ const ContactForm = () => {
       </div>
 
       <div className={`${styles.fieldHolder} ${styles.identificationChild}`}>
-        {/* <textarea
-          className={`${styles.innerInput} ${styles.innerTextarea}`}
-          id="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
+        <textarea
+          className={`${styles.autoHeightTextarea} ${styles.innerInput}`}
+          value={value}
+          onChange={handleTextAreaChange}
+          style={{ height: textareaHeight }}
+          ref={textareaRef}
           required
-        /> */}
-        <TextArea />
-        <label className={styles.innerLabel} htmlFor="message">
+        />
+        <label onClick={handleLabelClick} className={styles.innerLabel} htmlFor="message">
           Provide Details
         </label>
       </div>
