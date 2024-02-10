@@ -18,10 +18,18 @@
     font-size: 1.1rem;
     font-weight: bold;
     letter-spacing: 0.05rem;
-    filter: drop-shadow(0px 1px 1px #4f4f4f);
-    background-color: #ff416c;
     color: #fff;
     cursor: pointer;
+}
+
+.enabled {
+    filter: drop-shadow(0px 1px 1px #4f4f4f);
+    background-color: #ff416c;
+}
+
+.disabled {
+    background-color: #f19cbb;
+    cursor: none;
 }
 
 .button:hover {

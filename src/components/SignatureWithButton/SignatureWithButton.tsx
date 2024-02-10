@@ -5,16 +5,26 @@ import PathConstants from "../../routes/pathConstants";
 interface ButtonProps {
   buttonText: string;
   includeSignature: boolean;
+  enabled: boolean;
 }
 
-export default function SignatureWithButton({ buttonText, includeSignature }: ButtonProps) {
+export default function SignatureWithButton({ buttonText, includeSignature, enabled }: ButtonProps) {
   const navigate = useNavigate();
   
   return (
     <>
       <div className={styles.container}>
         {includeSignature && <p className={styles.signature}>Eric Hine</p>}
-        <button onClick={() => navigate(PathConstants.CONTACT)} type="submit" className={styles.button}>{buttonText}</button>
+        <button
+          onClick={() => navigate(PathConstants.CONTACT)}
+          type="submit"
+          className={`${styles.button} ${
+            enabled ? styles.enabled : styles.disabled
+          }`}
+          disabled={!enabled}
+        >
+          {buttonText}
+        </button>
       </div>
     </>
   );

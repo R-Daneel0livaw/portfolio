@@ -10,7 +10,6 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [topic, setTopic] = useState("");
   const [message, setMessage] = useState("");
-  const [value, setValue] = useState("");
   const [textareaHeight, setTextareaHeight] = useState("1.85rem");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -18,7 +17,7 @@ const ContactForm = () => {
     const { scrollHeight } = event.target;
     const maxHeight = 200;
 
-    setValue(event.target.value);
+    setMessage(event.target.value);
     if (event.target.value === "") {
       setTextareaHeight("1.85rem");
     } else {
@@ -26,7 +25,6 @@ const ContactForm = () => {
         scrollHeight < maxHeight ? scrollHeight + "px" : maxHeight + "px"
       );
     }
-    setMessage(event.target.value);
   };
 
   const handleLabelClick = () => {
@@ -35,10 +33,18 @@ const ContactForm = () => {
     }
   };
 
+  const isFormFilled = (): boolean => {
+    return (name.length > 0 || (firstName.length > 0 && lastName.length > 0)) &&
+      message.length > 0 &&
+      email.length > 0 &&
+      topic.length > 0 &&
+      contactType.length > 0;
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!name || !email || !message) {
+    if ((!name && (!firstName || !lastName)) || !message || !email || !topic || !contactType) {
       alert("Please fill in all mandatory fields.");
       return;
     }
@@ -182,7 +188,7 @@ const ContactForm = () => {
       <div className={`${styles.fieldHolder} ${styles.identificationChild}`}>
         <textarea
           className={`${styles.autoHeightTextarea} ${styles.innerInput}`}
-          value={value}
+          value={message}
           onChange={handleTextAreaChange}
           style={{ height: textareaHeight }}
           ref={textareaRef}
@@ -193,7 +199,7 @@ const ContactForm = () => {
         </label>
       </div>
 
-      <SignatureWithButton buttonText="Send Message" includeSignature={false} />
+      <SignatureWithButton buttonText="Send Message" includeSignature={false} enabled={isFormFilled()} />
     </form>
   );
 };
