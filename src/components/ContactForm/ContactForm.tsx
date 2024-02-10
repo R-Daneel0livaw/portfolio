@@ -12,6 +12,7 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
   const [textareaHeight, setTextareaHeight] = useState("1.85rem");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const { scrollHeight } = event.target;
@@ -44,7 +45,13 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if ((!name && (!firstName || !lastName)) || !message || !email || !topic || !contactType) {
+    if (
+      (!name && (!firstName || !lastName)) ||
+      !message ||
+      !email ||
+      !topic ||
+      !contactType
+    ) {
       alert("Please fill in all mandatory fields.");
       return;
     }
@@ -66,6 +73,11 @@ const ContactForm = () => {
     setEmail("");
     setTopic("");
     setMessage("");
+
+    setShowConfirmation(true);
+    setTimeout(() => {
+      setShowConfirmation(false);
+    }, 10000);
   };
 
   return (
@@ -200,6 +212,10 @@ const ContactForm = () => {
       </div>
 
       <SignatureWithButton buttonText="Send Message" includeSignature={false} enabled={isFormFilled()} />
+
+      {showConfirmation && (
+        <div>Message submitted successfully!</div>
+      )}
     </form>
   );
 };
