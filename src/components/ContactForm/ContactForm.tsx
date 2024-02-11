@@ -77,7 +77,7 @@ const ContactForm = () => {
     setShowConfirmation(true);
     setTimeout(() => {
       setShowConfirmation(false);
-    }, 10000);
+    }, 80000);
   };
 
   return (
