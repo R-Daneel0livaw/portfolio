@@ -15,7 +15,7 @@ function getAboutMe() {
 }
 
 function getSkills() {
-  const Skills = lazy(() => import("../pages/Skills"));
+  const Skills = lazy(() => import("../pages/Skills/Skills"));
   return <Skills />;
 }
 

@@ -77,7 +77,7 @@ const ContactForm = () => {
     setShowConfirmation(true);
     setTimeout(() => {
       setShowConfirmation(false);
-    }, 80000);
+    }, 8000);
   };
 
   return (
@@ -214,7 +214,7 @@ const ContactForm = () => {
       <SignatureWithButton buttonText="Send Message" includeSignature={false} enabled={isFormFilled()} />
 
       {showConfirmation && (
-        <div>Message submitted successfully!</div>
+        <div>Thank You! Your Message was submitted successfully and you'll be hearing from me soon!</div>
       )}
     </form>
   );
