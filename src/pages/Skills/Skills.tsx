@@ -15,6 +15,33 @@ export default function Skills() {
         }
       />
 
+      <div className={styles.buttonList}>
+        <button className={styles.skillButton} data-target="programming">
+          Programming
+        </button>
+        <button className={styles.skillButton} data-target="web">
+          Web
+        </button>
+        <button className={styles.skillButton} data-target="backend">
+          Backend
+        </button>
+        <button className={styles.skillButton} data-target="database">
+          Database
+        </button>
+        <button className={styles.skillButton} data-target="cloud">
+          Cloud
+        </button>
+        <button className={styles.skillButton} data-target="devops">
+          DevOps
+        </button>
+        <button className={styles.skillButton} data-target="emerging">
+          Emerging
+        </button>
+        <button className={styles.skillButton} data-target="soft-skills">
+          Soft Skills
+        </button>
+      </div>
+
       <h3>Programming Languages</h3>
       <ul>
         <li>Java</li>

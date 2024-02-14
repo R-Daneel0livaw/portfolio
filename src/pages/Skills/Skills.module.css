@@ -2,3 +2,25 @@
     font-weight: bold;
     color: #ff416c;
 }
+
+.buttonList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skillButton {
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #e5ecec;
+  color: #778787;
+  font-weight: bold;
+  border-radius: 20px 20px 0px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.skillButton:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
