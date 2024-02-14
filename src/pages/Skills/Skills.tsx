@@ -1,4 +1,6 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Skills.module.css";
 
 export default function Skills() {
@@ -16,23 +18,31 @@ export default function Skills() {
       />
 
       <div className={styles.buttonList}>
-        <button className={styles.skillButton} data-target="programming">
+        <button className={`${styles.skillButton} ${styles.selected}`} data-target="programming">
+          <FontAwesomeIcon icon={faCheck} />
           Programming
         </button>
-        <button className={styles.skillButton} data-target="web">
+        <button className={`${styles.skillButton} ${styles.selected}`} data-target="web">
+          <FontAwesomeIcon icon={faCheck} />
           Web
         </button>
-        <button className={styles.skillButton} data-target="backend">
-          Backend
-        </button>
-        <button className={styles.skillButton} data-target="database">
+        <button className={`${styles.skillButton} ${styles.selected}`} data-target="database">
+          <FontAwesomeIcon icon={faCheck} />
           Database
         </button>
-        <button className={styles.skillButton} data-target="cloud">
+        <button className={`${styles.skillButton} ${styles.selected}`} data-target="cloud">
+          <FontAwesomeIcon icon={faCheck} />
           Cloud
         </button>
-        <button className={styles.skillButton} data-target="devops">
+        <button className={`${styles.skillButton} ${styles.selected}`} data-target="devops">
+          <FontAwesomeIcon icon={faCheck} />
           DevOps
+        </button>
+      </div>
+
+      <div className={styles.buttonList}>
+        <button className={styles.skillButton} data-target="backend">
+          Backend
         </button>
         <button className={styles.skillButton} data-target="emerging">
           Emerging

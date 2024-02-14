@@ -6,21 +6,32 @@
 .buttonList {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 .skillButton {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 16px;
   margin: 5px;
   background-color: #e5ecec;
   color: #778787;
   font-weight: bold;
-  border-radius: 20px 20px 0px 20px;
+  font-size: 0.75rem;
+  border-radius: 20px 20px 2px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
+.selected {
+  background-color: #d3f2e4;
+  color: #1b835e;
+  font-size: 1rem;
+}
+
 .skillButton:hover {
-  background-color: #0056b3;
-  color: #fff;
+  background-color: #d3f2e4;
+  color: #1b835e;
 }
