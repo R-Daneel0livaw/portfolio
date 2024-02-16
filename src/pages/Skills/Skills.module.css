@@ -32,7 +32,7 @@
 .selected {
   background-color: #d3f2e4;
   color: #1b835e;
-  font-size: 1rem;
+  font-size: 0.85rem;
 }
 
 .skillButton:hover {
