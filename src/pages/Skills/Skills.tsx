@@ -3,24 +3,31 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Skills.module.css";
 import { useState } from "react";
+import { Fragment } from "react";
 
 export default function Skills() {
-  const [activeButtons, setActiveButtons] = useState<string[]>([
-    "programming",
-    "web",
-    "database",
-    "cloud",
-    "devops",
-  ]);
+  const [activeSections, setActiveSections] = useState<{
+    [key: string]: number;
+  }>({
+    programming: 0,
+    web: 1,
+    database: 2,
+    cloud: 3,
+    devops: 4,
+  });
 
   const handleButtonClick = (target: string) => {
-    if (activeButtons.includes(target)) {
-      setActiveButtons(activeButtons.filter((button) => button !== target));
+    if (activeSections[target] !== undefined) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { [target]: _, ...rest } = activeSections;
+      setActiveSections(rest);
     } else {
-      setActiveButtons([...activeButtons, target]);
+      setActiveSections({
+        ...activeSections,
+        [target]: Object.keys(activeSections).length,
+      });
     }
   };
-
   return (
     <section id="skills">
       <PageHeader
@@ -101,98 +108,105 @@ export default function Skills() {
         </button>
       </div>
 
-      {activeButtons.includes("programming") && (
-        <>
-          <h3>Programming Languages</h3>
-          <ul>
-            <li>Java</li>
-            <li>C/C++/C#</li>
-            <li>Python</li>
-            <li>R</li>
-            <li>JavaScript/TypeScript</li>
-          </ul>
-        </>
-      )}
+      {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        Object.entries(activeSections).map(([section, _]) => (
+          <Fragment key={section}>
+            {section === "programming" && (
+              <>
+                <h3>Programming Languages</h3>
+                <ul>
+                  <li>Java</li>
+                  <li>C/C++/C#</li>
+                  <li>Python</li>
+                  <li>R</li>
+                  <li>JavaScript/TypeScript</li>
+                </ul>
+              </>
+            )}
 
-      {activeButtons.includes("web") && (
-        <>
-          <h3>Web Technologies</h3>
-          <ul>
-            <li>React</li>
-            <li>Angular</li>
-            <li>Vue</li>
-            <li>HTML5/CSS3</li>
-          </ul>
-        </>
-      )}
+            {section === "web" && (
+              <>
+                <h3>Web Technologies</h3>
+                <ul>
+                  <li>React</li>
+                  <li>Angular</li>
+                  <li>Vue</li>
+                  <li>HTML5/CSS3</li>
+                </ul>
+              </>
+            )}
 
-      {activeButtons.includes("backend") && (
-        <>
-          <h3>Backend Technologies</h3>
-          <ul>
-            <li>Spring Boot</li>
-            <li>ASP.NET</li>
-            <li>NodeJS</li>
-          </ul>
-        </>
-      )}
+            {section === "backend" && (
+              <>
+                <h3>Backend Technologies</h3>
+                <ul>
+                  <li>Spring Boot</li>
+                  <li>ASP.NET</li>
+                  <li>NodeJS</li>
+                </ul>
+              </>
+            )}
 
-      {activeButtons.includes("database") && (
-        <>
-          <h3>Database Management</h3>
-          <ul>
-            <li>SQL (Oracle, PostgreSQL, MySQL)</li>
-            <li>NoSQL (MongoDB, Neo4j, Cassandra)</li>
-          </ul>
-        </>
-      )}
+            {section === "database" && (
+              <>
+                <h3>Database Management</h3>
+                <ul>
+                  <li>SQL (Oracle, PostgreSQL, MySQL)</li>
+                  <li>NoSQL (MongoDB, Neo4j, Cassandra)</li>
+                </ul>
+              </>
+            )}
 
-      {activeButtons.includes("cloud") && (
-        <>
-          <h3>Cloud Platforms</h3>
-          <ul>
-            <li>AWS</li>
-            <li>Azure</li>
-          </ul>
-        </>
-      )}
+            {section === "cloud" && (
+              <>
+                <h3>Cloud Platforms</h3>
+                <ul>
+                  <li>AWS</li>
+                  <li>Azure</li>
+                </ul>
+              </>
+            )}
 
-      {activeButtons.includes("devops") && (
-        <>
-          <h3>DevOps</h3>
-          <ul>
-            <li>Docker</li>
-            <li>Kubernetes</li>
-            <li>OpenShift</li>
-            <li>Jenkins</li>
-            <li>CI/CD Pipelines</li>
-          </ul>
-        </>
-      )}
+            {section === "devops" && (
+              <>
+                <h3>DevOps</h3>
+                <ul>
+                  <li>Docker</li>
+                  <li>Kubernetes</li>
+                  <li>OpenShift</li>
+                  <li>Jenkins</li>
+                  <li>CI/CD Pipelines</li>
+                </ul>
+              </>
+            )}
 
-      {activeButtons.includes("emerging") && (
-        <>
-          <h3>Emerging Technologies</h3>
-          <ul>
-            <li>Blockchain</li>
-            <li>Machine Learning</li>
-            <li>Internet of Things (IoT)</li>
-          </ul>
-        </>
-      )}
+            {section === "emerging" && (
+              <>
+                <h3>Emerging Technologies</h3>
+                <ul>
+                  <li>Blockchain</li>
+                  <li>Machine Learning</li>
+                  <li>Internet of Things (IoT)</li>
+                </ul>
+              </>
+            )}
 
-      {activeButtons.includes("soft-skills") && (
-        <>
-          <h3>Soft Skills</h3>
-          <ul>
-            <li>Team leadership</li>
-            <li>Mentorship</li>
-            <li>Effective Communication</li>
-            <li>Analytical Thinking</li>
-            <li>Adaptability</li>
-          </ul>
-        </>
-      )}
+            {section === "soft-skills" && (
+              <>
+                <h3>Soft Skills</h3>
+                <ul>
+                  <li>Team leadership</li>
+                  <li>Mentorship</li>
+                  <li>Effective Communication</li>
+                  <li>Analytical Thinking</li>
+                  <li>Adaptability</li>
+                </ul>
+              </>
+            )}
+          </Fragment>
+        ))
+      }
     </section>
   );
 }
