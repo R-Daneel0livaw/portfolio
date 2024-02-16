@@ -39,3 +39,9 @@
   background-color: #d3f2e4;
   color: #1b835e;
 }
+
+.skillsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px; 
+}

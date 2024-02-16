@@ -108,12 +108,13 @@ export default function Skills() {
         </button>
       </div>
 
-      {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        Object.entries(activeSections).map(([section, _]) => (
-          <React.Fragment key={section}>
-            {section === "programming" && (
-              <>
+      <div className={styles.skillsContainer}>
+        {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          Object.entries(activeSections).map(([section, _]) => (
+            <React.Fragment key={section}>
+              {section === "programming" && (
+              <div>
                 <h3>Programming Languages</h3>
                 <ul>
                   <li>Java</li>
@@ -122,91 +123,92 @@ export default function Skills() {
                   <li>R</li>
                   <li>JavaScript/TypeScript</li>
                 </ul>
-              </>
-            )}
+              </div>
+              )}
 
-            {section === "web" && (
-              <>
-                <h3>Web Technologies</h3>
-                <ul>
-                  <li>React</li>
-                  <li>Angular</li>
-                  <li>Vue</li>
-                  <li>HTML5/CSS3</li>
-                </ul>
-              </>
-            )}
+              {section === "web" && (
+                <div>
+                  <h3>Web Technologies</h3>
+                  <ul>
+                    <li>React</li>
+                    <li>Angular</li>
+                    <li>Vue</li>
+                    <li>HTML5/CSS3</li>
+                  </ul>
+                </div>
+              )}
 
-            {section === "backend" && (
-              <>
-                <h3>Backend Technologies</h3>
-                <ul>
-                  <li>Spring Boot</li>
-                  <li>ASP.NET</li>
-                  <li>NodeJS</li>
-                </ul>
-              </>
-            )}
+              {section === "backend" && (
+                <div>
+                  <h3>Backend Technologies</h3>
+                  <ul>
+                    <li>Spring Boot</li>
+                    <li>ASP.NET</li>
+                    <li>NodeJS</li>
+                  </ul>
+                </div>
+              )}
 
-            {section === "database" && (
-              <>
-                <h3>Database Management</h3>
-                <ul>
-                  <li>SQL (Oracle, PostgreSQL, MySQL)</li>
-                  <li>NoSQL (MongoDB, Neo4j, Cassandra)</li>
-                </ul>
-              </>
-            )}
+              {section === "database" && (
+                <div>
+                  <h3>Database Management</h3>
+                  <ul>
+                    <li>SQL (Oracle, PostgreSQL, MySQL)</li>
+                    <li>NoSQL (MongoDB, Neo4j, Cassandra)</li>
+                  </ul>
+                </div>
+              )}
 
-            {section === "cloud" && (
-              <>
-                <h3>Cloud Platforms</h3>
-                <ul>
-                  <li>AWS</li>
-                  <li>Azure</li>
-                </ul>
-              </>
-            )}
+              {section === "cloud" && (
+                <div>
+                  <h3>Cloud Platforms</h3>
+                  <ul>
+                    <li>AWS</li>
+                    <li>Azure</li>
+                  </ul>
+                </div>
+              )}
 
-            {section === "devops" && (
-              <>
-                <h3>DevOps</h3>
-                <ul>
-                  <li>Docker</li>
-                  <li>Kubernetes</li>
-                  <li>OpenShift</li>
-                  <li>Jenkins</li>
-                  <li>CI/CD Pipelines</li>
-                </ul>
-              </>
-            )}
+              {section === "devops" && (
+                <div>
+                  <h3>DevOps</h3>
+                  <ul>
+                    <li>Docker</li>
+                    <li>Kubernetes</li>
+                    <li>OpenShift</li>
+                    <li>Jenkins</li>
+                    <li>CI/CD Pipelines</li>
+                  </ul>
+                </div>
+              )}
 
-            {section === "emerging" && (
-              <>
-                <h3>Emerging Technologies</h3>
-                <ul>
-                  <li>Blockchain</li>
-                  <li>Machine Learning</li>
-                  <li>Internet of Things (IoT)</li>
-                </ul>
-              </>
-            )}
+              {section === "emerging" && (
+                <div>
+                  <h3>Emerging Technologies</h3>
+                  <ul>
+                    <li>Blockchain</li>
+                    <li>Machine Learning</li>
+                    <li>Internet of Things (IoT)</li>
+                  </ul>
+                </div>
+              )}
 
-            {section === "soft-skills" && (
-              <>
-                <h3>Soft Skills</h3>
-                <ul>
-                  <li>Team leadership</li>
-                  <li>Mentorship</li>
-                  <li>Effective Communication</li>
-                  <li>Analytical Thinking</li>
-                  <li>Adaptability</li>
-                </ul>
-              </>
-            )}
-          </React.Fragment>
-        ))
-      }
+              {section === "soft-skills" && (
+                <div>
+                  <h3>Soft Skills</h3>
+                  <ul>
+                    <li>Team leadership</li>
+                    <li>Mentorship</li>
+                    <li>Effective Communication</li>
+                    <li>Analytical Thinking</li>
+                    <li>Adaptability</li>
+                  </ul>
+                </div>
+              )}
+            </React.Fragment>
+          ))
+        }
+      </div>
     </section>
   );
 }
