@@ -3,7 +3,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Skills.module.css";
 import { useState } from "react";
-import { Fragment } from "react";
+import React from "react";
 
 export default function Skills() {
   const [activeSections, setActiveSections] = useState<{
@@ -111,7 +111,7 @@ export default function Skills() {
       {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         Object.entries(activeSections).map(([section, _]) => (
-          <Fragment key={section}>
+          <React.Fragment key={section}>
             {section === "programming" && (
               <>
                 <h3>Programming Languages</h3>
@@ -204,7 +204,7 @@ export default function Skills() {
                 </ul>
               </>
             )}
-          </Fragment>
+          </React.Fragment>
         ))
       }
     </section>
