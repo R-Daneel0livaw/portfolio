@@ -115,8 +115,8 @@ export default function Skills() {
             <React.Fragment key={section}>
               {section === "programming" && (
               <div>
-                <h3>Programming Languages</h3>
-                <ul>
+                <h3 className={styles.skillHeading}>Programming Languages</h3>
+                <ul className={styles.skillList}>
                   <li>Java</li>
                   <li>C/C++/C#</li>
                   <li>Python</li>
@@ -128,8 +128,8 @@ export default function Skills() {
 
               {section === "web" && (
                 <div>
-                  <h3>Web Technologies</h3>
-                  <ul>
+                  <h3 className={styles.skillHeading}>Web Technologies</h3>
+                  <ul className={styles.skillList}>
                     <li>React</li>
                     <li>Angular</li>
                     <li>Vue</li>
@@ -140,8 +140,8 @@ export default function Skills() {
 
               {section === "backend" && (
                 <div>
-                  <h3>Backend Technologies</h3>
-                  <ul>
+                  <h3 className={styles.skillHeading}>Backend Technologies</h3>
+                  <ul className={styles.skillList}>
                     <li>Spring Boot</li>
                     <li>ASP.NET</li>
                     <li>NodeJS</li>
@@ -151,8 +151,8 @@ export default function Skills() {
 
               {section === "database" && (
                 <div>
-                  <h3>Database Management</h3>
-                  <ul>
+                  <h3 className={styles.skillHeading}>Database Management</h3>
+                  <ul className={styles.skillList}>
                     <li>SQL (Oracle, PostgreSQL, MySQL)</li>
                     <li>NoSQL (MongoDB, Neo4j, Cassandra)</li>
                   </ul>
@@ -161,8 +161,8 @@ export default function Skills() {
 
               {section === "cloud" && (
                 <div>
-                  <h3>Cloud Platforms</h3>
-                  <ul>
+                  <h3 className={styles.skillHeading}>Cloud Platforms</h3>
+                  <ul className={styles.skillList}>
                     <li>AWS</li>
                     <li>Azure</li>
                   </ul>
@@ -171,8 +171,8 @@ export default function Skills() {
 
               {section === "devops" && (
                 <div>
-                  <h3>DevOps</h3>
-                  <ul>
+                  <h3 className={styles.skillHeading}>DevOps</h3>
+                  <ul className={styles.skillList}>
                     <li>Docker</li>
                     <li>Kubernetes</li>
                     <li>OpenShift</li>
@@ -184,8 +184,8 @@ export default function Skills() {
 
               {section === "emerging" && (
                 <div>
-                  <h3>Emerging Technologies</h3>
-                  <ul>
+                  <h3 className={styles.skillHeading}>Emerging Technologies</h3>
+                  <ul className={styles.skillList}>
                     <li>Blockchain</li>
                     <li>Machine Learning</li>
                     <li>Internet of Things (IoT)</li>
@@ -195,8 +195,8 @@ export default function Skills() {
 
               {section === "soft-skills" && (
                 <div>
-                  <h3>Soft Skills</h3>
-                  <ul>
+                  <h3 className={styles.skillHeading}>Soft Skills</h3>
+                  <ul className={styles.skillList}>
                     <li>Team leadership</li>
                     <li>Mentorship</li>
                     <li>Effective Communication</li>

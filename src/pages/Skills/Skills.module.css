@@ -43,5 +43,17 @@
 .skillsContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px; 
+  grid-gap: 2rem; 
+  margin-top: 2rem;
+}
+
+.skillHeading {
+  color: #3d5268;
+  font-weight: bold;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.skillList {
+  color: #3d5268;
 }
