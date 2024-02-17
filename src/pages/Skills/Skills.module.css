@@ -65,6 +65,12 @@
   margin-top: 2rem;
 }
 
+.skillHeadingContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
 .skillHeading {
   color: #3d5268;
   font-weight: bold;
@@ -72,6 +78,19 @@
   margin-bottom: 0.5rem;
 }
 
+.skillHeadingContainer svg {
+  transform: translate(0, 10%);
+}
+
 .skillList {
   color: #3d5268;
+  list-style-type: '- ';
 }
+
+.skillList li {
+  margin-bottom: 0.5rem;
+}
+
+.skillList li:last-of-type {
+  margin-bottom: 0;
+} 

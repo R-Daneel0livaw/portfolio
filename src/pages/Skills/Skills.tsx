@@ -1,5 +1,5 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Skills.module.css";
 import { useState } from "react";
@@ -128,9 +128,15 @@ export default function Skills() {
               <React.Fragment key={section}>
                 {section === "programming" && (
                   <div>
-                    <h3 className={styles.skillHeading}>
-                      Programming Languages
-                    </h3>
+                    <div className={styles.skillHeadingContainer}>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3 className={styles.skillHeading}>
+                        Programming Languages
+                      </h3>
+                    </div>
                     <ul className={styles.skillList}>
                       <li>Java</li>
                       <li>C/C++/C#</li>
@@ -143,7 +149,13 @@ export default function Skills() {
 
                 {section === "web" && (
                   <div>
-                    <h3 className={styles.skillHeading}>Web Technologies</h3>
+                    <div className={styles.skillHeadingContainer}>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3 className={styles.skillHeading}>Web Technologies</h3>
+                    </div>
                     <ul className={styles.skillList}>
                       <li>React</li>
                       <li>Angular</li>
@@ -155,9 +167,15 @@ export default function Skills() {
 
                 {section === "backend" && (
                   <div>
-                    <h3 className={styles.skillHeading}>
-                      Backend Technologies
-                    </h3>
+                    <div className={styles.skillHeadingContainer}>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3 className={styles.skillHeading}>
+                        Backend Technologies
+                      </h3>
+                    </div>
                     <ul className={styles.skillList}>
                       <li>Spring Boot</li>
                       <li>ASP.NET</li>
@@ -168,7 +186,15 @@ export default function Skills() {
 
                 {section === "database" && (
                   <div>
-                    <h3 className={styles.skillHeading}>Database Management</h3>
+                    <div className={styles.skillHeadingContainer}>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3 className={styles.skillHeading}>
+                        Database Management
+                      </h3>
+                    </div>
                     <ul className={styles.skillList}>
                       <li>SQL (Oracle, PostgreSQL, MySQL)</li>
                       <li>NoSQL (MongoDB, Neo4j, Cassandra)</li>
@@ -178,7 +204,13 @@ export default function Skills() {
 
                 {section === "cloud" && (
                   <div>
-                    <h3 className={styles.skillHeading}>Cloud Platforms</h3>
+                    <div className={styles.skillHeadingContainer}>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3 className={styles.skillHeading}>Cloud Platforms</h3>
+                    </div>
                     <ul className={styles.skillList}>
                       <li>AWS</li>
                       <li>Azure</li>
@@ -188,7 +220,13 @@ export default function Skills() {
 
                 {section === "devops" && (
                   <div>
-                    <h3 className={styles.skillHeading}>DevOps</h3>
+                    <div className={styles.skillHeadingContainer}>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3 className={styles.skillHeading}>DevOps</h3>
+                    </div>
                     <ul className={styles.skillList}>
                       <li>Docker</li>
                       <li>Kubernetes</li>
@@ -201,9 +239,15 @@ export default function Skills() {
 
                 {section === "emerging" && (
                   <div>
-                    <h3 className={styles.skillHeading}>
-                      Emerging Technologies
-                    </h3>
+                    <div className={styles.skillHeadingContainer}>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3 className={styles.skillHeading}>
+                        Emerging Technologies
+                      </h3>
+                    </div>
                     <ul className={styles.skillList}>
                       <li>Blockchain</li>
                       <li>Machine Learning</li>
@@ -214,7 +258,13 @@ export default function Skills() {
 
                 {section === "soft-skills" && (
                   <div>
-                    <h3 className={styles.skillHeading}>Soft Skills</h3>
+                    <div className={styles.skillHeadingContainer}>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3 className={styles.skillHeading}>Soft Skills</h3>
+                    </div>
                     <ul className={styles.skillList}>
                       <li>Team leadership</li>
                       <li>Mentorship</li>
