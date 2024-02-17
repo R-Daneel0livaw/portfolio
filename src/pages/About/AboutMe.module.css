@@ -19,6 +19,7 @@
 
 .details {
     margin-bottom: 2rem;
+    color: #4f4f4f;
 }
 
 .sectionHeadingContainer {
@@ -41,6 +42,7 @@
 
 .sectionContent, .seeMore {
     line-height: 1.7em;
+    color: #4f4f4f;
 }
 
 .seeMore:last-of-type {

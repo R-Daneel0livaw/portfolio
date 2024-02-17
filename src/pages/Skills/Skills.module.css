@@ -3,6 +3,24 @@
     color: #ff416c;
 }
 
+.skillsContainer {
+    display: flex;
+    gap: 2rem;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+}
+
+.spacer {
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.details {
+  color: #4f4f4f;
+}
+
 .buttonList {
   display: flex;
   flex-wrap: wrap;
@@ -40,7 +58,7 @@
   color: #1b835e;
 }
 
-.skillsContainer {
+.skillsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem; 
