@@ -74,6 +74,9 @@ export default function Skills() {
           effectively to any project.
         </p>
 
+        <p>Hats</p>
+        <hr />
+        <p>Key Areas</p>
         <div className={styles.buttonList}>
           {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
