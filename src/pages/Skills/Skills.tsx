@@ -17,18 +17,38 @@ export default function Skills() {
     devops: 4,
   });
 
-  const handleButtonClick = (target: string) => {
+  const [inactiveSections, setInactiveSections] = useState<{
+    [key: string]: number;
+  }>({
+    backend: 0,
+    emerging: 1,
+    'soft skills': 2,
+  });
+
+  const handleActiveButtonClick = (target: string) => {
     if (activeSections[target] !== undefined) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { [target]: _, ...rest } = activeSections;
       setActiveSections(rest);
-    } else {
+      setInactiveSections({
+        ...inactiveSections,
+        [target]: Object.keys(inactiveSections).length,
+      });
+    }
+  };
+
+  const handleInactiveButtonClick = (target: string) => {
+    if (inactiveSections[target] !== undefined) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { [target]: _, ...rest } = inactiveSections;
+      setInactiveSections(rest);
       setActiveSections({
         ...activeSections,
         [target]: Object.keys(activeSections).length,
       });
     }
   };
+
   return (
     <section id="skills" className={styles.skillsContainer}>
       <div className={styles.information}>
@@ -55,70 +75,34 @@ export default function Skills() {
         </p>
 
         <div className={styles.buttonList}>
-          <button
-            className={`${styles.skillButton} ${styles.selected}`}
-            data-target="programming"
-            onClick={() => handleButtonClick("programming")}
-          >
-            <FontAwesomeIcon icon={faCheck} />
-            Programming
-          </button>
-          <button
-            className={`${styles.skillButton} ${styles.selected}`}
-            data-target="web"
-            onClick={() => handleButtonClick("web")}
-          >
-            <FontAwesomeIcon icon={faCheck} />
-            Web
-          </button>
-          <button
-            className={`${styles.skillButton} ${styles.selected}`}
-            data-target="database"
-            onClick={() => handleButtonClick("database")}
-          >
-            <FontAwesomeIcon icon={faCheck} />
-            Database
-          </button>
-          <button
-            className={`${styles.skillButton} ${styles.selected}`}
-            data-target="cloud"
-            onClick={() => handleButtonClick("cloud")}
-          >
-            <FontAwesomeIcon icon={faCheck} />
-            Cloud
-          </button>
-          <button
-            className={`${styles.skillButton} ${styles.selected}`}
-            data-target="devops"
-            onClick={() => handleButtonClick("devops")}
-          >
-            <FontAwesomeIcon icon={faCheck} />
-            DevOps
-          </button>
+          {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            Object.entries(activeSections).map(([section, _]) => (
+              <button
+                className={`${styles.skillButton} ${styles.selected}`}
+                data-target={section}
+                onClick={() => handleActiveButtonClick(section)}
+              >
+                <FontAwesomeIcon icon={faCheck} />
+                {section}
+              </button>
+            ))
+          }
         </div>
 
         <div className={styles.buttonList}>
-          <button
-            className={styles.skillButton}
-            data-target="backend"
-            onClick={() => handleButtonClick("backend")}
-          >
-            Backend
-          </button>
-          <button
-            className={styles.skillButton}
-            data-target="emerging"
-            onClick={() => handleButtonClick("emerging")}
-          >
-            Emerging
-          </button>
-          <button
-            className={styles.skillButton}
-            data-target="soft-skills"
-            onClick={() => handleButtonClick("soft-skills")}
-          >
-            Soft Skills
-          </button>
+          {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            Object.entries(inactiveSections).map(([section, _]) => (
+              <button
+                className={styles.skillButton}
+                data-target={section}
+                onClick={() => handleInactiveButtonClick(section)}
+              >
+                {section}
+              </button>
+            ))
+          }
         </div>
 
         <div className={styles.skillsGrid}>
