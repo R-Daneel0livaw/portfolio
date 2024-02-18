@@ -240,7 +240,7 @@ export default function Skills() {
                   </div>
                 )}
 
-                {section === "soft-skills" && (
+                {section === "soft skills" && (
                   <div>
                     <div className={styles.skillHeadingContainer}>
                       <FontAwesomeIcon
