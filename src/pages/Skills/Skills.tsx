@@ -1,5 +1,5 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
-import { faCheck, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faChevronRight, faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Skills.module.css";
 import { useState } from "react";
@@ -74,9 +74,45 @@ export default function Skills() {
           effectively to any project.
         </p>
 
-        <p>Hats</p>
-        <hr />
-        <p>Key Areas</p>
+        {/* <h3 className={styles.buttonSectionLabel}>Persona</h3> */}
+        <div className={styles.personaContainer}>
+          <div className={styles.buttonList}>
+            <button
+              className={`${styles.skillButton} ${styles.selected}`}
+              data-target="all"
+            >
+              <FontAwesomeIcon icon={faCheck} />
+              All
+            </button>
+            <button className={`${styles.skillButton}`} data-target="full">
+              Full-Stack
+            </button>
+            <button className={`${styles.skillButton}`} data-target="front">
+              Frontend
+            </button>
+            <button className={`${styles.skillButton}`} data-target="design">
+              Designer
+            </button>
+            <button className={`${styles.skillButton}`} data-target="data">
+              Data Analysis
+            </button>
+            <button
+              className={`${styles.skillButton}`}
+              data-target="management"
+            >
+              Management
+            </button>
+          </div>
+          <FontAwesomeIcon
+            icon={faArrowsRotate}
+            size="lg"
+            style={{ color: "#3d5268" }}
+          />
+        </div>
+
+        <hr className={styles.buttonSectionSplit} />
+
+        {/* <h3 className={styles.buttonSectionLabel}>Key Areas</h3> */}
         <div className={styles.buttonList}>
           {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars

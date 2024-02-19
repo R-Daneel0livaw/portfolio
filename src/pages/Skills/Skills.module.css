@@ -21,6 +21,21 @@
   color: #4f4f4f;
 }
 
+.buttonSectionLabel {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.buttonSectionLabel:last-of-type {
+  margin-top: 0.5rem;
+}
+
+.buttonSectionSplit {
+  border-color: #FAFAFA;
+  margin: 1rem 0;
+}
+
 .buttonList {
   display: flex;
   flex-wrap: wrap;
@@ -29,6 +44,17 @@
 
 .buttonList:last-of-type {
   margin-bottom: 1rem;
+}
+
+.personaContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.personaContainer svg {
+  margin-left: 1rem;
+  cursor: pointer;
 }
 
 .skillButton {
