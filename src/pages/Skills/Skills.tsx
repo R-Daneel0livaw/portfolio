@@ -9,27 +9,31 @@ import SocialMedia from "../../components/SocialMedia/SocialMedia";
 export default function Skills() {
   const [activeSections, setActiveSections] = useState<{
     [key: string]: number;
-  }>({
-    programming: 0,
-    web: 1,
-    database: 2,
-    cloud: 3,
-    devops: 4,
-  });
+  }>(getActiveState());
 
   const [inactiveSections, setInactiveSections] = useState<{
     [key: string]: number;
-  }>({
-    backend: 0,
-    emerging: 1,
-    'soft skills': 2,
-  });
+  }>(getInactiveState());
 
   const [rotation, setRotation] = useState(0);
 
-  const handleClick = () => {
-    setRotation(rotation + 360);
-  };
+  function getActiveState() {
+    return {
+      programming: 0,
+      web: 1,
+      database: 2,
+      cloud: 3,
+      devops: 4,
+    };
+  }
+
+  function getInactiveState() {
+    return {
+      backend: 0,
+      emerging: 1,
+      "soft skills": 2,
+    };
+  }
 
   const handleActiveButtonClick = (target: string) => {
     if (activeSections[target] !== undefined) {
@@ -53,6 +57,12 @@ export default function Skills() {
         [target]: Object.keys(activeSections).length,
       });
     }
+  };
+
+  const handleReset = () => {
+    setRotation(rotation + 360);
+    setActiveSections(getActiveState());
+    setInactiveSections(getInactiveState());
   };
 
   return (
@@ -80,7 +90,6 @@ export default function Skills() {
           effectively to any project.
         </p>
 
-        {/* <h3 className={styles.buttonSectionLabel}>Persona</h3> */}
         <div className={styles.personaContainer}>
           <div className={styles.buttonList}>
             <button
@@ -113,13 +122,12 @@ export default function Skills() {
             icon={faArrowsRotate}
             size="lg"
             style={{ transform: `rotate(${rotation}deg)`, transition: 'transform 0.3s ease', color: "#3d5268" } }
-            onClick={handleClick}
+            onClick={handleReset}
           />
         </div>
 
         <hr className={styles.buttonSectionSplit} />
 
-        {/* <h3 className={styles.buttonSectionLabel}>Key Areas</h3> */}
         <div className={styles.buttonList}>
           {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
