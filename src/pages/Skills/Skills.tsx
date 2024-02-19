@@ -25,6 +25,12 @@ export default function Skills() {
     'soft skills': 2,
   });
 
+  const [rotation, setRotation] = useState(0);
+
+  const handleClick = () => {
+    setRotation(rotation + 360);
+  };
+
   const handleActiveButtonClick = (target: string) => {
     if (activeSections[target] !== undefined) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -106,7 +112,8 @@ export default function Skills() {
           <FontAwesomeIcon
             icon={faArrowsRotate}
             size="lg"
-            style={{ color: "#3d5268" }}
+            style={{ transform: `rotate(${rotation}deg)`, transition: 'transform 0.3s ease', color: "#3d5268" } }
+            onClick={handleClick}
           />
         </div>
 

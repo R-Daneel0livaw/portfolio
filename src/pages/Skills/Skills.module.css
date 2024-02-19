@@ -121,3 +121,8 @@
 .skillList li:last-of-type {
   margin-bottom: 0;
 } 
+
+.clickedIcon {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
