@@ -9,15 +9,15 @@ import SocialMedia from "../../components/SocialMedia/SocialMedia";
 export default function Skills() {
   const [activeSections, setActiveSections] = useState<{
     [key: string]: number;
-  }>(getActiveState());
+  }>(getDefaultActiveState());
 
   const [inactiveSections, setInactiveSections] = useState<{
     [key: string]: number;
-  }>(getInactiveState());
+  }>(getDefaultInactiveState());
 
   const [rotation, setRotation] = useState(0);
 
-  function getActiveState() {
+  function getDefaultActiveState() {
     return {
       programming: 0,
       web: 1,
@@ -27,7 +27,7 @@ export default function Skills() {
     };
   }
 
-  function getInactiveState() {
+  function getDefaultInactiveState() {
     return {
       backend: 0,
       emerging: 1,
@@ -61,8 +61,8 @@ export default function Skills() {
 
   const handleReset = () => {
     setRotation(rotation + 360);
-    setActiveSections(getActiveState());
-    setInactiveSections(getInactiveState());
+    setActiveSections(getDefaultActiveState());
+    setInactiveSections(getDefaultInactiveState());
   };
 
   return (
