@@ -1,9 +1,12 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
-import { faCheck, faChevronRight, faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheck,
+  faChevronRight,
+  faArrowsRotate,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Skills.module.css";
-import { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 
 export default function Skills() {
@@ -26,7 +29,7 @@ export default function Skills() {
       devops: 4,
     };
   }
-
+ 
   function getDefaultInactiveState() {
     return {
       backend: 0,
@@ -121,7 +124,11 @@ export default function Skills() {
           <FontAwesomeIcon
             icon={faArrowsRotate}
             size="lg"
-            style={{ transform: `rotate(${rotation}deg)`, transition: 'transform 0.3s ease', color: "#3d5268" } }
+            style={{
+              transform: `rotate(${rotation}deg)`,
+              transition: "transform 0.3s ease",
+              color: "#3d5268",
+            }}
             onClick={handleReset}
           />
         </div>
