@@ -52,7 +52,7 @@
   align-items: baseline;
 }
 
-.personaContainer svg {
+.personaReset {
   margin-left: 1rem;
   cursor: pointer;
 }
