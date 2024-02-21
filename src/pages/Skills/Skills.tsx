@@ -10,6 +10,8 @@ import React, { useState } from "react";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 
 export default function Skills() {
+  const [activePersonaButton, setActivePersonaButton] = useState("full");
+
   const [activeSections, setActiveSections] = useState<{
     [key: string]: number;
   }>(getDefaultActiveState());
@@ -19,6 +21,10 @@ export default function Skills() {
   }>(getDefaultInactiveState());
 
   const [rotation, setRotation] = useState(0);
+
+  const handlePersonaButtonClick = (target: string) => {
+    setActivePersonaButton(target);
+  };
 
   function getDefaultActiveState() {
     return {
@@ -96,29 +102,47 @@ export default function Skills() {
         <div className={styles.personaContainer}>
           <div className={styles.buttonList}>
             <button
-              className={`${styles.skillButton} ${styles.selected}`}
-              data-target="all"
+              className={`${styles.skillButton} ${activePersonaButton === 'full' && styles.selected}`}
+              data-target="full"
+              onClick={() => handlePersonaButtonClick("full")}
             >
               <FontAwesomeIcon icon={faCheck} />
-              All
-            </button>
-            <button className={`${styles.skillButton}`} data-target="full">
               Full-Stack
             </button>
-            <button className={`${styles.skillButton}`} data-target="front">
+            <button
+              className={`${styles.skillButton} ${activePersonaButton === 'front' && styles.selected}`}
+              data-target="front"
+              onClick={() => handlePersonaButtonClick("front")}
+            >
               Frontend
             </button>
-            <button className={`${styles.skillButton}`} data-target="design">
+            <button
+              className={`${styles.skillButton} ${activePersonaButton === 'design' && styles.selected}`}
+              data-target="design"
+              onClick={() => handlePersonaButtonClick("design")}
+            >
               Designer
             </button>
-            <button className={`${styles.skillButton}`} data-target="data">
+            <button
+              className={`${styles.skillButton} ${activePersonaButton === 'data' && styles.selected}`}
+              data-target="data"
+              onClick={() => handlePersonaButtonClick("data")}
+            >
               Data Analysis
             </button>
             <button
-              className={`${styles.skillButton}`}
+              className={`${styles.skillButton} ${activePersonaButton === 'management' && styles.selected}`}
               data-target="management"
+              onClick={() => handlePersonaButtonClick("management")}
             >
               Management
+            </button>
+            <button
+              className={`${styles.skillButton} ${activePersonaButton === 'all' && styles.selected}`}
+              data-target="all"
+              onClick={() => handlePersonaButtonClick("all")}
+            >
+              All
             </button>
           </div>
           <i className={styles.personaReset}>
