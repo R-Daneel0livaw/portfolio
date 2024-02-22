@@ -72,6 +72,7 @@ export default function Skills() {
     setRotation(rotation + 360);
     setActiveSections(getDefaultActiveState());
     setInactiveSections(getDefaultInactiveState());
+    setActivePersonaButton("full")
   };
 
   return (
