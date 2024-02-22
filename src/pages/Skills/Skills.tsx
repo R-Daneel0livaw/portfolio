@@ -102,46 +102,75 @@ export default function Skills() {
         <div className={styles.personaContainer}>
           <div className={styles.buttonList}>
             <button
-              className={`${styles.skillButton} ${activePersonaButton === 'full' && styles.selected}`}
+              className={`${styles.skillButton} ${
+                activePersonaButton === "full" && styles.selected
+              }`}
               data-target="full"
               onClick={() => handlePersonaButtonClick("full")}
             >
-              <FontAwesomeIcon icon={faCheck} />
+              {activePersonaButton === "full" && (
+                <FontAwesomeIcon icon={faCheck} />
+              )}
               Full-Stack
             </button>
             <button
-              className={`${styles.skillButton} ${activePersonaButton === 'front' && styles.selected}`}
+              className={`${styles.skillButton} ${
+                activePersonaButton === "front" && styles.selected
+              }`}
               data-target="front"
               onClick={() => handlePersonaButtonClick("front")}
             >
+              {activePersonaButton === "front" && (
+                <FontAwesomeIcon icon={faCheck} />
+              )}
               Frontend
             </button>
             <button
-              className={`${styles.skillButton} ${activePersonaButton === 'design' && styles.selected}`}
+              className={`${styles.skillButton} ${
+                activePersonaButton === "design" && styles.selected
+              }`}
               data-target="design"
               onClick={() => handlePersonaButtonClick("design")}
             >
+              {activePersonaButton === "design" && (
+                <FontAwesomeIcon icon={faCheck} />
+              )}
               Designer
             </button>
             <button
-              className={`${styles.skillButton} ${activePersonaButton === 'data' && styles.selected}`}
+              className={`${styles.skillButton} ${
+                activePersonaButton === "data" && styles.selected
+              }`}
               data-target="data"
               onClick={() => handlePersonaButtonClick("data")}
             >
+              {activePersonaButton === "data" && (
+                <FontAwesomeIcon icon={faCheck} />
+              )}
               Data Analysis
             </button>
             <button
-              className={`${styles.skillButton} ${activePersonaButton === 'management' && styles.selected}`}
+              className={`${styles.skillButton} ${
+                activePersonaButton === "management" && styles.selected
+              }`}
               data-target="management"
               onClick={() => handlePersonaButtonClick("management")}
             >
+              {activePersonaButton === "management" && (
+                <FontAwesomeIcon icon={faCheck} />
+              )}
               Management
             </button>
             <button
-              className={`${styles.skillButton} ${activePersonaButton === 'all' && styles.selected}`}
+              className={`${styles.skillButton} ${
+                activePersonaButton === "all" && styles.selected
+              }`}
               data-target="all"
               onClick={() => handlePersonaButtonClick("all")}
             >
+              {activePersonaButton === "all" && (
+                <FontAwesomeIcon icon={faCheck} />
+              )}
               All
             </button>
           </div>
