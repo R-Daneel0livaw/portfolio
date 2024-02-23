@@ -380,6 +380,7 @@ export default function Skills() {
                       <li>OpenShift</li>
                       <li>Jenkins</li>
                       <li>CI/CD Pipelines</li>
+                      <li>Git</li>
                     </ul>
                   </div>
                 )}
