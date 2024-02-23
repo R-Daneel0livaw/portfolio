@@ -61,8 +61,10 @@ export default function Skills() {
  
   function getDefaultInactiveState() {
     return {
-      emerging: 0,
-      "soft skills": 1,
+      ux: 0,
+      emerging: 1,
+      leadership: 2,
+      "soft skills": 3,
     };
   }
 
@@ -151,7 +153,7 @@ export default function Skills() {
               }`}
               data-target="front"
               onClick={() =>
-                handlePersonaButtonClick("front", ["web", "database", "cloud"])
+                handlePersonaButtonClick("front", ["web", "database", "ux", "cloud"])
               }
             >
               {activePersonaButton === "front" && (
@@ -164,12 +166,12 @@ export default function Skills() {
                 activePersonaButton === "design" && styles.selected
               }`}
               data-target="design"
-              onClick={() => handlePersonaButtonClick("design", ["web"])}
+              onClick={() => handlePersonaButtonClick("design", ["ux", "web"])}
             >
               {activePersonaButton === "design" && (
                 <FontAwesomeIcon icon={faCheck} />
               )}
-              Designer
+              Design
             </button>
             <button
               className={`${styles.skillButton} ${
@@ -189,7 +191,7 @@ export default function Skills() {
               }`}
               data-target="management"
               onClick={() =>
-                handlePersonaButtonClick("management", ["soft skills"])
+                handlePersonaButtonClick("management", ["leadership", "soft skills"])
               }
             >
               {activePersonaButton === "management" && (
@@ -210,7 +212,9 @@ export default function Skills() {
                   "database",
                   "cloud",
                   "devops",
+                  "ux",
                   "emerging",
+                  "leadership",
                   "soft skills",
                 ])
               }
@@ -308,6 +312,8 @@ export default function Skills() {
                       <li>Angular</li>
                       <li>Vue</li>
                       <li>HTML5/CSS3</li>
+                      <li>Webpack</li>
+                      <li>Vite</li>
                     </ul>
                   </div>
                 )}
@@ -385,6 +391,27 @@ export default function Skills() {
                   </div>
                 )}
 
+                {section === "ux" && (
+                  <div>
+                    <div className={styles.skillHeadingContainer}>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3 className={styles.skillHeading}>UI/UX</h3>
+                    </div>
+                    <ul className={styles.skillList}>
+                      <li>Figma</li>
+                      <li>Sketch</li>
+                      <li>Adobe XD</li>
+                      <li>Tailwind</li>
+                      <li>Bootstrap</li>
+                      <li>Material UI</li>
+                      <li>Accessibility</li>
+                    </ul>
+                  </div>
+                )}
+
                 {section === "emerging" && (
                   <div>
                     <div className={styles.skillHeadingContainer}>
@@ -404,6 +431,24 @@ export default function Skills() {
                   </div>
                 )}
 
+                {section === "leadership" && (
+                  <div>
+                    <div className={styles.skillHeadingContainer}>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3 className={styles.skillHeading}>Leadership and Communication</h3>
+                    </div>
+                    <ul className={styles.skillList}>
+                      <li>Team leadership</li>
+                      <li>Mentorship</li>
+                      <li>Effective Communication</li>
+                      <li>Analytical Thinking</li>
+                    </ul>
+                  </div>
+                )}
+                
                 {section === "soft skills" && (
                   <div>
                     <div className={styles.skillHeadingContainer}>
@@ -414,10 +459,8 @@ export default function Skills() {
                       <h3 className={styles.skillHeading}>Soft Skills</h3>
                     </div>
                     <ul className={styles.skillList}>
-                      <li>Team leadership</li>
-                      <li>Mentorship</li>
-                      <li>Effective Communication</li>
-                      <li>Analytical Thinking</li>
+                      <li>Collaboration</li>
+                      <li>Time management</li>
                       <li>Adaptability</li>
                     </ul>
                   </div>
