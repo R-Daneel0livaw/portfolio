@@ -22,25 +22,34 @@ export default function Skills() {
 
   const [rotation, setRotation] = useState(0);
 
-  const handlePersonaButtonClick = (target: string) => {
+  const handlePersonaButtonClick = (target: string, buttonsToEnable: string[]) => {
+    const obj: { [key: string]: number } = buttonsToEnable.reduce<{
+      [key: string]: number;
+    }>((acc, currentValue, index) => {
+      acc[currentValue] = index;
+      return acc;
+    }, {});
+
     setActivePersonaButton(target);
+    setInactiveSections({ ...getDefaultActiveState(), ...getDefaultInactiveState() })
+    setActiveSections(obj);
   };
 
   function getDefaultActiveState() {
     return {
       programming: 0,
-      web: 1,
-      database: 2,
-      cloud: 3,
-      devops: 4,
+      backend: 1,
+      web: 2,
+      database: 3,
+      cloud: 4,
+      devops: 5,
     };
   }
  
   function getDefaultInactiveState() {
     return {
-      backend: 0,
-      emerging: 1,
-      "soft skills": 2,
+      emerging: 0,
+      "soft skills": 1,
     };
   }
 
@@ -107,7 +116,16 @@ export default function Skills() {
                 activePersonaButton === "full" && styles.selected
               }`}
               data-target="full"
-              onClick={() => handlePersonaButtonClick("full")}
+              onClick={() =>
+                handlePersonaButtonClick("full", [
+                  "programming",
+                  "backend",
+                  "web",
+                  "database",
+                  "cloud",
+                  "devops",
+                ])
+              }
             >
               {activePersonaButton === "full" && (
                 <FontAwesomeIcon icon={faCheck} />
@@ -119,7 +137,9 @@ export default function Skills() {
                 activePersonaButton === "front" && styles.selected
               }`}
               data-target="front"
-              onClick={() => handlePersonaButtonClick("front")}
+              onClick={() =>
+                handlePersonaButtonClick("front", ["web", "database", "cloud"])
+              }
             >
               {activePersonaButton === "front" && (
                 <FontAwesomeIcon icon={faCheck} />
@@ -131,7 +151,7 @@ export default function Skills() {
                 activePersonaButton === "design" && styles.selected
               }`}
               data-target="design"
-              onClick={() => handlePersonaButtonClick("design")}
+              onClick={() => handlePersonaButtonClick("design", ["web"])}
             >
               {activePersonaButton === "design" && (
                 <FontAwesomeIcon icon={faCheck} />
@@ -143,7 +163,7 @@ export default function Skills() {
                 activePersonaButton === "data" && styles.selected
               }`}
               data-target="data"
-              onClick={() => handlePersonaButtonClick("data")}
+              onClick={() => handlePersonaButtonClick("data", ["database"])}
             >
               {activePersonaButton === "data" && (
                 <FontAwesomeIcon icon={faCheck} />
@@ -155,7 +175,9 @@ export default function Skills() {
                 activePersonaButton === "management" && styles.selected
               }`}
               data-target="management"
-              onClick={() => handlePersonaButtonClick("management")}
+              onClick={() =>
+                handlePersonaButtonClick("management", ["soft skills"])
+              }
             >
               {activePersonaButton === "management" && (
                 <FontAwesomeIcon icon={faCheck} />
@@ -167,7 +189,18 @@ export default function Skills() {
                 activePersonaButton === "all" && styles.selected
               }`}
               data-target="all"
-              onClick={() => handlePersonaButtonClick("all")}
+              onClick={() =>
+                handlePersonaButtonClick("all", [
+                  "programming",
+                  "backend",
+                  "web",
+                  "database",
+                  "cloud",
+                  "devops",
+                  "emrging",
+                  "soft-skills",
+                ])
+              }
             >
               {activePersonaButton === "all" && (
                 <FontAwesomeIcon icon={faCheck} />
