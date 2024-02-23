@@ -22,17 +22,30 @@ export default function Skills() {
 
   const [rotation, setRotation] = useState(0);
 
-  const handlePersonaButtonClick = (target: string, buttonsToEnable: string[]) => {
-    const obj: { [key: string]: number } = buttonsToEnable.reduce<{
+  const handlePersonaButtonClick = (
+    target: string,
+    buttonsToEnable: string[]
+  ) => {
+    const allActivities = [...Object.keys(getDefaultActiveState()), ...Object.keys(getDefaultInactiveState())].filter(i => !buttonsToEnable.includes(i));
+
+    const include: { [key: string]: number } = buttonsToEnable.reduce<{
       [key: string]: number;
     }>((acc, currentValue, index) => {
       acc[currentValue] = index;
       return acc;
     }, {});
 
+    const exclude: { [key: string]: number } = allActivities.reduce<{
+      [key: string]: number;
+    }>((acc, currentValue, index) => {
+      acc[currentValue] = index;
+      return acc;
+    }, {});
+
+
     setActivePersonaButton(target);
-    setInactiveSections({ ...getDefaultActiveState(), ...getDefaultInactiveState() })
-    setActiveSections(obj);
+    setInactiveSections(exclude);
+    setActiveSections(include);
   };
 
   function getDefaultActiveState() {
@@ -197,8 +210,8 @@ export default function Skills() {
                   "database",
                   "cloud",
                   "devops",
-                  "emrging",
-                  "soft-skills",
+                  "emerging",
+                  "soft skills",
                 ])
               }
             >
