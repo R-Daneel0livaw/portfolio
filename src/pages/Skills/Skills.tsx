@@ -62,9 +62,11 @@ export default function Skills() {
   function getDefaultInactiveState() {
     return {
       ux: 0,
-      emerging: 1,
-      leadership: 2,
-      "soft skills": 3,
+      "data visualization": 1,
+      "big data": 2,
+      "machine learning": 3,
+      leadership: 4,
+      "soft skills": 5,
     };
   }
 
@@ -178,7 +180,7 @@ export default function Skills() {
                 activePersonaButton === "data" && styles.selected
               }`}
               data-target="data"
-              onClick={() => handlePersonaButtonClick("data", ["database"])}
+              onClick={() => handlePersonaButtonClick("data", ["programming", "data visualization", "big data", "machine learning", "database"])}
             >
               {activePersonaButton === "data" && (
                 <FontAwesomeIcon icon={faCheck} />
@@ -212,8 +214,10 @@ export default function Skills() {
                   "database",
                   "cloud",
                   "devops",
+                  "data visualization",
+                  "big data",
+                  "machine learning",
                   "ux",
-                  "emerging",
                   "leadership",
                   "soft skills",
                 ])
@@ -412,7 +416,40 @@ export default function Skills() {
                   </div>
                 )}
 
-                {section === "emerging" && (
+                {section === "data visualization" && (
+                  <div>
+                    <div className={styles.skillHeadingContainer}>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3 className={styles.skillHeading}>Data Visualization</h3>
+                    </div>
+                    <ul className={styles.skillList}>
+                      <li>Tableau</li>
+                      <li>Power BI</li>
+                      <li>Seaborn</li>
+                    </ul>
+                  </div>
+                )}
+
+                {section === "big data" && (
+                  <div>
+                    <div className={styles.skillHeadingContainer}>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3 className={styles.skillHeading}>Big Data Technologies</h3>
+                    </div>
+                    <ul className={styles.skillList}>
+                      <li>Hadoop</li>
+                      <li>Spark</li>
+                    </ul>
+                  </div>
+                )}
+
+                {section === "machine learning" && (
                   <div>
                     <div className={styles.skillHeadingContainer}>
                       <FontAwesomeIcon
@@ -420,13 +457,14 @@ export default function Skills() {
                         style={{ color: "#3d5268" }}
                       />
                       <h3 className={styles.skillHeading}>
-                        Emerging Technologies
+                        Machine Learning 
                       </h3>
                     </div>
                     <ul className={styles.skillList}>
-                      <li>Blockchain</li>
-                      <li>Machine Learning</li>
-                      <li>Internet of Things (IoT)</li>
+                      <li>Scikit-learn</li>
+                      <li>TensorFlow</li>
+                      <li>Keras</li>
+                      <li>CARAT</li>
                     </ul>
                   </div>
                 )}
@@ -462,6 +500,7 @@ export default function Skills() {
                       <li>Collaboration</li>
                       <li>Time management</li>
                       <li>Adaptability</li>
+                      <li>Resource Planning</li>
                     </ul>
                   </div>
                 )}
