@@ -8,6 +8,10 @@
     color: #4f4f4f;
 }
 
+.socialMediaContainer a {
+    color: inherit;
+}
+
 .socialMediaContainer i {
     cursor: pointer;
 }

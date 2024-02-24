@@ -6,7 +6,13 @@ export default function SocialMedia() {
   return (
     <div className={styles.socialMediaContainer}>
       <i>
-        <FontAwesomeIcon icon={faGithub} size="lg" />
+        <a
+          href="https://github.com/R-Daneel0livaw"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faGithub} size="lg" />
+        </a>
       </i>
       <i>
         <FontAwesomeIcon icon={faLinkedin} size="lg" />

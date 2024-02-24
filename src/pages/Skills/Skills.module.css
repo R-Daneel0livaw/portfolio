@@ -83,6 +83,11 @@
 .skillButton:hover {
   background-color: #d3f2e4;
   color: #1b835e;
+  filter: brightness(90%);
+}
+
+.skillButton.selected:hover {
+  filter: brightness(100%);
 }
 
 .skillsGrid {

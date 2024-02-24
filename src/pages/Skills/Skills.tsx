@@ -61,7 +61,7 @@ export default function Skills() {
  
   function getDefaultInactiveState() {
     return {
-      ux: 0,
+      UX: 0,
       "data visualization": 1,
       "big data": 2,
       "machine learning": 3,
@@ -108,7 +108,7 @@ export default function Skills() {
           title="Skills"
           description={
             <p>
-              Below I showcase my expertise and skills essential for delivering{" "}
+              Essential for delivering{" "}
               <span className={styles.highlight}>high-quality projects</span>{" "}
               and{" "}
               <span className={styles.highlight}>
@@ -155,7 +155,12 @@ export default function Skills() {
               }`}
               data-target="front"
               onClick={() =>
-                handlePersonaButtonClick("front", ["web", "database", "ux", "cloud"])
+                handlePersonaButtonClick("front", [
+                  "web",
+                  "database",
+                  "UX",
+                  "cloud",
+                ])
               }
             >
               {activePersonaButton === "front" && (
@@ -168,7 +173,7 @@ export default function Skills() {
                 activePersonaButton === "design" && styles.selected
               }`}
               data-target="design"
-              onClick={() => handlePersonaButtonClick("design", ["ux", "web"])}
+              onClick={() => handlePersonaButtonClick("design", ["UX", "web"])}
             >
               {activePersonaButton === "design" && (
                 <FontAwesomeIcon icon={faCheck} />
@@ -180,7 +185,15 @@ export default function Skills() {
                 activePersonaButton === "data" && styles.selected
               }`}
               data-target="data"
-              onClick={() => handlePersonaButtonClick("data", ["programming", "data visualization", "big data", "machine learning", "database"])}
+              onClick={() =>
+                handlePersonaButtonClick("data", [
+                  "programming",
+                  "data visualization",
+                  "big data",
+                  "machine learning",
+                  "database",
+                ])
+              }
             >
               {activePersonaButton === "data" && (
                 <FontAwesomeIcon icon={faCheck} />
@@ -193,7 +206,10 @@ export default function Skills() {
               }`}
               data-target="management"
               onClick={() =>
-                handlePersonaButtonClick("management", ["leadership", "soft skills"])
+                handlePersonaButtonClick("management", [
+                  "leadership",
+                  "soft skills",
+                ])
               }
             >
               {activePersonaButton === "management" && (
@@ -217,7 +233,7 @@ export default function Skills() {
                   "data visualization",
                   "big data",
                   "machine learning",
-                  "ux",
+                  "UX",
                   "leadership",
                   "soft skills",
                 ])
@@ -395,7 +411,7 @@ export default function Skills() {
                   </div>
                 )}
 
-                {section === "ux" && (
+                {section === "UX" && (
                   <div>
                     <div className={styles.skillHeadingContainer}>
                       <FontAwesomeIcon
@@ -423,7 +439,9 @@ export default function Skills() {
                         icon={faChevronRight}
                         style={{ color: "#3d5268" }}
                       />
-                      <h3 className={styles.skillHeading}>Data Visualization</h3>
+                      <h3 className={styles.skillHeading}>
+                        Data Visualization
+                      </h3>
                     </div>
                     <ul className={styles.skillList}>
                       <li>Tableau</li>
@@ -440,7 +458,9 @@ export default function Skills() {
                         icon={faChevronRight}
                         style={{ color: "#3d5268" }}
                       />
-                      <h3 className={styles.skillHeading}>Big Data Technologies</h3>
+                      <h3 className={styles.skillHeading}>
+                        Big Data Technologies
+                      </h3>
                     </div>
                     <ul className={styles.skillList}>
                       <li>Hadoop</li>
@@ -456,15 +476,13 @@ export default function Skills() {
                         icon={faChevronRight}
                         style={{ color: "#3d5268" }}
                       />
-                      <h3 className={styles.skillHeading}>
-                        Machine Learning 
-                      </h3>
+                      <h3 className={styles.skillHeading}>Machine Learning</h3>
                     </div>
                     <ul className={styles.skillList}>
                       <li>Scikit-learn</li>
                       <li>TensorFlow</li>
                       <li>Keras</li>
-                      <li>CARAT</li>
+                      <li>CARET</li>
                     </ul>
                   </div>
                 )}
@@ -476,7 +494,9 @@ export default function Skills() {
                         icon={faChevronRight}
                         style={{ color: "#3d5268" }}
                       />
-                      <h3 className={styles.skillHeading}>Leadership and Communication</h3>
+                      <h3 className={styles.skillHeading}>
+                        Leadership and Communication
+                      </h3>
                     </div>
                     <ul className={styles.skillList}>
                       <li>Team leadership</li>
@@ -486,7 +506,7 @@ export default function Skills() {
                     </ul>
                   </div>
                 )}
-                
+
                 {section === "soft skills" && (
                   <div>
                     <div className={styles.skillHeadingContainer}>
