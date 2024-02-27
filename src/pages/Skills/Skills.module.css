@@ -8,6 +8,11 @@
     gap: 2rem;
 }
 
+.skillActivityContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .information {
     display: flex;
     flex-direction: column;
@@ -116,13 +121,27 @@
 
 .skillList {
   color: #3d5268;
-  list-style-type: '- ';
 }
 
-.skillList li {
-  margin-bottom: 0.5rem;
+.skillActivityList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  list-style-type: none;
+  margin-top: 1rem;
 }
 
-.skillList li:last-of-type {
-  margin-bottom: 0;
-} 
+.skillActivityList li:nth-child(even) {
+  grid-row: span 1;
+  grid-column: 2;
+}
+
+.skillActivityList li:nth-child(odd) {
+  grid-row: span 1;
+  grid-column: 1;
+}
+
+.skillActivityList li {
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
+}

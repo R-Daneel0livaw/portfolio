@@ -60,16 +60,12 @@ export default function AboutMe() {
               title="Eric Hine"
               description={
                 <p>
-                  Greetings! I'm a{" "}
+                  An{" "}
                   <span className={styles.highlight}>
-                    seasoned professional
+                    experienced tech professional
                   </span>{" "}
-                  in the <span className={styles.highlight}>tech industry</span>{" "}
-                  with a{" "}
-                  <span className={styles.highlight}>
-                    passion for continuous learning
-                  </span>{" "}
-                  and a diverse range of interests.
+                  with a passion for{" "}
+                  <span className={styles.highlight}>continuous learning.</span>{" "}
                 </p>
               }
             />
@@ -130,7 +126,11 @@ export default function AboutMe() {
             connect, share ideas, and explore the exciting intersections of
             technology, learning, and life.
           </p>
-          <SignatureWithButton buttonText="Connect" includeSignature={true} enabled={true}/>
+          <SignatureWithButton
+            buttonText="Connect"
+            includeSignature={true}
+            enabled={true}
+          />
         </footer>
       </div>
       <SocialMedia />
