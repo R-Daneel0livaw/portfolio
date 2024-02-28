@@ -317,6 +317,213 @@ export default function Skills() {
                      </ul>
                    </div>
                  )}
+
+                 {section === "web" && (
+                  <div className={styles.skillActivityContainer}>
+                    <div>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3>Web Technologies</h3>
+                    </div>
+                    <ul className={styles.skillActivityList}>
+                      <li>React</li>
+                      <li>Angular</li>
+                      <li>Vue</li>
+                      <li>HTML5/CSS3</li>
+                      <li>Webpack</li>
+                      <li>Vite</li>
+                    </ul>
+                  </div>
+                )}
+
+                {section === "backend" && (
+                  <div className={styles.skillActivityContainer}>
+                    <div>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3>
+                        Backend Technologies
+                      </h3>
+                    </div>
+                    <ul className={styles.skillActivityList}>
+                      <li>Spring Boot</li>
+                      <li>ASP.NET</li>
+                      <li>NodeJS</li>
+                    </ul>
+                  </div>
+                )}
+
+                {section === "database" && (
+                  <div className={styles.skillActivityContainer}>
+                    <div>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3>
+                        Database Management
+                      </h3>
+                    </div>
+                    <ul className={styles.skillActivityList}>
+                      <li>SQL (Oracle, PostgreSQL, MySQL)</li>
+                      <li>NoSQL (MongoDB, Neo4j, Cassandra)</li>
+                    </ul>
+                  </div>
+                )}
+
+                {section === "cloud" && (
+                  <div className={styles.skillActivityContainer}>
+                    <div>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3>Cloud Platforms</h3>
+                    </div>
+                    <ul className={styles.skillActivityList}>
+                      <li>AWS</li>
+                      <li>Azure</li>
+                    </ul>
+                  </div>
+                )}
+
+                {section === "devops" && (
+                  <div className={styles.skillActivityContainer}>
+                    <div>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3>DevOps</h3>
+                    </div>
+                    <ul className={styles.skillActivityList}>
+                      <li>Docker</li>
+                      <li>Kubernetes</li>
+                      <li>OpenShift</li>
+                      <li>Jenkins</li>
+                      <li>CI/CD Pipelines</li>
+                      <li>Git</li>
+                    </ul>
+                  </div>
+                )}
+
+                {section === "UX" && (
+                  <div className={styles.skillActivityContainer}>
+                    <div>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3>UI/UX</h3>
+                    </div>
+                    <ul className={styles.skillActivityList}>
+                      <li>Figma</li>
+                      <li>Sketch</li>
+                      <li>Adobe XD</li>
+                      <li>Tailwind</li>
+                      <li>Bootstrap</li>
+                      <li>Material UI</li>
+                      <li>Accessibility</li>
+                    </ul>
+                  </div>
+                )}
+
+                {section === "data visualization" && (
+                  <div className={styles.skillActivityContainer}>
+                    <div>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3>
+                        Data Visualization
+                      </h3>
+                    </div>
+                    <ul className={styles.skillActivityList}>
+                      <li>Tableau</li>
+                      <li>Power BI</li>
+                      <li>Seaborn</li>
+                    </ul>
+                  </div>
+                )}
+
+                {section === "big data" && (
+                  <div className={styles.skillActivityContainer}>
+                    <div>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3>
+                        Big Data Technologies
+                      </h3>
+                    </div>
+                    <ul className={styles.skillActivityList}>
+                      <li>Hadoop</li>
+                      <li>Spark</li>
+                    </ul>
+                  </div>
+                )}
+
+                {section === "machine learning" && (
+                  <div className={styles.skillActivityContainer}>
+                    <div>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3>Machine Learning</h3>
+                    </div>
+                    <ul className={styles.skillActivityList}>
+                      <li>Scikit-learn</li>
+                      <li>TensorFlow</li>
+                      <li>Keras</li>
+                      <li>CARET</li>
+                    </ul>
+                  </div>
+                )}
+
+                {section === "leadership" && (
+                  <div className={styles.skillActivityContainer}>
+                    <div>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3>
+                        Leadership and Communication
+                      </h3>
+                    </div>
+                    <ul className={styles.skillActivityList}>
+                      <li>Team leadership</li>
+                      <li>Mentorship</li>
+                      <li>Effective Communication</li>
+                      <li>Analytical Thinking</li>
+                    </ul>
+                  </div>
+                )}
+
+                {section === "soft skills" && (
+                  <div className={styles.skillActivityContainer}>
+                    <div>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3>Soft Skills</h3>
+                    </div>
+                    <ul className={styles.skillActivityList}>
+                      <li>Collaboration</li>
+                      <li>Time management</li>
+                      <li>Adaptability</li>
+                      <li>Resource Planning</li>
+                    </ul>
+                  </div>
+                )}
               </React.Fragment>
             ))
           }
