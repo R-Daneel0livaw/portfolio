@@ -275,9 +275,6 @@ export default function Skills() {
               </button>
             ))
           }
-        </div>
-
-        <div className={styles.buttonList}>
           {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             Object.entries(inactiveSections).map(([section, _]) => (

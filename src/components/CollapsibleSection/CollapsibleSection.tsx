@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { ReactNode } from 'react';
 import styles from "./CollapsibleSection.module.css";
 
 interface CollapsibleSectionProps {
   title: string;
-  content: React.ReactNode; 
+  content: ReactNode; 
   isExpanded: boolean;
   onToggle: () => void;
   containerElement?: keyof JSX.IntrinsicElements;
