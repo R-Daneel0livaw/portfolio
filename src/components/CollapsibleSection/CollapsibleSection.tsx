@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
-import { ReactNode } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
 import styles from "./CollapsibleSection.module.css";
 
 interface CollapsibleSectionProps {
@@ -14,35 +14,26 @@ interface CollapsibleSectionProps {
   contentClassName?: string; 
 }
 
-export default function CollapsibleSection({
-  title,
-  content,
-  isExpanded,
-  onToggle,
-  containerElement = 'p',
-  containerClassName = '',
-  headingClassName = '',
-  contentClassName = ''
-}: CollapsibleSectionProps) {
+export default function CollapsibleSection(props: PropsWithChildren<CollapsibleSectionProps>) {
 
   const handleToggle = () => {
-    onToggle();
+    props.onToggle();
   };
 
-  const ContainerElement = containerElement as keyof JSX.IntrinsicElements;
+  const ContainerElement = props.containerElement as keyof JSX.IntrinsicElements;
 
   return (
-    <section className={containerClassName}>
+    <section className={props.containerClassName}>
       <div className={styles.sectionHeadingContainer} onClick={handleToggle}>
         <FontAwesomeIcon
           icon={faCaretRight}
           className={`${styles.sectionHeadingArrow} ${
-            isExpanded ? styles.expanded : ''
+            props.isExpanded ? styles.expanded : ''
           }`}
         />
-        <h2 className={`${styles.sectionHeading} ${headingClassName}`}>{title}</h2>
+        <h2 className={`${styles.sectionHeading} ${props.headingClassName}`}>{props.title}</h2>
       </div>
-      {isExpanded && <ContainerElement className={`${styles.sectionContent} ${contentClassName}`}>{content}</ContainerElement>}
+      {props.isExpanded && <ContainerElement className={`${styles.sectionContent} ${props.contentClassName}`}>{props.content}</ContainerElement>}
     </section>
   );
 }
