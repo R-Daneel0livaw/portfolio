@@ -14,26 +14,34 @@ interface CollapsibleSectionProps {
   contentClassName?: string; 
 }
 
-export default function CollapsibleSection(props: PropsWithChildren<CollapsibleSectionProps>) {
+export default function CollapsibleSection({title,
+  content,
+  isExpanded,
+  onToggle,
+  containerElement,
+  containerClassName,
+  headingClassName,
+  contentClassName
+}: PropsWithChildren<CollapsibleSectionProps>) {
 
   const handleToggle = () => {
-    props.onToggle();
+    onToggle();
   };
 
-  const ContainerElement = props.containerElement as keyof JSX.IntrinsicElements;
+  const ContainerElement = containerElement as keyof JSX.IntrinsicElements;
 
   return (
-    <section className={props.containerClassName}>
+    <section className={containerClassName}>
       <div className={styles.sectionHeadingContainer} onClick={handleToggle}>
         <FontAwesomeIcon
           icon={faCaretRight}
           className={`${styles.sectionHeadingArrow} ${
-            props.isExpanded ? styles.expanded : ''
+            isExpanded ? styles.expanded : ''
           }`}
         />
-        <h2 className={`${styles.sectionHeading} ${props.headingClassName}`}>{props.title}</h2>
+        <h2 className={`${styles.sectionHeading} ${headingClassName}`}>{title}</h2>
       </div>
-      {props.isExpanded && <ContainerElement className={`${styles.sectionContent} ${props.contentClassName}`}>{props.content}</ContainerElement>}
+      {isExpanded && <ContainerElement className={`${styles.sectionContent} ${contentClassName}`}>{content}</ContainerElement>}
     </section>
   );
 }
