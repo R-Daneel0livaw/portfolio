@@ -21,7 +21,9 @@ export default function CollapsibleSection({title,
   containerElement,
   containerClassName,
   headingClassName,
-  contentClassName
+  contentClassName,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  children
 }: PropsWithChildren<CollapsibleSectionProps>) {
 
   const handleToggle = () => {
