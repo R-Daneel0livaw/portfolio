@@ -1,7 +1,6 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
 import {
   faCheck,
-  faChevronRight,
   faArrowsRotate,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -93,7 +93,7 @@ export default function AboutMe() {
 
           <CollapsibleSection
             title="Education and Professional Journey"
-            content="I earned my Bachelor's degree in Computer Science, complemented by a minor in Mathematics, from the esteemed SUNY Brockport. With nearly 15 years of professional experience, my journey has been shaped by meaningful contributions to the Financial and Retirement industry. I've had the privilege of working with some of the world's largest retirement providers, gaining valuable insights and expertise along the way."
+            content="I earned my Bachelor's degree in Computer Science, complemented by a minor in Mathematics, from the accredited SUNY Brockport. With nearly 15 years of professional experience, my journey has been shaped by meaningful contributions to the Financial and Retirement industry. I've had the privilege of working with some of the world's largest retirement providers, gaining valuable insights and expertise along the way."
             isExpanded={expandedSection === "Section 1"}
             onToggle={() => handleToggle("Section 1")}
           />
