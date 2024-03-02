@@ -296,25 +296,6 @@ export default function Skills() {
             Object.entries(activeSections).map(([section, _]) => (
               <React.Fragment key={section}>
                 {section === "programming" && (
-                  <div className={styles.skillActivityContainer}>
-                    <div>
-                      <FontAwesomeIcon
-                        icon={faChevronRight}
-                        style={{ color: "#3d5268" }}
-                      />
-                      <h3>Programming Languages</h3>
-                    </div>
-                    <ul className={styles.skillActivityList}>
-                      <li>Java</li>
-                      <li>C/C++/C#</li>
-                      <li>Python</li>
-                      <li>R</li>
-                      <li>JavaScript/TypeScript</li>
-                    </ul>
-                  </div>
-                )}
-
-                {section === "programming" && (
                   <div>
                     <CollapsibleSection
                       title="Programming Languages"
@@ -335,39 +316,41 @@ export default function Skills() {
                 )}
 
                 {section === "web" && (
-                  <div className={styles.skillActivityContainer}>
-                    <div>
-                      <FontAwesomeIcon
-                        icon={faChevronRight}
-                        style={{ color: "#3d5268" }}
-                      />
-                      <h3>Web Technologies</h3>
-                    </div>
-                    <ul className={styles.skillActivityList}>
-                      <li>React</li>
-                      <li>Angular</li>
-                      <li>Vue</li>
-                      <li>HTML5/CSS3</li>
-                      <li>Webpack</li>
-                      <li>Vite</li>
-                    </ul>
+                  <div>
+                    <CollapsibleSection
+                      title="Web Technologies"
+                      isExpanded={false}
+                      onToggle={function (): void {
+                        throw new Error("Function not implemented.");
+                      }}
+                    >
+                      <ul className={styles.skillActivityList}>
+                        <li>React</li>
+                        <li>Angular</li>
+                        <li>Vue</li>
+                        <li>HTML5/CSS3</li>
+                        <li>Webpack</li>
+                        <li>Vite</li>
+                      </ul>
+                    </CollapsibleSection>
                   </div>
                 )}
 
                 {section === "backend" && (
                   <div className={styles.skillActivityContainer}>
-                    <div>
-                      <FontAwesomeIcon
-                        icon={faChevronRight}
-                        style={{ color: "#3d5268" }}
-                      />
-                      <h3>Backend Technologies</h3>
-                    </div>
-                    <ul className={styles.skillActivityList}>
-                      <li>Spring Boot</li>
-                      <li>ASP.NET</li>
-                      <li>NodeJS</li>
-                    </ul>
+                    <CollapsibleSection
+                      title="Backend Technologies"
+                      isExpanded={false}
+                      onToggle={function (): void {
+                        throw new Error("Function not implemented.");
+                      }}
+                    >
+                      <ul className={styles.skillActivityList}>
+                        <li>Spring Boot</li>
+                        <li>ASP.NET</li>
+                        <li>NodeJS</li>
+                      </ul>
+                    </CollapsibleSection>
                   </div>
                 )}
 
