@@ -37,7 +37,9 @@ const CollapsibleSection = ({
         />
         <h2 className={styles.sectionHeading}>{title}</h2>
       </div>
-      {isExpanded && <p className={styles.sectionContent}>{content}</p>}
+      <div className={styles.contentContainer}>
+        {isExpanded && <p className={styles.sectionContent}>{content}</p>}
+      </div>
     </section>
   );
 };

@@ -13,7 +13,6 @@ interface CollapsibleSectionProps {
 export default function CollapsibleSection({title,
   isExpanded,
   onToggle,
-  containerClassName,
   children
 }: PropsWithChildren<CollapsibleSectionProps>) {
 
@@ -22,17 +21,17 @@ export default function CollapsibleSection({title,
   };
 
   return (
-    <section className={containerClassName}>
+    <section className={styles.sectionContainer}>
       <div className={styles.sectionHeadingContainer} onClick={handleToggle}>
         <FontAwesomeIcon
           icon={faCaretRight}
           className={`${styles.sectionHeadingArrow} ${
-            isExpanded ? styles.expanded : ''
+            isExpanded ? styles.expanded : ""
           }`}
         />
         <h2 className={styles.sectionHeading}>{title}</h2>
       </div>
-      {isExpanded && children}
+      <div className={styles.contentContainer}>{isExpanded && children}</div>
       {/* {isExpanded && <ContainerElement className={`${styles.sectionContent} ${contentClassName}`}>{content}</ContainerElement>} */}
     </section>
   );

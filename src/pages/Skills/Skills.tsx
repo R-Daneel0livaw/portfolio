@@ -295,231 +295,207 @@ export default function Skills() {
             Object.entries(activeSections).map(([section, _]) => (
               <React.Fragment key={section}>
                 {section === "programming" && (
-                  <div>
-                    <CollapsibleSection
-                      title="Programming Languages"
-                      isExpanded={true}
-                      onToggle={function (): void {
-                        throw new Error("Function not implemented.");
-                      }}
-                    >
-                      <ul className={styles.skillActivityList}>
-                        <li>Java</li>
-                        <li>C/C++/C#</li>
-                        <li>Python</li>
-                        <li>R</li>
-                        <li>JavaScript/TypeScript</li>
-                      </ul>
-                    </CollapsibleSection>
-                  </div>
+                  <CollapsibleSection
+                    title="Programming Languages"
+                    isExpanded={true}
+                    onToggle={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>Java</li>
+                      <li>C/C++/C#</li>
+                      <li>Python</li>
+                      <li>R</li>
+                      <li>JavaScript/TypeScript</li>
+                    </ul>
+                  </CollapsibleSection>
                 )}
 
                 {section === "web" && (
-                  <div>
-                    <CollapsibleSection
-                      title="Web Technologies"
-                      isExpanded={false}
-                      onToggle={function (): void {
-                        throw new Error("Function not implemented.");
-                      }}
-                    >
-                      <ul className={styles.skillActivityList}>
-                        <li>React</li>
-                        <li>Angular</li>
-                        <li>Vue</li>
-                        <li>HTML5/CSS3</li>
-                        <li>Webpack</li>
-                        <li>Vite</li>
-                      </ul>
-                    </CollapsibleSection>
-                  </div>
+                  <CollapsibleSection
+                    title="Web Technologies"
+                    isExpanded={false}
+                    onToggle={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>React</li>
+                      <li>Angular</li>
+                      <li>Vue</li>
+                      <li>HTML5/CSS3</li>
+                      <li>Webpack</li>
+                      <li>Vite</li>
+                    </ul>
+                  </CollapsibleSection>
                 )}
 
                 {section === "backend" && (
-                  <div className={styles.skillActivityContainer}>
-                    <CollapsibleSection
-                      title="Backend Technologies"
-                      isExpanded={false}
-                      onToggle={function (): void {
-                        throw new Error("Function not implemented.");
-                      }}
-                    >
-                      <ul className={styles.skillActivityList}>
-                        <li>Spring Boot</li>
-                        <li>ASP.NET</li>
-                        <li>NodeJS</li>
-                      </ul>
-                    </CollapsibleSection>
-                  </div>
+                  <CollapsibleSection
+                    title="Backend Technologies"
+                    isExpanded={false}
+                    onToggle={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>Spring Boot</li>
+                      <li>ASP.NET</li>
+                      <li>NodeJS</li>
+                    </ul>
+                  </CollapsibleSection>
                 )}
 
                 {section === "database" && (
-                  <div className={styles.skillActivityContainer}>
-                    <CollapsibleSection
-                      title="Database Management"
-                      isExpanded={false}
-                      onToggle={function (): void {
-                        throw new Error("Function not implemented.");
-                      }}
-                    >
-                      <ul className={styles.skillActivityList}>
-                        <li>SQL (Oracle, PostgreSQL, MySQL)</li>
-                        <li>NoSQL (MongoDB, Neo4j, Cassandra)</li>
-                      </ul>
-                    </CollapsibleSection>
-                  </div>
+                  <CollapsibleSection
+                    title="Database Management"
+                    isExpanded={false}
+                    onToggle={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>SQL (Oracle, PostgreSQL, MySQL)</li>
+                      <li>NoSQL (MongoDB, Neo4j, Cassandra)</li>
+                    </ul>
+                  </CollapsibleSection>
                 )}
 
                 {section === "cloud" && (
-                  <div className={styles.skillActivityContainer}>
-                    <CollapsibleSection
-                      title="Cloud Platforms"
-                      isExpanded={false}
-                      onToggle={function (): void {
-                        throw new Error("Function not implemented.");
-                      }}
-                    >
-                      <ul className={styles.skillActivityList}>
-                        <li>AWS</li>
-                        <li>Azure</li>
-                      </ul>
-                    </CollapsibleSection>
-                  </div>
+                  <CollapsibleSection
+                    title="Cloud Platforms"
+                    isExpanded={false}
+                    onToggle={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>AWS</li>
+                      <li>Azure</li>
+                    </ul>
+                  </CollapsibleSection>
                 )}
 
                 {section === "devops" && (
-                  <div className={styles.skillActivityContainer}>
-                    <CollapsibleSection
-                      title="DevOps"
-                      isExpanded={false}
-                      onToggle={function (): void {
-                        throw new Error("Function not implemented.");
-                      }}
-                    >
-                      <ul className={styles.skillActivityList}>
-                        <li>Docker</li>
-                        <li>Kubernetes</li>
-                        <li>OpenShift</li>
-                        <li>Jenkins</li>
-                        <li>CI/CD Pipelines</li>
-                        <li>Git</li>
-                      </ul>
-                    </CollapsibleSection>
-                  </div>
+                  <CollapsibleSection
+                    title="DevOps"
+                    isExpanded={false}
+                    onToggle={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>Docker</li>
+                      <li>Kubernetes</li>
+                      <li>OpenShift</li>
+                      <li>Jenkins</li>
+                      <li>CI/CD Pipelines</li>
+                      <li>Git</li>
+                    </ul>
+                  </CollapsibleSection>
                 )}
 
                 {section === "UX" && (
-                  <div className={styles.skillActivityContainer}>
-                    <CollapsibleSection
-                      title="UI/UX"
-                      isExpanded={false}
-                      onToggle={function (): void {
-                        throw new Error("Function not implemented.");
-                      }}
-                    >
-                      <ul className={styles.skillActivityList}>
-                        <li>Figma</li>
-                        <li>Sketch</li>
-                        <li>Adobe XD</li>
-                        <li>Tailwind</li>
-                        <li>Bootstrap</li>
-                        <li>Material UI</li>
-                        <li>Accessibility</li>
-                      </ul>
-                    </CollapsibleSection>
-                  </div>
+                  <CollapsibleSection
+                    title="UI/UX"
+                    isExpanded={false}
+                    onToggle={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>Figma</li>
+                      <li>Sketch</li>
+                      <li>Adobe XD</li>
+                      <li>Tailwind</li>
+                      <li>Bootstrap</li>
+                      <li>Material UI</li>
+                      <li>Accessibility</li>
+                    </ul>
+                  </CollapsibleSection>
                 )}
 
                 {section === "data visualization" && (
-                  <div className={styles.skillActivityContainer}>
-                    <CollapsibleSection
-                      title="Data Visualization"
-                      isExpanded={false}
-                      onToggle={function (): void {
-                        throw new Error("Function not implemented.");
-                      }}
-                    >
-                      <ul className={styles.skillActivityList}>
-                        <li>Tableau</li>
-                        <li>Power BI</li>
-                        <li>Seaborn</li>
-                      </ul>
-                    </CollapsibleSection>
-                  </div>
+                  <CollapsibleSection
+                    title="Data Visualization"
+                    isExpanded={false}
+                    onToggle={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>Tableau</li>
+                      <li>Power BI</li>
+                      <li>Seaborn</li>
+                    </ul>
+                  </CollapsibleSection>
                 )}
 
                 {section === "big data" && (
-                  <div className={styles.skillActivityContainer}>
-                    <CollapsibleSection
-                      title="Big Data Technologies"
-                      isExpanded={false}
-                      onToggle={function (): void {
-                        throw new Error("Function not implemented.");
-                      }}
-                    >
-                      <ul className={styles.skillActivityList}>
-                        <li>Hadoop</li>
-                        <li>Spark</li>
-                      </ul>
-                    </CollapsibleSection>
-                  </div>
+                  <CollapsibleSection
+                    title="Big Data Technologies"
+                    isExpanded={false}
+                    onToggle={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>Hadoop</li>
+                      <li>Spark</li>
+                    </ul>
+                  </CollapsibleSection>
                 )}
 
                 {section === "machine learning" && (
-                  <div className={styles.skillActivityContainer}>
-                    <CollapsibleSection
-                      title="Machine Learning"
-                      isExpanded={false}
-                      onToggle={function (): void {
-                        throw new Error("Function not implemented.");
-                      }}
-                    >
-                      <ul className={styles.skillActivityList}>
-                        <li>Scikit-learn</li>
-                        <li>TensorFlow</li>
-                        <li>Keras</li>
-                        <li>CARET</li>
-                      </ul>
-                    </CollapsibleSection>
-                  </div>
+                  <CollapsibleSection
+                    title="Machine Learning"
+                    isExpanded={false}
+                    onToggle={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>Scikit-learn</li>
+                      <li>TensorFlow</li>
+                      <li>Keras</li>
+                      <li>CARET</li>
+                    </ul>
+                  </CollapsibleSection>
                 )}
 
                 {section === "leadership" && (
-                  <div className={styles.skillActivityContainer}>
-                    <CollapsibleSection
-                      title="Leadership and Communication"
-                      isExpanded={false}
-                      onToggle={function (): void {
-                        throw new Error("Function not implemented.");
-                      }}
-                    >
-                      <ul className={styles.skillActivityList}>
-                        <li>Team leadership</li>
-                        <li>Mentorship</li>
-                        <li>Effective Communication</li>
-                        <li>Analytical Thinking</li>
-                      </ul>
-                    </CollapsibleSection>
-                  </div>
+                  <CollapsibleSection
+                    title="Leadership and Communication"
+                    isExpanded={false}
+                    onToggle={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>Team leadership</li>
+                      <li>Mentorship</li>
+                      <li>Effective Communication</li>
+                      <li>Analytical Thinking</li>
+                    </ul>
+                  </CollapsibleSection>
                 )}
 
                 {section === "soft skills" && (
-                  <div className={styles.skillActivityContainer}>
-                    <CollapsibleSection
-                      title="Soft Skills"
-                      isExpanded={false}
-                      onToggle={function (): void {
-                        throw new Error("Function not implemented.");
-                      }}
-                    >
-                      <ul className={styles.skillActivityList}>
-                        <li>Collaboration</li>
-                        <li>Time management</li>
-                        <li>Adaptability</li>
-                        <li>Resource Planning</li>
-                      </ul>
-                    </CollapsibleSection>
-                  </div>
+                  <CollapsibleSection
+                    title="Soft Skills"
+                    isExpanded={false}
+                    onToggle={function (): void {
+                      throw new Error("Function not implemented.");
+                    }}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>Collaboration</li>
+                      <li>Time management</li>
+                      <li>Adaptability</li>
+                      <li>Resource Planning</li>
+                    </ul>
+                  </CollapsibleSection>
                 )}
               </React.Fragment>
             ))
