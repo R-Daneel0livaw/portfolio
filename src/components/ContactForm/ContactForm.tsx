@@ -214,7 +214,7 @@ const ContactForm = () => {
       <SignatureWithButton buttonText="Send Message" includeSignature={false} enabled={isFormFilled()} />
 
       {showConfirmation && (
-        <div>Thank You! Your message was submitted successfully and you'll be hearing from me soon!</div>
+        <div>Thank You! I've received your message, and you'll be hearing from me soon!</div>
       )}
     </form>
   );
