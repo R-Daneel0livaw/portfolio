@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Skills.module.css";
 import React, { useState } from "react";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
+import CollapsibleSection from "../../components/CollapsibleSection/CollapsibleSection";
 
 export default function Skills() {
   const [activePersonaButton, setActivePersonaButton] = useState("full");
@@ -294,28 +295,46 @@ export default function Skills() {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             Object.entries(activeSections).map(([section, _]) => (
               <React.Fragment key={section}>
-                 {section === "programming" && (
-                   <div className={styles.skillActivityContainer}>
+                {section === "programming" && (
+                  <div className={styles.skillActivityContainer}>
                     <div>
-                       <FontAwesomeIcon
+                      <FontAwesomeIcon
                         icon={faChevronRight}
-                         style={{ color: "#3d5268" }}
-                       />
-                       <h3>
-                         Programming Languages
-                       </h3>
-                     </div>
-                     <ul className={styles.skillActivityList}>
-                       <li>Java</li>
-                       <li>C/C++/C#</li>
-                       <li>Python</li>
-                       <li>R</li>
-                       <li>JavaScript/TypeScript</li>
-                     </ul>
-                   </div>
-                 )}
+                        style={{ color: "#3d5268" }}
+                      />
+                      <h3>Programming Languages</h3>
+                    </div>
+                    <ul className={styles.skillActivityList}>
+                      <li>Java</li>
+                      <li>C/C++/C#</li>
+                      <li>Python</li>
+                      <li>R</li>
+                      <li>JavaScript/TypeScript</li>
+                    </ul>
+                  </div>
+                )}
 
-                 {section === "web" && (
+                {section === "programming" && (
+                  <div>
+                    <CollapsibleSection
+                      title="Programming Languages"
+                      isExpanded={false}
+                      onToggle={function (): void {
+                        throw new Error("Function not implemented.");
+                      }}
+                    >
+                      <ul className={styles.skillActivityList}>
+                        <li>Java</li>
+                        <li>C/C++/C#</li>
+                        <li>Python</li>
+                        <li>R</li>
+                        <li>JavaScript/TypeScript</li>
+                      </ul>
+                    </CollapsibleSection>
+                  </div>
+                )}
+
+                {section === "web" && (
                   <div className={styles.skillActivityContainer}>
                     <div>
                       <FontAwesomeIcon
@@ -342,9 +361,7 @@ export default function Skills() {
                         icon={faChevronRight}
                         style={{ color: "#3d5268" }}
                       />
-                      <h3>
-                        Backend Technologies
-                      </h3>
+                      <h3>Backend Technologies</h3>
                     </div>
                     <ul className={styles.skillActivityList}>
                       <li>Spring Boot</li>
@@ -361,9 +378,7 @@ export default function Skills() {
                         icon={faChevronRight}
                         style={{ color: "#3d5268" }}
                       />
-                      <h3>
-                        Database Management
-                      </h3>
+                      <h3>Database Management</h3>
                     </div>
                     <ul className={styles.skillActivityList}>
                       <li>SQL (Oracle, PostgreSQL, MySQL)</li>
@@ -436,9 +451,7 @@ export default function Skills() {
                         icon={faChevronRight}
                         style={{ color: "#3d5268" }}
                       />
-                      <h3>
-                        Data Visualization
-                      </h3>
+                      <h3>Data Visualization</h3>
                     </div>
                     <ul className={styles.skillActivityList}>
                       <li>Tableau</li>
@@ -455,9 +468,7 @@ export default function Skills() {
                         icon={faChevronRight}
                         style={{ color: "#3d5268" }}
                       />
-                      <h3>
-                        Big Data Technologies
-                      </h3>
+                      <h3>Big Data Technologies</h3>
                     </div>
                     <ul className={styles.skillActivityList}>
                       <li>Hadoop</li>
@@ -491,9 +502,7 @@ export default function Skills() {
                         icon={faChevronRight}
                         style={{ color: "#3d5268" }}
                       />
-                      <h3>
-                        Leadership and Communication
-                      </h3>
+                      <h3>Leadership and Communication</h3>
                     </div>
                     <ul className={styles.skillActivityList}>
                       <li>Team leadership</li>

@@ -1,0 +1,21 @@
+.sectionHeadingContainer {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.sectionHeadingArrow {
+    font-size: 1.5rem;
+    color: #189ad3;
+    transition: transform 0.3s ease;
+}
+
+.expanded {
+    transform: rotate(90deg);
+}
+
+.sectionHeading {
+    margin-left: 0.7rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
