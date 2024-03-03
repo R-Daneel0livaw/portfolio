@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useEffect, useState } from 'react';
 import styles from "./CollapsibleSection.module.css";
 
 interface CollapsibleSectionProps {
@@ -11,14 +11,23 @@ interface CollapsibleSectionProps {
 }
 
 export default function CollapsibleSection({title,
-  isExpanded,
-  onToggle,
+  isExpanded: propExpanded,
+//   onToggle,
   children
 }: PropsWithChildren<CollapsibleSectionProps>) {
+  const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    if (propExpanded !== undefined) {
+      setExpanded(propExpanded);
+    }
+  }, [propExpanded]);
 
   const handleToggle = () => {
-    onToggle();
+    setExpanded(!expanded);
   };
+
+  console.log("in", propExpanded, children);
 
   return (
     <section className={styles.sectionContainer}>
@@ -26,13 +35,12 @@ export default function CollapsibleSection({title,
         <FontAwesomeIcon
           icon={faCaretRight}
           className={`${styles.sectionHeadingArrow} ${
-            isExpanded ? styles.expanded : ""
+            expanded ? styles.expanded : ""
           }`}
         />
         <h2 className={styles.sectionHeading}>{title}</h2>
       </div>
-      <div className={styles.contentContainer}>{isExpanded && children}</div>
-      {/* {isExpanded && <ContainerElement className={`${styles.sectionContent} ${contentClassName}`}>{content}</ContainerElement>} */}
+      {expanded && <div className={styles.contentContainer}>{children}</div>}
     </section>
   );
 }

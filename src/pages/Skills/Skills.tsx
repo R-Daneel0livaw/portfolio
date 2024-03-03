@@ -22,11 +22,16 @@ export default function Skills() {
 
   const [rotation, setRotation] = useState(0);
 
+  const [firstActivity, setFirstActivity] = useState("programming");
+
   const handlePersonaButtonClick = (
     target: string,
     buttonsToEnable: string[]
   ) => {
-    const allActivities = [...Object.keys(getDefaultActiveState()), ...Object.keys(getDefaultInactiveState())].filter(i => !buttonsToEnable.includes(i));
+    const allActivities = [
+      ...Object.keys(getDefaultActiveState()),
+      ...Object.keys(getDefaultInactiveState()),
+    ].filter((i) => !buttonsToEnable.includes(i));
 
     const include: { [key: string]: number } = buttonsToEnable.reduce<{
       [key: string]: number;
@@ -42,10 +47,11 @@ export default function Skills() {
       return acc;
     }, {});
 
-
     setActivePersonaButton(target);
     setInactiveSections(exclude);
     setActiveSections(include);
+    setFirstActivity(Object.keys(include)[0]);
+    console.log(Object.keys(include)[0]);
   };
 
   function getDefaultActiveState() {
@@ -58,7 +64,7 @@ export default function Skills() {
       devops: 5,
     };
   }
- 
+
   function getDefaultInactiveState() {
     return {
       UX: 0,
@@ -98,8 +104,17 @@ export default function Skills() {
     setRotation(rotation + 360);
     setActiveSections(getDefaultActiveState());
     setInactiveSections(getDefaultInactiveState());
-    setActivePersonaButton("full")
+    setActivePersonaButton("full");
   };
+
+  // function isLowestValueKeyEqualTo<T extends number>(
+  //   obj: { [key: string]: T },
+  //   specificValue: string
+  // ): boolean {
+  //   const values: T[] = Object.values(obj);
+  //   const minVal: number = Math.min(...values);
+  //   return Object.keys(obj).find((key) => obj[key] === minVal) === specificValue;
+  // }
 
   return (
     <section id="skills" className={styles.skillsContainer}>
@@ -289,7 +304,7 @@ export default function Skills() {
           }
         </div>
 
-        <div>
+        <div className={styles.activityCotainer}>
           {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             Object.entries(activeSections).map(([section, _]) => (
@@ -297,7 +312,7 @@ export default function Skills() {
                 {section === "programming" && (
                   <CollapsibleSection
                     title="Programming Languages"
-                    isExpanded={true}
+                    isExpanded={firstActivity === "programming"}
                     onToggle={function (): void {
                       throw new Error("Function not implemented.");
                     }}
@@ -315,7 +330,7 @@ export default function Skills() {
                 {section === "web" && (
                   <CollapsibleSection
                     title="Web Technologies"
-                    isExpanded={false}
+                    isExpanded={firstActivity === "web"}
                     onToggle={function (): void {
                       throw new Error("Function not implemented.");
                     }}
@@ -334,7 +349,7 @@ export default function Skills() {
                 {section === "backend" && (
                   <CollapsibleSection
                     title="Backend Technologies"
-                    isExpanded={false}
+                    isExpanded={firstActivity === "backend"}
                     onToggle={function (): void {
                       throw new Error("Function not implemented.");
                     }}
@@ -350,7 +365,7 @@ export default function Skills() {
                 {section === "database" && (
                   <CollapsibleSection
                     title="Database Management"
-                    isExpanded={false}
+                    isExpanded={firstActivity === "database"}
                     onToggle={function (): void {
                       throw new Error("Function not implemented.");
                     }}
@@ -365,7 +380,7 @@ export default function Skills() {
                 {section === "cloud" && (
                   <CollapsibleSection
                     title="Cloud Platforms"
-                    isExpanded={false}
+                    isExpanded={firstActivity === "cloud"}
                     onToggle={function (): void {
                       throw new Error("Function not implemented.");
                     }}
@@ -380,7 +395,7 @@ export default function Skills() {
                 {section === "devops" && (
                   <CollapsibleSection
                     title="DevOps"
-                    isExpanded={false}
+                    isExpanded={firstActivity === "devops"}
                     onToggle={function (): void {
                       throw new Error("Function not implemented.");
                     }}
@@ -399,7 +414,7 @@ export default function Skills() {
                 {section === "UX" && (
                   <CollapsibleSection
                     title="UI/UX"
-                    isExpanded={false}
+                    isExpanded={firstActivity === "UX"}
                     onToggle={function (): void {
                       throw new Error("Function not implemented.");
                     }}
@@ -419,7 +434,7 @@ export default function Skills() {
                 {section === "data visualization" && (
                   <CollapsibleSection
                     title="Data Visualization"
-                    isExpanded={false}
+                    isExpanded={firstActivity === "data visualization"}
                     onToggle={function (): void {
                       throw new Error("Function not implemented.");
                     }}
@@ -435,7 +450,7 @@ export default function Skills() {
                 {section === "big data" && (
                   <CollapsibleSection
                     title="Big Data Technologies"
-                    isExpanded={false}
+                    isExpanded={firstActivity === "big data"}
                     onToggle={function (): void {
                       throw new Error("Function not implemented.");
                     }}
@@ -450,7 +465,7 @@ export default function Skills() {
                 {section === "machine learning" && (
                   <CollapsibleSection
                     title="Machine Learning"
-                    isExpanded={false}
+                    isExpanded={firstActivity === "machine learning"}
                     onToggle={function (): void {
                       throw new Error("Function not implemented.");
                     }}
@@ -467,7 +482,7 @@ export default function Skills() {
                 {section === "leadership" && (
                   <CollapsibleSection
                     title="Leadership and Communication"
-                    isExpanded={false}
+                    isExpanded={firstActivity === "leadership"}
                     onToggle={function (): void {
                       throw new Error("Function not implemented.");
                     }}
@@ -484,7 +499,7 @@ export default function Skills() {
                 {section === "soft skills" && (
                   <CollapsibleSection
                     title="Soft Skills"
-                    isExpanded={false}
+                    isExpanded={firstActivity === "soft skills"}
                     onToggle={function (): void {
                       throw new Error("Function not implemented.");
                     }}
