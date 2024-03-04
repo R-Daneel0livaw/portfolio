@@ -22,7 +22,7 @@ export default function Skills() {
 
   const [rotation, setRotation] = useState(0);
 
-  const [firstActivity, setFirstActivity] = useState("programming");
+  const [expandedActivities, setExpandedActivities] = useState<string[]>(Object.keys(getDefaultActiveState()));
 
   const handlePersonaButtonClick = (
     target: string,
@@ -50,8 +50,22 @@ export default function Skills() {
     setActivePersonaButton(target);
     setInactiveSections(exclude);
     setActiveSections(include);
-    setFirstActivity(Object.keys(include)[0]);
-    console.log(Object.keys(include)[0]);
+    setExpandedActivities([Object.keys(include)[0]]);
+  };
+
+  type ToggleFunction = (sectionTitle: string) => void;
+
+  const handleToggle: ToggleFunction = (sectionTitle) => {
+    console.log(sectionTitle);
+    setExpandedActivities(prevArray => {
+      const index = prevArray.indexOf(sectionTitle);
+      if (index !== -1) {
+        const newArray = [...prevArray.slice(0, index), ...prevArray.slice(index + 1)];
+        return newArray;
+      } else {
+        return [...prevArray, sectionTitle];
+      }
+    });
   };
 
   function getDefaultActiveState() {
@@ -106,15 +120,6 @@ export default function Skills() {
     setInactiveSections(getDefaultInactiveState());
     setActivePersonaButton("full");
   };
-
-  // function isLowestValueKeyEqualTo<T extends number>(
-  //   obj: { [key: string]: T },
-  //   specificValue: string
-  // ): boolean {
-  //   const values: T[] = Object.values(obj);
-  //   const minVal: number = Math.min(...values);
-  //   return Object.keys(obj).find((key) => obj[key] === minVal) === specificValue;
-  // }
 
   return (
     <section id="skills" className={styles.skillsContainer}>
@@ -312,10 +317,8 @@ export default function Skills() {
                 {section === "programming" && (
                   <CollapsibleSection
                     title="Programming Languages"
-                    isExpanded={firstActivity === "programming"}
-                    onToggle={function (): void {
-                      throw new Error("Function not implemented.");
-                    }}
+                    isExpanded={expandedActivities.includes("programming")}
+                    onToggle={() => handleToggle("programming")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>Java</li>
@@ -330,10 +333,8 @@ export default function Skills() {
                 {section === "web" && (
                   <CollapsibleSection
                     title="Web Technologies"
-                    isExpanded={firstActivity === "web"}
-                    onToggle={function (): void {
-                      throw new Error("Function not implemented.");
-                    }}
+                    isExpanded={expandedActivities.includes("web")}
+                    onToggle={() => handleToggle("web")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>React</li>
@@ -349,10 +350,8 @@ export default function Skills() {
                 {section === "backend" && (
                   <CollapsibleSection
                     title="Backend Technologies"
-                    isExpanded={firstActivity === "backend"}
-                    onToggle={function (): void {
-                      throw new Error("Function not implemented.");
-                    }}
+                    isExpanded={expandedActivities.includes("backend")}
+                    onToggle={() => handleToggle("backend")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>Spring Boot</li>
@@ -365,10 +364,8 @@ export default function Skills() {
                 {section === "database" && (
                   <CollapsibleSection
                     title="Database Management"
-                    isExpanded={firstActivity === "database"}
-                    onToggle={function (): void {
-                      throw new Error("Function not implemented.");
-                    }}
+                    isExpanded={expandedActivities.includes("database")}
+                    onToggle={() => handleToggle("database")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>SQL (Oracle, PostgreSQL, MySQL)</li>
@@ -380,10 +377,8 @@ export default function Skills() {
                 {section === "cloud" && (
                   <CollapsibleSection
                     title="Cloud Platforms"
-                    isExpanded={firstActivity === "cloud"}
-                    onToggle={function (): void {
-                      throw new Error("Function not implemented.");
-                    }}
+                    isExpanded={expandedActivities.includes("cloud")}
+                    onToggle={() => handleToggle("cloud")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>AWS</li>
@@ -395,10 +390,8 @@ export default function Skills() {
                 {section === "devops" && (
                   <CollapsibleSection
                     title="DevOps"
-                    isExpanded={firstActivity === "devops"}
-                    onToggle={function (): void {
-                      throw new Error("Function not implemented.");
-                    }}
+                    isExpanded={expandedActivities.includes("devops")}
+                    onToggle={() => handleToggle("devops")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>Docker</li>
@@ -414,10 +407,8 @@ export default function Skills() {
                 {section === "UX" && (
                   <CollapsibleSection
                     title="UI/UX"
-                    isExpanded={firstActivity === "UX"}
-                    onToggle={function (): void {
-                      throw new Error("Function not implemented.");
-                    }}
+                    isExpanded={expandedActivities.includes("UX")}
+                    onToggle={() => handleToggle("UX")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>Figma</li>
@@ -434,10 +425,8 @@ export default function Skills() {
                 {section === "data visualization" && (
                   <CollapsibleSection
                     title="Data Visualization"
-                    isExpanded={firstActivity === "data visualization"}
-                    onToggle={function (): void {
-                      throw new Error("Function not implemented.");
-                    }}
+                    isExpanded={expandedActivities.includes("data visualization")}
+                    onToggle={() => handleToggle("data visualization")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>Tableau</li>
@@ -450,10 +439,22 @@ export default function Skills() {
                 {section === "big data" && (
                   <CollapsibleSection
                     title="Big Data Technologies"
-                    isExpanded={firstActivity === "big data"}
-                    onToggle={function (): void {
-                      throw new Error("Function not implemented.");
-                    }}
+                    isExpanded={expandedActivities.includes("big data")}
+                    onToggle={() => handleToggle("big data")}
+                  >
+                    <ul className={styles.skillActivityList}>
+                      <li>Tableau</li>
+                      <li>Power BI</li>
+                      <li>Seaborn</li>
+                    </ul>
+                  </CollapsibleSection>
+                )}
+
+                {section === "big data" && (
+                  <CollapsibleSection
+                    title="Big Data Technologies"
+                    isExpanded={expandedActivities.includes("big data")}
+                    onToggle={() => handleToggle("big data")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>Hadoop</li>
@@ -465,10 +466,8 @@ export default function Skills() {
                 {section === "machine learning" && (
                   <CollapsibleSection
                     title="Machine Learning"
-                    isExpanded={firstActivity === "machine learning"}
-                    onToggle={function (): void {
-                      throw new Error("Function not implemented.");
-                    }}
+                    isExpanded={expandedActivities.includes("machine learning")}
+                    onToggle={() => handleToggle("machine learning")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>Scikit-learn</li>
@@ -482,10 +481,8 @@ export default function Skills() {
                 {section === "leadership" && (
                   <CollapsibleSection
                     title="Leadership and Communication"
-                    isExpanded={firstActivity === "leadership"}
-                    onToggle={function (): void {
-                      throw new Error("Function not implemented.");
-                    }}
+                    isExpanded={expandedActivities.includes("leadership")}
+                    onToggle={() => handleToggle("leadership")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>Team leadership</li>
@@ -499,10 +496,8 @@ export default function Skills() {
                 {section === "soft skills" && (
                   <CollapsibleSection
                     title="Soft Skills"
-                    isExpanded={firstActivity === "soft skills"}
-                    onToggle={function (): void {
-                      throw new Error("Function not implemented.");
-                    }}
+                    isExpanded={expandedActivities.includes("soft skills")}
+                    onToggle={() => handleToggle("soft skills")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>Collaboration</li>
