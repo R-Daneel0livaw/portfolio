@@ -15,21 +15,8 @@ export default function CollapsibleSection({title,
   onToggle,
   children
 }: PropsWithChildren<CollapsibleSectionProps>) {
-//   const [expanded, setExpanded] = useState(propExpanded !== undefined ? propExpanded : false);
-//   console.log(propExpanded, expanded);
-
-
-//   useEffect(() => {
-//     if (propExpanded !== undefined) {
-//         // console.log("huh?");
-//         // console.log(propExpanded);
-//       setExpanded(propExpanded);
-//     }
-//   }, [propExpanded]);
-
   const handleToggle = () => {
     onToggle();
-    // setExpanded(!expanded);
   };
 
   return (

@@ -22,7 +22,7 @@ export default function Skills() {
 
   const [rotation, setRotation] = useState(0);
 
-  const [expandedActivities, setExpandedActivities] = useState<string[]>(Object.keys(getDefaultActiveState()));
+  const [expandedActivities, setExpandedActivities] = useState<string[]>([Object.keys(getDefaultActiveState())[0]]);
 
   const handlePersonaButtonClick = (
     target: string,
@@ -119,6 +119,7 @@ export default function Skills() {
     setActiveSections(getDefaultActiveState());
     setInactiveSections(getDefaultInactiveState());
     setActivePersonaButton("full");
+    setExpandedActivities([Object.keys(getDefaultActiveState())[0]]);
   };
 
   return (
@@ -427,20 +428,6 @@ export default function Skills() {
                     title="Data Visualization"
                     isExpanded={expandedActivities.includes("data visualization")}
                     onToggle={() => handleToggle("data visualization")}
-                  >
-                    <ul className={styles.skillActivityList}>
-                      <li>Tableau</li>
-                      <li>Power BI</li>
-                      <li>Seaborn</li>
-                    </ul>
-                  </CollapsibleSection>
-                )}
-
-                {section === "big data" && (
-                  <CollapsibleSection
-                    title="Big Data Technologies"
-                    isExpanded={expandedActivities.includes("big data")}
-                    onToggle={() => handleToggle("big data")}
                   >
                     <ul className={styles.skillActivityList}>
                       <li>Tableau</li>
