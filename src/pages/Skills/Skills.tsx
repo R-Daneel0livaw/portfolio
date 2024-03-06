@@ -326,7 +326,11 @@ export default function Skills() {
                       <li>C/C++/C#</li>
                       <li>Python</li>
                       <li>R</li>
-                      <li>JavaScript/TypeScript</li>
+                      <li>Go</li>
+                      <li>Groovy</li>
+                      <li>PHP</li>
+                      <li>JavaScript</li>
+                      <li>TypeScript</li>
                     </ul>
                   </CollapsibleSection>
                 )}
@@ -341,9 +345,9 @@ export default function Skills() {
                       <li>React</li>
                       <li>Angular</li>
                       <li>Vue</li>
-                      <li>HTML5/CSS3</li>
                       <li>Webpack</li>
                       <li>Vite</li>
+                      <li>HTML5/CSS3</li>
                     </ul>
                   </CollapsibleSection>
                 )}
@@ -355,8 +359,8 @@ export default function Skills() {
                     onToggle={() => handleToggle("backend")}
                   >
                     <ul className={styles.skillActivityList}>
-                      <li>Spring Boot</li>
-                      <li>ASP.NET</li>
+                      <li>Spring</li>
+                      <li>.NET</li>
                       <li>NodeJS</li>
                     </ul>
                   </CollapsibleSection>
@@ -369,8 +373,15 @@ export default function Skills() {
                     onToggle={() => handleToggle("database")}
                   >
                     <ul className={styles.skillActivityList}>
-                      <li>SQL (Oracle, PostgreSQL, MySQL)</li>
-                      <li>NoSQL (MongoDB, Neo4j, Cassandra)</li>
+                      <li>SQL</li>
+                      <li>NoSQL</li>
+                      <li>Vector</li>
+                      <li>Oracle</li>
+                      <li>PostgreSQL</li>
+                      <li>MySQL</li>
+                      <li>MongoDB</li>
+                      <li>Neo4j</li>
+                      <li>Cassandra</li>
                     </ul>
                   </CollapsibleSection>
                 )}
@@ -414,7 +425,6 @@ export default function Skills() {
                     <ul className={styles.skillActivityList}>
                       <li>Figma</li>
                       <li>Sketch</li>
-                      <li>Adobe XD</li>
                       <li>Tailwind</li>
                       <li>Bootstrap</li>
                       <li>Material UI</li>
@@ -472,7 +482,7 @@ export default function Skills() {
                     onToggle={() => handleToggle("leadership")}
                   >
                     <ul className={styles.skillActivityList}>
-                      <li>Team leadership</li>
+                      <li>Team Leadership</li>
                       <li>Mentorship</li>
                       <li>Effective Communication</li>
                       <li>Analytical Thinking</li>
@@ -488,7 +498,7 @@ export default function Skills() {
                   >
                     <ul className={styles.skillActivityList}>
                       <li>Collaboration</li>
-                      <li>Time management</li>
+                      <li>Time Management</li>
                       <li>Adaptability</li>
                       <li>Resource Planning</li>
                     </ul>

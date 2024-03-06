@@ -15,6 +15,7 @@
 
 .spacer {
   margin: 0.5rem 0 1.5rem 0;
+  color:#4f4f4f;
 }
 
 .details {
@@ -126,23 +127,13 @@
 
 .skillActivityList {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
   list-style-type: none;
   padding-left: 0;
 }
 
-.skillActivityList li:nth-child(even) {
-  grid-row: span 1;
-  grid-column: 2;
-}
-
-.skillActivityList li:nth-child(odd) {
-  grid-row: span 1;
-  grid-column: 1;
-}
-
 .skillActivityList li {
   margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
 }
