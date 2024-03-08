@@ -1,5 +1,4 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
-import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./AboutMe.module.css";
@@ -9,41 +8,6 @@ import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import CollapsibleSection from "../../components/CollapsibleSection/CollapsibleSection";
 
 type ToggleFunction = (sectionTitle: string | null) => void;
-
-// interface SectionProps {
-//   title: string;
-//   content: string;
-//   isExpanded: boolean;
-//   onToggle: ToggleFunction;
-// }
-
-// const CollapsibleSection = ({
-//   title,
-//   content,
-//   isExpanded,
-//   onToggle,
-// }: SectionProps) => {
-//   const handleToggle = () => {
-//     onToggle(null);
-//   };
-
-//   return (
-//     <section className={styles.sectionSpacer}>
-//       <div className={styles.sectionHeadingContainer} onClick={handleToggle}>
-//         <FontAwesomeIcon
-//           icon={faCaretRight}
-//           className={`${styles.sectionHeadingArrow} ${
-//             isExpanded ? styles.expanded : ""
-//           }`}
-//         />
-//         <h2 className={styles.sectionHeading}>{title}</h2>
-//       </div>
-//       <div className={styles.contentContainer}>
-//         {isExpanded && <p className={styles.sectionContent}>{content}</p>}
-//       </div>
-//     </section>
-//   );
-// };
 
 export default function AboutMe() {
   const [expandedSection, setExpandedSection] = useState<string | null>(
