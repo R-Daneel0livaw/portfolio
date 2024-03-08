@@ -22,31 +22,9 @@
     color: #4f4f4f;
 }
 
-.sectionHeadingContainer {
-    display: flex;
-    align-items: flex-start;
-    cursor: pointer;
-}
-
-.sectionHeadingArrow {
-    font-size: 1.5rem;
-    color: #189ad3;
-    transition: transform 0.3s ease;
-}
-
-.sectionHeading {
-    margin-left: 0.7rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
 .sectionContent, .seeMore {
     line-height: 1.7em;
     color: #4f4f4f;
-}
-
-.contentContainer {
-    padding-left: 1.5rem;
 }
 
 .seeMore:last-of-type {

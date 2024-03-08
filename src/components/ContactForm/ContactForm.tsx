@@ -1,6 +1,8 @@
 import { ChangeEvent, useRef, useState } from "react";
 import styles from "./ContactForm.module.css";
 import SignatureWithButton from "../SignatureWithButton/SignatureWithButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 
 const ContactForm = () => {
   const [contactType, setContactType] = useState("");
@@ -206,15 +208,31 @@ const ContactForm = () => {
           ref={textareaRef}
           required
         />
-        <label onClick={handleLabelClick} className={styles.innerLabel} htmlFor="message">
+        <label
+          onClick={handleLabelClick}
+          className={styles.innerLabel}
+          htmlFor="message"
+        >
           Provide Details
         </label>
       </div>
 
-      <SignatureWithButton buttonText="Send Message" includeSignature={false} enabled={isFormFilled()} />
+      <SignatureWithButton
+        buttonText="Send Message"
+        includeSignature={false}
+        enabled={isFormFilled()}
+      />
 
       {showConfirmation && (
-        <div>Thank You! I've received your message, and you'll be hearing from me soon!</div>
+        <div>
+          Thank You! I've received your message, and you'll be hearing from me
+          soon!{" "}
+          <FontAwesomeIcon
+            icon={faThumbsUp}
+            size="xl"
+            style={{ color: "#ffd43b" }}
+          />
+        </div>
       )}
     </form>
   );
