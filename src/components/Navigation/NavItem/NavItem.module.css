@@ -17,13 +17,7 @@
     font-weight: bold;
 }
 
-.navItem:hover {
-    background-color: #FFF;
-    color: #189AD3;
-    font-weight: bold;
-}
-
-.activeNavItem {
+.activeNavItem, .navItem:hover {
     background-color: #FFF;
     color: #189AD3;
     font-weight: bold;
