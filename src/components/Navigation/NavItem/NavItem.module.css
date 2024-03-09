@@ -1,13 +1,29 @@
 .navItem {
     display: flex;
     align-items: center;
-    margin-top: 3rem;
-}
-
-.navItem:hover {
-    text-decoration: underline;
+    margin-top: 2.75rem;
+    padding: .4rem .5rem;
+    margin-right: -1.4rem;
+    border-radius: 1.25rem 0 0 1.25rem;
 }
 
 .navItemIcon {
     width: 1.6rem;
+}
+
+.selected {
+    background-color: #FFF;
+    color: #189AD3;
+    font-weight: bold;
+}
+
+.navItem:hover {
+    background-color: #FFF;
+    color: #189AD3;
+    font-weight: bold;
+}
+
+.navItem a {
+    background-color: inherit;
+    color: inherit;
 }
