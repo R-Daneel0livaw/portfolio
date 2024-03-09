@@ -27,5 +27,15 @@ export default function NavItem({
       </i>
       <Link to={to}>{children}</Link>
     </li>
+    // <Link to={to}>
+    //   <li
+    //     className={`${styles.navItem} ${isActive ? styles.activeNavItem : ""}`}
+    //   >
+    //     <i className={styles.navItemIcon}>
+    //       <FontAwesomeIcon icon={icon} />
+    //     </i>
+    //     {children}
+    //   </li>
+    // </Link>
   );
 }
