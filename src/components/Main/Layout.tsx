@@ -16,7 +16,7 @@ export default function Layout() {
   return (
     <>
       <div className={styles.gridContainer}>
-        <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        <Navigation currentPage={currentPage} />
         <main className={styles.layoutContainer}>
           <Suspense fallback={<Loading />}>
             <Outlet />

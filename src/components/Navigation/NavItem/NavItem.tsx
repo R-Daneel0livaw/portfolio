@@ -1,6 +1,6 @@
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Dispatch, ReactNode, SetStateAction } from "react";
+import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavItem.module.css";
 
@@ -9,7 +9,6 @@ interface NavItemProps {
   icon: IconDefinition;
   children: ReactNode;
   currentPage: string;
-  setCurrentPage: Dispatch<SetStateAction<string>>;
 }
 
 export default function NavItem({
@@ -17,18 +16,12 @@ export default function NavItem({
   to,
   children,
   currentPage,
-  setCurrentPage,
 }: NavItemProps) {
   const isActive = currentPage === to;
-  const handleClick = () => {
-    setCurrentPage(to);
-  };
 
   return (
     <li
-      className={`${styles.navItem} ${isActive ? styles.activeNavItem : ""}`}
-      onClick={handleClick}
-    >
+      className={`${styles.navItem} ${isActive ? styles.activeNavItem : ""}`}>
       <i className={styles.navItemIcon}>
         <FontAwesomeIcon icon={icon} />
       </i>
