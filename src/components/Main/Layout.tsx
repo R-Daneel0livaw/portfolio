@@ -1,14 +1,22 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Loading from "../Loading";
 import styles from "./MainLayout.module.css";
+import PathConstants from "../../routes/pathConstants";
 
 export default function Layout() {
+  const [currentPage, setCurrentPage] = useState(PathConstants.HOME);
+
+  const location = useLocation();
+  useEffect(() => {
+    setCurrentPage(location.pathname);
+  }, [location]);
+
   return (
     <>
       <div className={styles.gridContainer}>
-        <Navigation />
+        <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         <main className={styles.layoutContainer}>
           <Suspense fallback={<Loading />}>
             <Outlet />

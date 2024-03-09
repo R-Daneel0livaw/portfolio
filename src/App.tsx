@@ -4,6 +4,7 @@ import routes from "./routes";
 import ErrorPage from "./pages/ErrorPage";
 
 export default function App() {
+
   const router = createBrowserRouter(
     [
       {
