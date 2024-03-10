@@ -10,6 +10,7 @@
 
 .navItemIcon {
     width: 1.6rem;
+    font-size: initial;
 }
 
 .selected {
