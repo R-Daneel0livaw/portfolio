@@ -27,7 +27,7 @@ export default function NavItem({
         <i className={styles.navItemIcon}>
           <FontAwesomeIcon icon={icon} />
         </i>
-        <p>{children }</p>
+        <p>{children}</p>
       </li>
     </Link>
   );
