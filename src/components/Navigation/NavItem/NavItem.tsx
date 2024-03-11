@@ -20,7 +20,7 @@ export default function NavItem({
   const isActive = currentPage === to;
 
   return (
-    <Link to={to}>
+    <Link to={to} className={styles.navLink}>
       <li
         className={`${styles.navItem} ${isActive ? styles.activeNavItem : ""}`}
       >
