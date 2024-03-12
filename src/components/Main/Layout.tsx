@@ -17,9 +17,9 @@ export default function Layout() {
     <>
       <div className={styles.gridContainer}>
         <Navigation currentPage={currentPage} />
-          <Suspense fallback={<Loading />}>
-            <Outlet />
-          </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Outlet />
+        </Suspense>
       </div>
     </>
   );
