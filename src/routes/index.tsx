@@ -1,8 +1,8 @@
 import { lazy } from "react";
 import PathConstants from "./pathConstants";
 import { Navigate } from "react-router-dom";
-import SplitLayout from "../components/SplitLayout";
-import SingleLayout from "../components/SingleLayout";
+import SplitLayout from "../components/Main/Split/SplitLayout";
+import SingleLayout from "../components/Main/Single/SingleLayout";
 
 function getHome() {
   const Home = lazy(() => import("../pages/Home/Home"));
