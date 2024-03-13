@@ -7,7 +7,6 @@ export default function SingleLayout() {
   return (
     <>
       <main className={styles.layoutContainer}>
-        <p>Single Layout</p>
         <Suspense fallback={<Loading />}>
           <Outlet />
         </Suspense>

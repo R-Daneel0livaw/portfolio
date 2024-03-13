@@ -25,7 +25,7 @@ function getProjects() {
 }
 
 function getBlog() {
-  const Blog = lazy(() => import("../pages/Blog"));
+  const Blog = lazy(() => import("../pages/Blog/Blog"));
   return <Blog />;
 }
 
