@@ -1,0 +1,46 @@
+.blogList {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.blogList article {
+    cursor: pointer;
+}
+
+.blogMain {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.blogTopic {
+    font-size: 0.75rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #a69575;
+}
+
+.blogTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.blogDescription {
+    line-height: 1.7em;
+    color: #4f4f4f;
+}
+
+.blogFooter {
+    display: flex;
+    font-size: 0.85rem;
+    color: #a69575;
+}
+
+.blogFooter p:first-of-type::after {
+  margin: 0 .25rem;  
+  content: '·'; 
+  font-weight: bold;
+}
