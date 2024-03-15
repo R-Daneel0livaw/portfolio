@@ -60,17 +60,17 @@ export default function Blog() {
 
           <nav className={styles.filterBar}>
             <div className={styles.filterOptions}>
-              <button className={styles.filterBtn} data-filter="all">
-                All
-              </button>
               <button className={styles.filterBtn} data-filter="tech">
                 Tech
+              </button>
+              <button className={styles.filterBtn} data-filter="architecture">
+                Architecture
               </button>
               <button className={styles.filterBtn} data-filter="tutorial">
                 Tutorial
               </button>
-              <button className={styles.filterBtn} data-filter="architecture">
-                Architecture
+              <button className={styles.filterBtn} data-filter="all">
+                All
               </button>
             </div>
             <div className={styles.sortBy}>

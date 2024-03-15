@@ -42,6 +42,10 @@
     cursor: pointer;
 }
 
+.sortBy label {
+    margin-right: 0.5rem;
+}
+
 .blogList article {
     cursor: pointer;
 }
