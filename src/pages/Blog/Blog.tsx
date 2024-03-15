@@ -4,8 +4,8 @@ export default function Blog() {
   return (
     <section id="blog">
       <header>
-        <h1>Stories & Ideas</h1>
-        <p>
+        <h1 className={styles.blogOverviewHeader}>Stories & Ideas</h1>
+        <p className={styles.blogOverviewDescription}>
           My latest thoughts on technology, design, architecture, and everything
           in between.
         </p>
@@ -50,7 +50,11 @@ export default function Blog() {
         <p>20 May 2024</p>
       </article> */}
 
-      <div className={styles.blogList}>
+      <section className={styles.blogList}>
+        <header>
+          <h2 className={styles.blogListHeader}>All Blog Posts</h2>
+          <p className={styles.blogListDescription}>All thoughts are my own and do not reflect the opinions of any past, present or future employers.</p>
+        </header>
         <article id="post1">
           <div className={styles.blogMain}>
             <h2 className={styles.blogTopic}>Machine Learning</h2>
@@ -127,7 +131,7 @@ export default function Blog() {
             <p>15 mins</p>
           </footer>
         </article>
-      </div>
+      </section>
     </section>
   );
 }
