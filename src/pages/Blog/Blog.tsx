@@ -60,7 +60,7 @@ export default function Blog() {
 
           <nav className={styles.filterBar}>
             <div className={styles.filterOptions}>
-              <button className={styles.filterBtn} data-filter="tech">
+              <button className={`${styles.filterBtn} ${styles.active}`} data-filter="tech">
                 Tech
               </button>
               <button className={styles.filterBtn} data-filter="architecture">

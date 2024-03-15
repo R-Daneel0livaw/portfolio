@@ -39,7 +39,18 @@
 }
 
 .filterBtn {
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    background-color: #FFF;
+    font-size: 0.85rem;
     cursor: pointer;
+}
+
+.active {
+    border: 1px solid #4f4f4f;
+    background-color: #f6f6f6;
+    font-weight: 600;
 }
 
 .sortBy label {
