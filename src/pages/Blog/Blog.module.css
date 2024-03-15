@@ -30,7 +30,7 @@
 .filterBar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     margin-top: 2rem;
 }
 
@@ -56,6 +56,12 @@
 
 .sortBy label {
     margin-right: 0.5rem;
+}
+
+.sortBy select {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #4f4f4f;
+    border-radius: 4px;
 }
 
 .blogList article {
