@@ -27,6 +27,21 @@
     font-size: 0.85rem;
 }
 
+.filterBar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.filterOptions {
+    display: flex;
+    gap: 1rem;
+}
+
+.filterBtn {
+    cursor: pointer;
+}
+
 .blogList article {
     cursor: pointer;
 }

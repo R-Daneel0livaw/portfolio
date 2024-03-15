@@ -53,8 +53,36 @@ export default function Blog() {
       <section className={styles.blogList}>
         <header>
           <h2 className={styles.blogListHeader}>All Blog Posts</h2>
-          <p className={styles.blogListDescription}>All thoughts are my own and do not reflect the opinions of any past, present or future employers.</p>
+          <p className={styles.blogListDescription}>
+            All thoughts are my own and do not reflect the opinions of any past,
+            present or future employers.
+          </p>
+
+          <nav className={styles.filterBar}>
+            <div className={styles.filterOptions}>
+              <button className={styles.filterBtn} data-filter="all">
+                All
+              </button>
+              <button className={styles.filterBtn} data-filter="tech">
+                Tech
+              </button>
+              <button className={styles.filterBtn} data-filter="tutorial">
+                Tutorial
+              </button>
+              <button className={styles.filterBtn} data-filter="architecture">
+                Architecture
+              </button>
+            </div>
+            <div className={styles.sortBy}>
+              <label htmlFor="sort-dropdown">Sort by:</label>
+              <select id="sort-dropdown">
+                <option value="date">Newest</option>
+                <option value="popularity">Popularity</option>
+              </select>
+            </div>
+          </nav>
         </header>
+        
         <article id="post1">
           <div className={styles.blogMain}>
             <h2 className={styles.blogTopic}>Machine Learning</h2>
