@@ -22,10 +22,24 @@
     padding: 1rem;
 }
 
+.secondaryFeatures {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .featuredIntro {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
     font-size: 0.85rem;
+}
+
+.featureTopic {
+    padding: 5px 1rem;
+    border-radius: 1.5rem;
+    background-color: #ff416c;
+    color: #FFF;
 }
 
 .blogList {
@@ -41,6 +55,7 @@
 }
 
 .blogListDescription {
+    margin-top: 0.5rem;
     color: #a5a8b0;
     font-size: 0.85rem;
 }

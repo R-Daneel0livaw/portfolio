@@ -15,7 +15,7 @@ export default function Blog() {
         <div className={styles.primaryFeature}>
           <article>
             <div className={styles.featuredIntro}>
-              <p>Programming</p>
+              <p className={styles.featureTopic}>Programming</p>
               <p>8 mins</p>
             </div>
             <h2>Demystifying React Hooks: A Comprehensive Guide</h2>
@@ -26,7 +26,7 @@ export default function Blog() {
         <div className={styles.secondaryFeatures}>
           <article>
             <div className={styles.featuredIntro}>
-              <p>Design</p>
+              <p className={styles.featureTopic}>Design</p>
               <p>10 mins</p>
             </div>
             <h2 className={styles.blogTitle}>
@@ -37,7 +37,7 @@ export default function Blog() {
 
           <article>
             <div className={styles.featuredIntro}>
-              <p>AI</p>
+              <p className={styles.featureTopic}>AI</p>
               <p>12 mins</p>
             </div>
             <h2 className={styles.blogTitle}>
@@ -49,7 +49,7 @@ export default function Blog() {
 
           <article>
             <div className={styles.featuredIntro}>
-              <p>Data Science</p>
+              <p className={styles.featureTopic}>Data Science</p>
               <p>15 mins</p>
             </div>
             <h2 className={styles.blogTitle}>
