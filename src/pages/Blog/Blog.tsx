@@ -14,48 +14,56 @@ export default function Blog() {
       <section className={styles.featuredBlogList}>
         <div className={styles.primaryFeature}>
           <article>
-            <div className={styles.featuredIntro}>
-              <p className={styles.featureTopic}>Programming</p>
-              <p>8 mins</p>
+            <div className={styles.blogMain}>
+              <div className={styles.featuredIntro}>
+                <p className={styles.featureTopic}>Programming</p>
+                <p>8 mins</p>
+              </div>
+              <h2>Demystifying React Hooks: A Comprehensive Guide</h2>
             </div>
-            <h2>Demystifying React Hooks: A Comprehensive Guide</h2>
-            <p>15 Jan 2024</p>
+            <p className={styles.featuredDate}>15 Jan 2024</p>
           </article>
         </div>
 
         <div className={styles.secondaryFeatures}>
           <article>
-            <div className={styles.featuredIntro}>
-              <p className={styles.featureTopic}>Design</p>
-              <p>10 mins</p>
+            <div className={styles.blogMain}>
+              <div className={styles.featuredIntro}>
+                <p className={styles.featureTopic}>Design</p>
+                <p>10 mins</p>
+              </div>
+              <h2 className={styles.blogTitle}>
+                The Art of Minimalist Design: Less is More
+              </h2>
             </div>
-            <h2 className={styles.blogTitle}>
-              The Art of Minimalist Design: Less is More
-            </h2>
-            <p>10 Jan 2024</p>
+            <p className={styles.featuredDate}>10 Jan 2024</p>
           </article>
 
           <article>
-            <div className={styles.featuredIntro}>
-              <p className={styles.featureTopic}>AI</p>
-              <p>12 mins</p>
+            <div className={styles.blogMain}>
+              <div className={styles.featuredIntro}>
+                <p className={styles.featureTopic}>AI</p>
+                <p>12 mins</p>
+              </div>
+              <h2 className={styles.blogTitle}>
+                Exploring the World of Artificial Intelligence: Applications and
+                Ethics
+              </h2>
             </div>
-            <h2 className={styles.blogTitle}>
-              Exploring the World of Artificial Intelligence: Applications and
-              Ethics
-            </h2>
-            <p>3 Apr 2024</p>
+            <p className={styles.featuredDate}>3 Apr 2024</p>
           </article>
 
           <article>
-            <div className={styles.featuredIntro}>
-              <p className={styles.featureTopic}>Data Science</p>
-              <p>15 mins</p>
+            <div className={styles.blogMain}>
+              <div className={styles.featuredIntro}>
+                <p className={styles.featureTopic}>Data Science</p>
+                <p>15 mins</p>
+              </div>
+              <h2 className={styles.blogTitle}>
+                Mastering Data Science: A Beginner's Guide to Python and Pandas
+              </h2>
             </div>
-            <h2 className={styles.blogTitle}>
-              Mastering Data Science: A Beginner's Guide to Python and Pandas
-            </h2>
-            <p>20 May 2024</p>
+            <p className={styles.featuredDate}>20 May 2024</p>
           </article>
         </div>
       </section>

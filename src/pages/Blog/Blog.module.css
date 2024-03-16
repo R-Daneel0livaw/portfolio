@@ -25,7 +25,7 @@
 .secondaryFeatures {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .featuredIntro {
@@ -40,6 +40,10 @@
     border-radius: 1.5rem;
     background-color: #ff416c;
     color: #FFF;
+}
+
+.featuredDate {
+    font-size: 0.85rem;
 }
 
 .blogList {
