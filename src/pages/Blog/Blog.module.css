@@ -10,11 +10,29 @@
     text-align: center;
 }
 
+.featuredBlogList {
+    display: flex;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.primaryFeature {
+    border: 2px solid #4f4f4f;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.featuredIntro {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
 .blogList {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    margin-top: 3rem;
+    margin-top: 5rem;
 }
 
 .blogListHeader {
