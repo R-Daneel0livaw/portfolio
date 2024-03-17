@@ -32,7 +32,25 @@
 .secondaryFeatures {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 3rem;
+    padding: 1rem 0;
+}
+
+.secondaryFeature {
+    display: flex;
+    height: 10rem;
+    gap: 1rem;
+}
+
+.secondaryFeatureImage {
+    width: 40%;
+}
+
+.secondaryFeatureInnerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
 }
 
 .featuredIntro {
