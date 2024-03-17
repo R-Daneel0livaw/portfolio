@@ -12,8 +12,9 @@ export default function Blog() {
       </header>
 
       <section className={styles.featuredBlogList}>
-        <div className={styles.primaryFeature}>
-          <article>
+        <article className={styles.primaryFeature}>
+          <div className={styles.primaryFeatureImage}></div>
+          <div className={styles.primaryFeatureInnerContainer}>
             <div className={styles.blogMain}>
               <div className={styles.featuredIntro}>
                 <p className={styles.featureTopic}>Programming</p>
@@ -22,8 +23,8 @@ export default function Blog() {
               <h2>Demystifying React Hooks: A Comprehensive Guide</h2>
             </div>
             <p className={styles.featuredDate}>15 Jan 2024</p>
-          </article>
-        </div>
+          </div>
+        </article>
 
         <div className={styles.secondaryFeatures}>
           <article>
