@@ -2,7 +2,7 @@ import styles from "./Blog.module.css";
 
 export default function Blog() {
   return (
-    <section id="blog">
+    <section id="blog" className={styles.blogContainer}>
       <header>
         <h1 className={styles.blogOverviewHeader}>Stories & Ideas</h1>
         <p className={styles.blogOverviewDescription}>
