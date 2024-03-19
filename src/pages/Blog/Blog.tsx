@@ -1,5 +1,6 @@
 import styles from "./Blog.module.css";
 
+
 export default function Blog() {
   return (
     <section id="blog" className={styles.blogContainer}>

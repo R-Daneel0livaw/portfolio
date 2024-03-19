@@ -32,6 +32,10 @@
 
 .primaryFeatureImage {
     flex-grow: 1;
+    background-image: url('../../img/reactJS_logo.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
 }
 
 .secondaryFeatures {
