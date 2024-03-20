@@ -32,9 +32,10 @@
 
 .primaryFeatureImage {
     flex-grow: 1;
-    background-image: url('../../img/reactJS_logo.jpeg');
-    background-size: cover;
+    background-image: url('/src/img/reactJS_logo.jpeg'), linear-gradient(to bottom, #1f2229, #1f2229);
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     border-radius: 8px;
 }
 
