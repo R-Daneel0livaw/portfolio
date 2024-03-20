@@ -17,7 +17,7 @@
 
 .featuredBlogList {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 6rem;
 }
 
@@ -49,11 +49,15 @@
 .secondaryFeature {
     display: flex;
     height: 10rem;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .secondaryFeatureImage {
     width: 40%;
+    background-image: url('/src/img/reactJS_logo.jpeg');
+    background-size: contain;
+    background-position: center;
+    border-radius: 4px;
 }
 
 .secondaryFeatureInnerContainer {
