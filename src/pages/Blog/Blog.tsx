@@ -29,7 +29,7 @@ export default function Blog() {
 
         <div className={styles.secondaryFeatures}>
           <article className={styles.secondaryFeature}>
-            <div className={styles.secondaryFeatureImage}></div>
+            <div className={styles.secondaryFeatureImage}><img src="src/img/reactJS_logo.jpeg"></img></div>
             <div className={styles.secondaryFeatureInnerContainer}>
               <div className={styles.blogMain}>
                 <div className={styles.featuredIntro}>
@@ -45,7 +45,7 @@ export default function Blog() {
           </article>
 
           <article className={styles.secondaryFeature}>
-            <div className={styles.secondaryFeatureImage}></div>
+            <div className={styles.secondaryFeatureImage}><img src="src/img/reactJS_logo.jpeg"></img></div>
             <div className={styles.secondaryFeatureInnerContainer}>
               <div className={styles.blogMain}>
                 <div className={styles.featuredIntro}>
@@ -61,7 +61,7 @@ export default function Blog() {
           </article>
 
           <article className={styles.secondaryFeature}>
-            <div className={styles.secondaryFeatureImage}></div>
+            <div className={styles.secondaryFeatureImage}><img src="src/img/reactJS_logo.jpeg"></img></div>
             <div className={styles.secondaryFeatureInnerContainer}>
               <div className={styles.blogMain}>
                 <div className={styles.featuredIntro}>
