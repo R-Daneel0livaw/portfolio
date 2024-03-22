@@ -3,9 +3,8 @@ import styles from "./Blog.module.css";
 
 
 export default function Blog() {
-  const [selectedFilter, setSelectedFilter] = useState('all');
+  const [selectedFilter, setSelectedFilter] = useState('tech');
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleFilterClick = (filter: string) => {
     setSelectedFilter(filter);
   };
@@ -166,18 +165,35 @@ export default function Blog() {
           <nav className={styles.filterBar}>
             <div className={styles.filterOptions}>
               <button
-                className={`${styles.filterBtn} ${styles.active}`}
-                data-filter="tech"
+                className={`${styles.filterBtn} ${
+                  selectedFilter === "tech" && styles.active
+                }`}
+                onClick={() => handleFilterClick("tech")}
               >
                 Tech
               </button>
-              <button className={styles.filterBtn} data-filter="architecture">
+              <button
+                className={`${styles.filterBtn} ${
+                  selectedFilter === "architecture" && styles.active
+                }`}
+                onClick={() => handleFilterClick("architecture")}
+              >
                 Architecture
               </button>
-              <button className={styles.filterBtn} data-filter="tutorial">
+              <button
+                className={`${styles.filterBtn} ${
+                  selectedFilter === "tutorial" && styles.active
+                }`}
+                onClick={() => handleFilterClick("tutorial")}
+              >
                 Tutorial
               </button>
-              <button className={styles.filterBtn} data-filter="all">
+              <button
+                className={`${styles.filterBtn} ${
+                  selectedFilter === "all" && styles.active
+                }`}
+                onClick={() => handleFilterClick("all")}
+              >
                 All
               </button>
             </div>
