@@ -91,11 +91,15 @@
     color: #a69575;
 }
 
-.blogList {
+.blogList, .articles {
     display: flex;
     flex-direction: column;
     gap: 3rem;
     margin: 5rem 0;
+}
+
+.articles {
+    margin-top: 0;
 }
 
 .blogListHeader {
