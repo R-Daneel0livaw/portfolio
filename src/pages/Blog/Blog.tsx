@@ -1,7 +1,23 @@
+import { useState } from "react";
 import styles from "./Blog.module.css";
 
 
 export default function Blog() {
+  const [selectedFilter, setSelectedFilter] = useState('all');
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handleFilterClick = (filter: string) => {
+    setSelectedFilter(filter);
+  };
+
+  const filterArticles = (articles: Article[]) => {
+    if (selectedFilter === 'all') {
+      return articles;
+    } else {
+      return articles.filter(article => article.topics.includes(selectedFilter));
+    }
+  };
+  
   type Article = {
     id: string;
     topic: string;
@@ -12,7 +28,6 @@ export default function Blog() {
     topics: string[];
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const articles: Article[] = [
     {
       id: "post1",
@@ -83,7 +98,9 @@ export default function Blog() {
 
         <div className={styles.secondaryFeatures}>
           <article className={styles.secondaryFeature}>
-            <div className={styles.secondaryFeatureImage}><img src="src/img/reactJS_logo.jpeg"></img></div>
+            <div className={styles.secondaryFeatureImage}>
+              <img src="src/img/reactJS_logo.jpeg"></img>
+            </div>
             <div className={styles.secondaryFeatureInnerContainer}>
               <div className={styles.blogMain}>
                 <div className={styles.featuredIntro}>
@@ -99,7 +116,9 @@ export default function Blog() {
           </article>
 
           <article className={styles.secondaryFeature}>
-            <div className={styles.secondaryFeatureImage}><img src="src/img/reactJS_logo.jpeg"></img></div>
+            <div className={styles.secondaryFeatureImage}>
+              <img src="src/img/reactJS_logo.jpeg"></img>
+            </div>
             <div className={styles.secondaryFeatureInnerContainer}>
               <div className={styles.blogMain}>
                 <div className={styles.featuredIntro}>
@@ -107,7 +126,8 @@ export default function Blog() {
                   <p>10 mins</p>
                 </div>
                 <h2 className={styles.blogTitle}>
-                 Exploring the World of Artificial Intelligence: Applications and Ethics 
+                  Exploring the World of Artificial Intelligence: Applications
+                  and Ethics
                 </h2>
               </div>
               <p className={styles.featuredDate}>3 Apr 2024</p>
@@ -115,7 +135,9 @@ export default function Blog() {
           </article>
 
           <article className={styles.secondaryFeature}>
-            <div className={styles.secondaryFeatureImage}><img src="src/img/reactJS_logo.jpeg"></img></div>
+            <div className={styles.secondaryFeatureImage}>
+              <img src="src/img/reactJS_logo.jpeg"></img>
+            </div>
             <div className={styles.secondaryFeatureInnerContainer}>
               <div className={styles.blogMain}>
                 <div className={styles.featuredIntro}>
@@ -123,7 +145,8 @@ export default function Blog() {
                   <p>10 mins</p>
                 </div>
                 <h2 className={styles.blogTitle}>
-                  Mastering Data Science: A Beginner's Guide to Python and Pandas
+                  Mastering Data Science: A Beginner's Guide to Python and
+                  Pandas
                 </h2>
               </div>
               <p className={styles.featuredDate}>20 May 2024</p>
@@ -167,6 +190,23 @@ export default function Blog() {
             </div>
           </nav>
         </header>
+
+        <div className={styles.articles}>
+          {filterArticles(articles).length === 0 && <p>No articles found.</p>}
+          {filterArticles(articles).map((article) => (
+            <article key={article.id}>
+              <div className={styles.blogMain}>
+                <h2 className={styles.blogTopic}>{article.topic}</h2>
+                <h3 className={styles.blogTitle}>{article.title}</h3>
+                <p className={styles.blogDescription}>{article.description}</p>
+              </div>
+              <footer className={styles.blogFooter}>
+                <p>{article.date}</p>
+                <p>{article.readTime}</p>
+              </footer>
+            </article>
+          ))}
+        </div>
 
         <article id="post1">
           <div className={styles.blogMain}>
