@@ -233,7 +233,7 @@ export default function Blog() {
         </header>
 
         <div className={styles.articles}>
-          {filterAndSortArticles(articles).length === 0 && <p>No articles found.</p>}
+          {filterAndSortArticles(articles).length === 0 && <p>No articles found. Please check back later.</p>}
           {filterAndSortArticles(articles).map((article) => (
             <article key={article.id}>
               <div className={styles.blogMain}>
