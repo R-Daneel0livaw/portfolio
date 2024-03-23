@@ -4,17 +4,37 @@ import styles from "./Blog.module.css";
 
 export default function Blog() {
   const [selectedFilter, setSelectedFilter] = useState('tech');
+  const [sortBy, setSortBy] = useState('date');
 
   const handleFilterClick = (filter: string) => {
     setSelectedFilter(filter);
   };
 
-  const filterArticles = (articles: Article[]) => {
-    if (selectedFilter === 'all') {
-      return articles;
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSortBy(e.target.value);
+  };
+
+  const filterAndSortArticles = (articles: Article[]) => {
+    let filteredArticles;
+    if (selectedFilter === "all") {
+      filteredArticles = articles;
     } else {
-      return articles.filter(article => article.topics.includes(selectedFilter));
+      filteredArticles = articles.filter((article) =>
+        article.topics.includes(selectedFilter)
+      );
     }
+
+    if (sortBy === "date") {
+      filteredArticles.sort((a, b) => {
+        const dateA = new Date(a.date).getTime();
+        const dateB = new Date(b.date).getTime();
+        return dateB - dateA;
+      });
+    } else if (sortBy === "popular") {
+      filteredArticles.sort((a, b) => b.comments - a.comments); 
+    }
+
+    return filteredArticles;
   };
   
   type Article = {
@@ -204,7 +224,7 @@ export default function Blog() {
             </div>
             <div className={styles.sortBy}>
               <label htmlFor="sort-dropdown">Sort by:</label>
-              <select id="sort-dropdown">
+              <select id="sort-dropdown" onChange={handleSortChange} value={sortBy}>
                 <option value="date">Newest</option>
                 <option value="popular">Popular</option>
               </select>
@@ -213,8 +233,8 @@ export default function Blog() {
         </header>
 
         <div className={styles.articles}>
-          {filterArticles(articles).length === 0 && <p>No articles found.</p>}
-          {filterArticles(articles).map((article) => (
+          {filterAndSortArticles(articles).length === 0 && <p>No articles found.</p>}
+          {filterAndSortArticles(articles).map((article) => (
             <article key={article.id}>
               <div className={styles.blogMain}>
                 <h2 className={styles.blogTopic}>{article.topic}</h2>
