@@ -184,7 +184,7 @@
     color: #a69575;
 }
 
-.blogFooter p:first-of-type::after {
+.blogFooter p:not(:last-child)::after {
   margin: 0 .25rem;  
   content: '·'; 
   font-weight: bold;

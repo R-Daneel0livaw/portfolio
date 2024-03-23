@@ -25,6 +25,7 @@ export default function Blog() {
     date: string;
     readTime: string;
     topics: string[];
+    comments: number
   };
 
   const articles: Article[] = [
@@ -37,6 +38,7 @@ export default function Blog() {
       date: "1 February, 2024",
       readTime: "12 mins",
       topics: ["tech"],
+      comments: 8
     },
     {
       id: "post2",
@@ -47,6 +49,7 @@ export default function Blog() {
       date: "5 February, 2024",
       readTime: "15 mins",
       topics: ["tech"],
+      comments: 0
     },
     {
       id: "post3",
@@ -57,6 +60,7 @@ export default function Blog() {
       date: "20 February, 2024",
       readTime: "10 mins",
       topics: ["tech"],
+      comments: 3
     },
     {
       id: "post4",
@@ -67,6 +71,7 @@ export default function Blog() {
       date: "5 March, 2024",
       readTime: "15 mins",
       topics: ["tech", "architecture", "tutorial"],
+      comments: 5
     },
   ];
 
@@ -219,6 +224,7 @@ export default function Blog() {
               <footer className={styles.blogFooter}>
                 <p>{article.date}</p>
                 <p>{article.readTime}</p>
+                <p>{article.comments} Comments</p>
               </footer>
             </article>
           ))}
