@@ -225,7 +225,11 @@ export default function Blog() {
             </div>
             <div className={styles.sortBy}>
               <label htmlFor="sort-dropdown">Sort by:</label>
-              <select id="sort-dropdown" onChange={handleSortChange} value={sortBy}>
+              <select
+                id="sort-dropdown"
+                onChange={handleSortChange}
+                value={sortBy}
+              >
                 <option value="date">Newest</option>
                 <option value="popular">Popular</option>
               </select>
@@ -234,21 +238,26 @@ export default function Blog() {
         </header>
 
         <div className={styles.articles}>
-          {filterAndSortArticles(articles).length === 0 && <p>No articles found. Please check back later.</p>}
+          {filterAndSortArticles(articles).length === 0 && (
+            <p>No articles found. Please check back later.</p>
+          )}
           {filterAndSortArticles(articles).map((article) => (
-            <article key={article.id}>
-              <div className={styles.blogMain}>
-                <h2 className={styles.blogTopic}>{article.topic}</h2>
-                <h3 className={styles.blogTitle}>{article.title}</h3>
-                <p className={styles.blogDescription}>{article.description}</p>
-              </div>
-              <Link to={`/blog/${article.id}`}>{article.title}</Link>
-              <footer className={styles.blogFooter}>
-                <p>{article.date}</p>
-                <p>{article.readTime}</p>
-                <p>{article.comments} Comments</p>
-              </footer>
-            </article>
+            <Link to={`/blog/${article.id}`}>
+              <article key={article.id}>
+                <div className={styles.blogMain}>
+                  <h2 className={styles.blogTopic}>{article.topic}</h2>
+                  <h3 className={styles.blogTitle}>{article.title}</h3>
+                  <p className={styles.blogDescription}>
+                    {article.description}
+                  </p>
+                </div>
+                <footer className={styles.blogFooter}>
+                  <p>{article.date}</p>
+                  <p>{article.readTime}</p>
+                  <p>{article.comments} Comments</p>
+                </footer>
+              </article>
+            </Link>
           ))}
         </div>
       </section>
