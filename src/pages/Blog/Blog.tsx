@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Blog.module.css";
+import { Link } from "react-router-dom";
 
 
 export default function Blog() {
@@ -241,6 +242,7 @@ export default function Blog() {
                 <h3 className={styles.blogTitle}>{article.title}</h3>
                 <p className={styles.blogDescription}>{article.description}</p>
               </div>
+              <Link to={`/blog/${article.id}`}>{article.title}</Link>
               <footer className={styles.blogFooter}>
                 <p>{article.date}</p>
                 <p>{article.readTime}</p>

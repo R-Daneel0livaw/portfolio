@@ -29,6 +29,11 @@ function getBlog() {
   return <Blog />;
 }
 
+function getBlogArticle() {
+  const BlogArticle = lazy(() => import("../pages/Blog/BlogArticle/BlogArticle"));
+  return <BlogArticle />;
+}
+
 function getContact() {
   const Contact = lazy(() => import("../pages/Contact/Contact"));
   return <Contact />;
@@ -75,6 +80,10 @@ const routes = [
       {
         path: PathConstants.BLOG,
         element: getBlog(),
+      },
+      {
+        path: PathConstants.BLOG_ARTICLE,
+        element: getBlogArticle(),
       },
       {
         path: PathConstants.ERROR,
