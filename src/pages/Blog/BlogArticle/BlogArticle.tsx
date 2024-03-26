@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
+import styles from "./BlogArticle.module.css";
 
 export default function BlogArticle() {
   const { id } = useParams(); // Access the article ID from URL params
@@ -7,31 +8,49 @@ export default function BlogArticle() {
   // Fetch/display the article with the given ID
 
   return (
-    <section id="blog-article">
-      <button onClick={() => navigate(-1)}>&larr; Go back</button>
+    <section id="blog-article" className={styles.articleContainer}>
+      <button onClick={() => navigate(-1)} className={styles.previousButton}>
+        &larr; Go back
+      </button>
       <header>
-        <h1>Blog Title {id}</h1>
-        <p>
-          Published on: <time dateTime="2024-02-01">February 1, 2024</time>
-        </p>
-        <p>Length: 12 minutes</p>
-        <img src="blog-image.jpg" alt="Blog Image" />
+        <h1 className={styles.blogTitle}>Blog Title {id}</h1>
+        <div className={styles.blogDateTime}>
+          <p>
+            <time dateTime="2024-02-01">1 February, 2024</time>
+          </p>
+          <p>12 mins</p>
+        </div>
+        {/* <img src="blog-image.jpg" alt="Blog Image" /> */}
       </header>
 
       <section>
-        <h2>Section 1 Title</h2>
-        <p>
-          Section 1 Content Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit. ...
-        </p>
+        <h2 className={styles.blogSectionTitle}>Section 1 Title</h2>
+        <div className={styles.blogSectionContent}>
+          <p>
+            Section 1 Content Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. ...
+          </p>
+
+          <p>
+            Section 1 Content Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. ...
+          </p>
+        </div>
       </section>
 
       <section>
-        <h2>Section 2 Title</h2>
-        <p>
-          Section 2 Content Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit. ...
-        </p>
+        <h2 className={styles.blogSectionTitle}>Section 2 Title</h2>
+        <div className={styles.blogSectionContent}>
+          <p>
+            Section 2 Content Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. ...
+          </p>
+
+          <p>
+            Section 2 Content Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. ...
+          </p>
+        </div>
       </section>
     </section>
   );
