@@ -1,11 +1,23 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import styles from "./BlogArticle.module.css";
 
 export default function BlogArticle() {
-  const { id } = useParams(); // Access the article ID from URL params
+  const { id } = useParams(); 
   const navigate = useNavigate()
 
-  // Fetch/display the article with the given ID
+  type Article = {
+    id: string;
+    topic: string;
+    title: string;
+    description: string;
+    date: string;
+    readTime: string;
+    topics: string[];
+    comments: number
+  };
+
+  const location = useLocation();
+  const state = location.state as Article;
 
   return (
     <section id="blog-article" className={styles.articleContainer}>
@@ -13,12 +25,12 @@ export default function BlogArticle() {
         &larr; Go back
       </button>
       <header>
-        <h1 className={styles.blogTitle}>Blog Title {id}</h1>
+        <h1 className={styles.blogTitle}>{state.title} ({id})</h1>
         <div className={styles.blogDateTime}>
           <p>
-            <time dateTime="2024-02-01">1 February, 2024</time>
+            <time dateTime="2024-02-01">{state.date}</time>
           </p>
-          <p>12 mins</p>
+          <p>{state.readTime}</p>
         </div>
         {/* <img src="blog-image.jpg" alt="Blog Image" /> */}
       </header>

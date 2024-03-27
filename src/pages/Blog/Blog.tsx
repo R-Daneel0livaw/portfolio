@@ -242,7 +242,7 @@ export default function Blog() {
             <p>No articles found. Please check back later.</p>
           )}
           {filterAndSortArticles(articles).map((article) => (
-            <Link to={`/blog/${article.id}`}>
+            <Link to={`/blog/${article.id}`} state={article}>
               <article key={article.id}>
                 <div className={styles.blogMain}>
                   <h2 className={styles.blogTopic}>{article.topic}</h2>

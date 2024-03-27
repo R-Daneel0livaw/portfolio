@@ -8,6 +8,7 @@ interface LayoutProps {
 }
 
 export default function Navigation({ currentPage }: LayoutProps) {
+  currentPage = currentPage.startsWith("/blog/") ? PathConstants.BLOG : currentPage;
   return (
     <nav className={styles.sidebar}>
       <h2 className={styles.navHeader}>Eric Hine</h2>
