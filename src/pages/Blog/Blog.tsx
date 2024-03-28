@@ -49,6 +49,10 @@ export default function Blog() {
     comments: number
   };
 
+  type FeaturedArticle = Article & {
+    rank: number;
+  };
+
   const articles: Article[] = [
     {
       id: "post1",
@@ -95,6 +99,59 @@ export default function Blog() {
       comments: 5
     },
   ];
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const featuredArticles: FeaturedArticle[] = [
+    {
+      id: "fpost1",
+      topic: "Programming",
+      title: "Demystifying React Hooks: A Comprehensive Guide",
+      description:
+        "Dive into the intricacies of React Hooks with our comprehensive guide, unraveling the mysteries behind these powerful tools for state and lifecycle management in React applications.",
+      date: "15 Jan 2024",
+      readTime: "8 mins",
+      topics: ["tech", "tutorial"],
+      comments: 20,
+      rank: 1
+    },
+    {
+      id: "fpost2",
+      topic: "Design",
+      title: "The Art of Minimalist Design: Less is More",
+      description:
+        "Explore the elegance and effectiveness of minimalist design principles in our insightful article, uncovering the transformative power of simplicity in creating sophisticated and user-friendly interfaces.",
+      date: "10 Jan 2024",
+      readTime: "10 mins",
+      topics: ["tech", "architecture"],
+      comments: 2,
+      rank: 2
+    },
+    {
+      id: "fpost3",
+      topic: "AI",
+      title: "Exploring the World of Artificial Intelligence: Applications and Ethics",
+      description:
+        "Dive into the fascinating realm of artificial intelligence as we navigate through its myriad applications and delve into the ethical considerations shaping its development and deployment in today's technological landscape.",
+      date: "3 Apr 2024",
+      readTime: "10 mins",
+      topics: ["tech"],
+      comments: 7,
+      rank: 3
+    },
+    {
+      id: "fpost4",
+      topic: "Data Science",
+      title: "Mastering Data Science: A Beginner's Guide to Python and Pandas",
+      description:
+        "Embark on your data science journey with this beginner's guide to Python and Pandas. Learn the fundamentals of data manipulation and analysis, setting the foundation for mastering the art of data science.",
+      date: "20 May 2024",
+      readTime: "10 mins",
+      topics: ["tech", "tutorial"],
+      comments: 12,
+      rank: 4
+    },
+  ];
+
 
   return (
     <section id="blog" className={styles.blogContainer}>
