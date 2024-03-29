@@ -37,6 +37,11 @@ export default function Blog() {
 
     return filteredArticles;
   };
+
+  const getPrimaryArticle = () => {
+    const primary = featuredArticles.find((article) => article.rank === 1);
+    return !primary ? featuredArticles[0] : primary; 
+  };
   
   type Article = {
     id: string;
@@ -50,6 +55,7 @@ export default function Blog() {
   };
 
   type FeaturedArticle = Article & {
+    image: string;
     rank: number;
   };
 
@@ -112,6 +118,7 @@ export default function Blog() {
       readTime: "8 mins",
       topics: ["tech", "tutorial"],
       comments: 20,
+      image: "src/img/reactJS_logo.jpeg",
       rank: 1
     },
     {
@@ -124,6 +131,7 @@ export default function Blog() {
       readTime: "10 mins",
       topics: ["tech", "architecture"],
       comments: 2,
+      image: "src/img/reactJS_logo.jpeg",
       rank: 2
     },
     {
@@ -136,6 +144,7 @@ export default function Blog() {
       readTime: "10 mins",
       topics: ["tech"],
       comments: 7,
+      image: "src/img/reactJS_logo.jpeg",
       rank: 3
     },
     {
@@ -148,6 +157,7 @@ export default function Blog() {
       readTime: "10 mins",
       topics: ["tech", "tutorial"],
       comments: 12,
+      image: "src/img/reactJS_logo.jpeg",
       rank: 4
     },
   ];
@@ -169,12 +179,12 @@ export default function Blog() {
           <div className={styles.primaryFeatureInnerContainer}>
             <div className={styles.blogMain}>
               <div className={styles.featuredIntro}>
-                <p className={styles.featureTopic}>Programming</p>
-                <p>8 mins</p>
+                <p className={styles.featureTopic}>{getPrimaryArticle().topic}</p>
+                <p>{getPrimaryArticle().readTime}</p>
               </div>
-              <h2>Demystifying React Hooks: A Comprehensive Guide</h2>
+              <h2>{getPrimaryArticle().title}</h2>
             </div>
-            <p className={styles.featuredDate}>15 Jan 2024</p>
+            <p className={styles.featuredDate}>{getPrimaryArticle().date}</p>
           </div>
         </article>
 
@@ -269,7 +279,15 @@ export default function Blog() {
                 }`}
                 onClick={() => handleFilterClick("tutorial")}
               >
-                Tutorial
+                Tutorials
+              </button>
+              <button
+                className={`${styles.filterBtn} ${
+                  selectedFilter === "personal" && styles.active
+                }`}
+                onClick={() => handleFilterClick("personal")}
+              >
+                Personal Insights
               </button>
               <button
                 className={`${styles.filterBtn} ${
