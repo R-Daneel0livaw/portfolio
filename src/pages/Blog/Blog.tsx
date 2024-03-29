@@ -176,7 +176,7 @@ export default function Blog() {
       </header>
 
       <section className={styles.featuredBlogList}>
-        {/* <Link to={`/blog/${getPrimaryArticle().id}`} state={getPrimaryArticle()}> */}
+        <Link to={`/blog/${getPrimaryArticle().id}`} state={getPrimaryArticle()}>
           <article className={styles.primaryFeature}>
             <div className={styles.primaryFeatureImage}></div>
             <div className={styles.primaryFeatureInnerContainer}>
@@ -187,12 +187,12 @@ export default function Blog() {
                   </p>
                   <p>{getPrimaryArticle().readTime}</p>
                 </div>
-                <h2>{getPrimaryArticle().title}</h2>
+                <h2 className={styles.featureTitle}>{getPrimaryArticle().title}</h2>
               </div>
               <p className={styles.featuredDate}>{getPrimaryArticle().date}</p>
             </div>
           </article>
-        {/* </Link> */}
+        </Link>
 
         <div className={styles.secondaryFeatures}>
           {getSecondaryArticles().map((article) => (

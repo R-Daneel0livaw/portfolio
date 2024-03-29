@@ -468,6 +468,7 @@ export default function Skills() {
                   >
                     <ul className={styles.skillActivityList}>
                       <li>Scikit-learn</li>
+                      <li>Amazon SageMaker</li>
                       <li>TensorFlow</li>
                       <li>Keras</li>
                       <li>CARET</li>
