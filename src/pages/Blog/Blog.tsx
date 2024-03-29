@@ -185,7 +185,7 @@ export default function Blog() {
                   <p className={styles.featureTopic}>
                     {getPrimaryArticle().topic}
                   </p>
-                  <p>{getPrimaryArticle().readTime}</p>
+                  <p className={styles.featuredReadTime}>{getPrimaryArticle().readTime}</p>
                 </div>
                 <h2 className={styles.featureTitle}>{getPrimaryArticle().title}</h2>
               </div>
@@ -205,7 +205,7 @@ export default function Blog() {
                   <div className={styles.blogMain}>
                     <div className={styles.featuredIntro}>
                       <p className={styles.featureTopic}>{article.topic}</p>
-                      <p>{article.readTime}</p>
+                      <p className={styles.featuredReadTime}>{article.readTime}</p>
                     </div>
                     <h2 className={styles.blogTitle}>{article.title}</h2>
                   </div>

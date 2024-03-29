@@ -89,7 +89,7 @@
     color: #FFF;
 }
 
-.featureTitle {
+.featureTitle, .featuredReadTime {
     color: initial;
 }
 
