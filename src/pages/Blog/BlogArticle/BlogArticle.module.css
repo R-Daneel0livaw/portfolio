@@ -1,11 +1,35 @@
 .articleContainer {
+    /* display: flex;
+    flex-direction: column;
+    gap: 3rem; */
+    display: grid;
+    grid-template-columns: 10rem auto 10rem;
+    gap: 2rem;
+    align-items: baseline;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.contentContainer {
     display: flex;
     flex-direction: column;
     gap: 3rem;
 }
 
+.navContainer {
+    justify-self: center;
+}
+
 .previousButton {
     width: fit-content;
+    padding: 0.25rem 0.75rem;
+    padding-bottom: 0.35rem;
+    background-color: #faf7f0;
+    border: 0.5px solid #a69575;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    color: #a69575;
+    cursor: pointer;
 }
 
 .blogTitle {
