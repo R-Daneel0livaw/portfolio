@@ -42,6 +42,10 @@ export default function Blog() {
     const primary = featuredArticles.find((article) => article.rank === 1);
     return !primary ? featuredArticles[0] : primary; 
   };
+
+  const getSecondaryArticles = () => {
+    return featuredArticles.filter((article) => article.rank !== 1);
+  }
   
   type Article = {
     id: string;
@@ -106,7 +110,6 @@ export default function Blog() {
     },
   ];
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const featuredArticles: FeaturedArticle[] = [
     {
       id: "fpost1",
@@ -162,7 +165,6 @@ export default function Blog() {
     },
   ];
 
-
   return (
     <section id="blog" className={styles.blogContainer}>
       <header>
@@ -174,76 +176,44 @@ export default function Blog() {
       </header>
 
       <section className={styles.featuredBlogList}>
-        <article className={styles.primaryFeature}>
-          <div className={styles.primaryFeatureImage}></div>
-          <div className={styles.primaryFeatureInnerContainer}>
-            <div className={styles.blogMain}>
-              <div className={styles.featuredIntro}>
-                <p className={styles.featureTopic}>{getPrimaryArticle().topic}</p>
-                <p>{getPrimaryArticle().readTime}</p>
+        {/* <Link to={`/blog/${getPrimaryArticle().id}`} state={getPrimaryArticle()}> */}
+          <article className={styles.primaryFeature}>
+            <div className={styles.primaryFeatureImage}></div>
+            <div className={styles.primaryFeatureInnerContainer}>
+              <div className={styles.blogMain}>
+                <div className={styles.featuredIntro}>
+                  <p className={styles.featureTopic}>
+                    {getPrimaryArticle().topic}
+                  </p>
+                  <p>{getPrimaryArticle().readTime}</p>
+                </div>
+                <h2>{getPrimaryArticle().title}</h2>
               </div>
-              <h2>{getPrimaryArticle().title}</h2>
+              <p className={styles.featuredDate}>{getPrimaryArticle().date}</p>
             </div>
-            <p className={styles.featuredDate}>{getPrimaryArticle().date}</p>
-          </div>
-        </article>
+          </article>
+        {/* </Link> */}
 
         <div className={styles.secondaryFeatures}>
-          <article className={styles.secondaryFeature}>
-            <div className={styles.secondaryFeatureImage}>
-              <img src="src/img/reactJS_logo.jpeg"></img>
-            </div>
-            <div className={styles.secondaryFeatureInnerContainer}>
-              <div className={styles.blogMain}>
-                <div className={styles.featuredIntro}>
-                  <p className={styles.featureTopic}>Design</p>
-                  <p>10 mins</p>
+          {getSecondaryArticles().map((article) => (
+            <Link to={`/blog/${article.id}`} state={article}>
+              <article key={article.id} className={styles.secondaryFeature}>
+                <div className={styles.secondaryFeatureImage}>
+                  <img src={article.image} alt={article.title}></img>
                 </div>
-                <h2 className={styles.blogTitle}>
-                  The Art of Minimalist Design: Less is More
-                </h2>
-              </div>
-              <p className={styles.featuredDate}>10 Jan 2024</p>
-            </div>
-          </article>
-
-          <article className={styles.secondaryFeature}>
-            <div className={styles.secondaryFeatureImage}>
-              <img src="src/img/reactJS_logo.jpeg"></img>
-            </div>
-            <div className={styles.secondaryFeatureInnerContainer}>
-              <div className={styles.blogMain}>
-                <div className={styles.featuredIntro}>
-                  <p className={styles.featureTopic}>AI</p>
-                  <p>10 mins</p>
+                <div className={styles.secondaryFeatureInnerContainer}>
+                  <div className={styles.blogMain}>
+                    <div className={styles.featuredIntro}>
+                      <p className={styles.featureTopic}>{article.topic}</p>
+                      <p>{article.readTime}</p>
+                    </div>
+                    <h2 className={styles.blogTitle}>{article.title}</h2>
+                  </div>
+                  <p className={styles.featuredDate}>{article.date}</p>
                 </div>
-                <h2 className={styles.blogTitle}>
-                  Exploring the World of Artificial Intelligence: Applications
-                  and Ethics
-                </h2>
-              </div>
-              <p className={styles.featuredDate}>3 Apr 2024</p>
-            </div>
-          </article>
-
-          <article className={styles.secondaryFeature}>
-            <div className={styles.secondaryFeatureImage}>
-              <img src="src/img/reactJS_logo.jpeg"></img>
-            </div>
-            <div className={styles.secondaryFeatureInnerContainer}>
-              <div className={styles.blogMain}>
-                <div className={styles.featuredIntro}>
-                  <p className={styles.featureTopic}>Data Science</p>
-                  <p>10 mins</p>
-                </div>
-                <h2 className={styles.blogTitle}>
-                  Mastering Data Science: A Beginner's Guide to Python and
-                  Pandas
-                </h2>
-              </div>
-              <p className={styles.featuredDate}>20 May 2024</p>
-            </div>
-          </article>
+              </article>
+            </Link>
+          ))}
         </div>
       </section>
 
