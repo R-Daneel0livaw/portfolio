@@ -1,5 +1,8 @@
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import styles from "./BlogArticle.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { useLayoutEffect } from 'react';
 
 export default function BlogArticle() {
   const { id } = useParams();
@@ -19,11 +22,15 @@ export default function BlogArticle() {
   const location = useLocation();
   const state = location.state as Article;
 
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <section id="blog-article" className={styles.articleContainer}>
       <div className={styles.navContainer}>
-        <button onClick={() => navigate(-1)} className={styles.previousButton}>
-          &larr;
+        <button onClick={() => navigate(-1)} className={styles.navButton}>
+          <FontAwesomeIcon icon={faArrowLeft} size="xl" />
         </button>
       </div>
       <div className={styles.contentContainer}>
@@ -162,8 +169,8 @@ export default function BlogArticle() {
         </section>
       </div>
       <div className={styles.navContainer}>
-        <button onClick={() => navigate(-1)} className={styles.previousButton}>
-          &rarr;
+        <button onClick={() => navigate(-1)} className={styles.navButton}>
+          <FontAwesomeIcon icon={faArrowRight} size="xl" />
         </button>
       </div>
     </section>
