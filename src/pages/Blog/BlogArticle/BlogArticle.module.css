@@ -8,6 +8,7 @@
     align-items: baseline;
     max-width: 1600px;
     margin: 0 auto;
+    margin-bottom: 3rem;
 }
 
 .contentContainer {
@@ -47,6 +48,10 @@
   margin: 0 .25rem;  
   content: '·'; 
   font-weight: bold;
+}
+
+.blogDescription {
+    margin-top: 2rem;
 }
 
 .blogSectionTitle {
