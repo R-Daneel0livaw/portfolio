@@ -29,6 +29,10 @@
     cursor: pointer;
 }
 
+.navButton:hover {
+    font-size: 1.7rem;
+}
+
 .blogTitle {
     font-size: 2rem;
     margin-bottom: 0.5rem;
