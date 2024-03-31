@@ -7,6 +7,7 @@ import { useLayoutEffect } from 'react';
 export default function BlogArticle() {
   const { id } = useParams();
   const navigate = useNavigate();
+  console.log(id);
 
   type Article = {
     id: string;
@@ -36,7 +37,7 @@ export default function BlogArticle() {
       <div className={styles.contentContainer}>
         <header>
           <h1 className={styles.blogTitle}>
-            {state.title} ({id})
+            {state.title}
           </h1>
           <div className={styles.blogDateTime}>
             <p>
