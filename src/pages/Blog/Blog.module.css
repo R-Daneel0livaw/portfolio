@@ -18,7 +18,7 @@
 .featuredBlogList {
     display: flex;
     gap: 1rem;
-    margin: 3rem auto 3rem;
+    margin: 3rem auto;
     width: 85%;
 }
 
@@ -73,7 +73,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 40%;
+    width: 50%;
 }
 
 .featuredIntro {
