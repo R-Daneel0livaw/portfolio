@@ -18,7 +18,7 @@
 .featuredBlogList {
     display: flex;
     gap: 1rem;
-    margin: 3rem auto;
+    margin: 5rem auto;
     width: 85%;
 }
 
