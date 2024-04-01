@@ -30,7 +30,7 @@ export default function BlogArticle() {
   return (
     <section id="blog-article" className={styles.articleContainer}>
       <div className={styles.navContainer}>
-        <button onClick={() => navigate(-1)} className={styles.navButton}>
+        <button onClick={() => navigate("/blog", { state: { key: state } })} className={styles.navButton}>
           <FontAwesomeIcon icon={faArrowLeft} size="xl" />
         </button>
       </div>
@@ -170,7 +170,7 @@ export default function BlogArticle() {
         </section>
       </div>
       <div className={styles.navContainer}>
-        <button onClick={() => navigate(-1)} className={styles.navButton}>
+        <button onClick={() => navigate("/blog", { state: { key: state } })} className={styles.navButton}>
           <FontAwesomeIcon icon={faArrowRight} size="xl" />
         </button>
       </div>

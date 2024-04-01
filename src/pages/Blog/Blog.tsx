@@ -1,11 +1,15 @@
 import { useState } from "react";
 import styles from "./Blog.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 
 export default function Blog() {
   const [selectedFilter, setSelectedFilter] = useState('tech');
   const [sortBy, setSortBy] = useState('date');
+
+  const location = useLocation();
+  const state = location.state;
+  console.log(state);
 
   const handleFilterClick = (filter: string) => {
     setSelectedFilter(filter);
