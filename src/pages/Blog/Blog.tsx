@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Blog.module.css";
 import { Link, useLocation } from "react-router-dom";
 
@@ -8,8 +8,11 @@ export default function Blog() {
   const [sortBy, setSortBy] = useState('date');
 
   const location = useLocation();
-  const state = location.state;
-  console.log(state);
+  useEffect(() => {
+    if (location.state) {
+      setSelectedFilter("personal");
+    }
+  }, [location.state]);
 
   const handleFilterClick = (filter: string) => {
     setSelectedFilter(filter);
