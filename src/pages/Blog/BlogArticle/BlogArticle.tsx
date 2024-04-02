@@ -20,8 +20,15 @@ export default function BlogArticle() {
     comments: number;
   };
 
+  type PageState = {
+    selectedFilter: string;
+    sortBy: string;
+  };
+
+  type ArticleWithPageState = Article & PageState;
+
   const location = useLocation();
-  const state = location.state as Article;
+  const state = location.state as ArticleWithPageState;
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -30,7 +37,7 @@ export default function BlogArticle() {
   return (
     <section id="blog-article" className={styles.articleContainer}>
       <div className={styles.navContainer}>
-        <button onClick={() => navigate("/blog", { state: { key: state } })} className={styles.navButton}>
+        <button onClick={() => navigate("/blog", { state: { selectedFilter: state.selectedFilter, sortBy: state.sortBy } })} className={styles.navButton}>
           <FontAwesomeIcon icon={faArrowLeft} size="xl" />
         </button>
       </div>

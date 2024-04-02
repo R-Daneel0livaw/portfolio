@@ -10,7 +10,8 @@ export default function Blog() {
   const location = useLocation();
   useEffect(() => {
     if (location.state) {
-      setSelectedFilter("personal");
+      setSelectedFilter(location.state.selectedFilter ? location.state.selectedFilter : "tech");
+      setSortBy(location.state.sortBy ? location.state.sortBy : "date");
     }
   }, [location.state]);
 
@@ -294,7 +295,7 @@ export default function Blog() {
             <p>No articles found. Please check back later.</p>
           )}
           {filterAndSortArticles(articles).map((article) => (
-            <Link to={`/blog/${article.id}`} state={article}>
+            <Link to={`/blog/${article.id}`} state={{...article, selectedFilter, sortBy}}>
               <article key={article.id}>
                 <div className={styles.blogMain}>
                   <h2 className={styles.blogTopic}>{article.topic}</h2>
