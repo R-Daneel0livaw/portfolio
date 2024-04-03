@@ -8,7 +8,6 @@ export default function Blog() {
   const [selectedFilter, setSelectedFilter] = useState(location.state?.selectedFilter ? location.state.selectedFilter : "tech");
   const [sortBy, setSortBy] = useState(location.state?.sortBy ? location.state.sortBy : "date");
 
-
   const handleFilterClick = (filter: string) => {
     setSelectedFilter(filter);
   };

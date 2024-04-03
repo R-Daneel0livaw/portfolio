@@ -37,15 +37,26 @@ export default function BlogArticle() {
   return (
     <section id="blog-article" className={styles.articleContainer}>
       <div className={styles.navContainer}>
-        <button onClick={() => navigate("/blog", { state: { selectedFilter: state.selectedFilter, sortBy: state.sortBy } })} className={styles.navButton}>
+        {/* <button onClick={() => navigate("/blog", { state: { selectedFilter: state.selectedFilter, sortBy: state.sortBy } })} className={styles.navButton}>
+          <FontAwesomeIcon icon={faArrowUp} size="xl" />
+        </button> */}
+        <button
+          onClick={() =>
+            navigate("/blog", {
+              state: {
+                selectedFilter: state.selectedFilter,
+                sortBy: state.sortBy,
+              },
+            })
+          }
+          className={styles.navButton}
+        >
           <FontAwesomeIcon icon={faArrowLeft} size="xl" />
         </button>
       </div>
       <div className={styles.contentContainer}>
         <header>
-          <h1 className={styles.blogTitle}>
-            {state.title}
-          </h1>
+          <h1 className={styles.blogTitle}>{state.title}</h1>
           <div className={styles.blogDateTime}>
             <p>
               <time dateTime="2024-02-01">{state.date}</time>
@@ -175,9 +186,31 @@ export default function BlogArticle() {
             </p>
           </div>
         </section>
+
+        <footer>
+          <h2>Comments</h2>
+          <form>
+            <label>Add a comment:</label>
+            <br />
+            <textarea></textarea>
+            <br />
+            <button type="submit">Post</button>
+          </form>
+
+          <div>
+            <h3>Posted Comments</h3>
+            <ul>
+              <li><p>Comment 1</p></li>
+              <li><p>Comment 2</p></li>
+            </ul>
+          </div>
+        </footer>
       </div>
       <div className={styles.navContainer}>
-        <button onClick={() => navigate("/blog", { state: { key: state } })} className={styles.navButton}>
+        <button
+          onClick={() => navigate("/blog", { state: { key: state } })}
+          className={styles.navButton}
+        >
           <FontAwesomeIcon icon={faArrowRight} size="xl" />
         </button>
       </div>
