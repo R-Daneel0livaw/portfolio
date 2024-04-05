@@ -82,6 +82,20 @@
     margin-top: 4rem;
 }
 
+.commentsSumbmissionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.commentsSumbmissionContainer button {
+    width: fit-content;
+}
+
+.commentsSumbmissionLabel {
+    color: #4f4f4f;
+}
+
 .commentsViewContainer {
     display: flex;
     flex-direction: column;

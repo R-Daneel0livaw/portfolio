@@ -190,7 +190,7 @@ export default function BlogArticle() {
         <footer className={styles.commentsContainer}>
           <h2 className={styles.commentsTitle}>Comments</h2>
           <form className={styles.commentsSumbmissionContainer}>
-            <label>Add a comment:</label>
+            <label className={styles.commentsSumbmissionLabel}>Add a comment:</label>
             <br />
             <textarea></textarea>
             <br />
