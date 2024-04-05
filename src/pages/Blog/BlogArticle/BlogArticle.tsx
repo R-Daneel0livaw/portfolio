@@ -206,6 +206,10 @@ export default function BlogArticle() {
                   useState hook really helpful. Looking forward to diving deeper
                   into React hooks. Thanks for sharing!
                 </p>
+                <div className={styles.commentsPostEnding}>
+                  <p>Anonymous Cat</p>
+                  <p>17 Mar 2024</p>
+                </div>
               </li>
               <li className={styles.commentsPostContent}>
                 <p>
@@ -217,6 +221,10 @@ export default function BlogArticle() {
                 <p>
                   Keep up the good work!
                 </p>
+                <div className={styles.commentsPostEnding}>
+                  <p>Frank Potter</p>
+                  <p>15 Jan 2024</p>
+                </div>
               </li>
             </ul>
           </div>
