@@ -187,9 +187,9 @@ export default function BlogArticle() {
           </div>
         </section>
 
-        <footer>
-          <h2>Comments</h2>
-          <form>
+        <footer className={styles.commentsContainer}>
+          <h2 className={styles.commentsTitle}>Comments</h2>
+          <form className={styles.commentsSumbmissionContainer}>
             <label>Add a comment:</label>
             <br />
             <textarea></textarea>
@@ -197,11 +197,27 @@ export default function BlogArticle() {
             <button type="submit">Post</button>
           </form>
 
-          <div>
-            <h3>Posted Comments</h3>
+          <div className={styles.commentsViewContainer}>
+            <h3 className={styles.commentsPostTitle}>Posted Comments</h3>
             <ul>
-              <li><p>Comment 1</p></li>
-              <li><p>Comment 2</p></li>
+              <li className={styles.commentsPostContent}>
+                <p>
+                  Great article! I found the explanation on how to use the
+                  useState hook really helpful. Looking forward to diving deeper
+                  into React hooks. Thanks for sharing!
+                </p>
+              </li>
+              <li className={styles.commentsPostContent}>
+                <p>
+                  This article clarified a lot of things for me about React
+                  hooks. I particularly liked the section on custom hooks and
+                  how they can simplify code reuse. Keep up the good work!"
+                </p>
+
+                <p>
+                  Keep up the good work!
+                </p>
+              </li>
             </ul>
           </div>
         </footer>
