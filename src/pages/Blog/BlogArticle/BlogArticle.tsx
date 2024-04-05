@@ -215,7 +215,7 @@ export default function BlogArticle() {
                 <p>
                   This article clarified a lot of things for me about React
                   hooks. I particularly liked the section on custom hooks and
-                  how they can simplify code reuse. Keep up the good work!"
+                  how they can simplify code reuse. Keep up the good work!
                 </p>
 
                 <p>
