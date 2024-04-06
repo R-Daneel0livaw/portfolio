@@ -190,24 +190,28 @@ export default function BlogArticle() {
         <footer className={styles.commentsContainer}>
           <h2 className={styles.commentsTitle}>Comments</h2>
           <form className={styles.commentsSumbmissionContainer}>
-            <label className={styles.commentsSumbmissionLabel}>
-              Add a comment
-            </label>
-            <br />
-            <textarea></textarea>
-            <br />
-            <input
-              className={styles.innerInput}
-              type="text"
-              name="name"
-              id="name"
-            />
-            <label className={styles.innerLabel} htmlFor="name">
-              Name
-            </label>
-            <button type="submit" className={styles.commentSubmit}>
-              Post
-            </button>
+            <div className={styles.commentsSumbmissionContent}>
+              <label className={styles.commentsSumbmissionLabel}>
+                Add a comment
+              </label>
+              <br />
+              <textarea></textarea>
+              <br />
+              <input
+                className={styles.innerInput}
+                type="text"
+                name="name"
+                id="name"
+              />
+              <label className={styles.innerLabel} htmlFor="name">
+                Name
+              </label>
+            </div>
+            <div className={styles.commentsSumbmission}>
+              <button type="submit" className={styles.commentSubmit}>
+                Post
+              </button>
+            </div>
           </form>
 
           <div className={styles.commentsViewContainer}>

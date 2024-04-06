@@ -83,10 +83,15 @@
 }
 
 .commentsSumbmissionContainer {
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    gap: 2rem;
+}
+
+.commentsSumbmissionContent {
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    width: 50%;
 }
 
 .commentsSumbmissionContainer button {
@@ -96,6 +101,11 @@
 .commentsSumbmissionLabel {
     color: #4f4f4f;
 }
+
+.commentsSumbmission {
+    align-self: flex-end;
+}
+
 
 .commentSubmit {
     padding: 5px 1rem;
