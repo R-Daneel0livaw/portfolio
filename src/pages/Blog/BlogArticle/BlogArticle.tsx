@@ -196,7 +196,7 @@ export default function BlogArticle() {
             <br />
             <textarea></textarea>
             <br />
-            <button type="submit">Post</button>
+            <button type="submit" className={styles.commentSubmit}>Post</button>
           </form>
 
           <div className={styles.commentsViewContainer}>

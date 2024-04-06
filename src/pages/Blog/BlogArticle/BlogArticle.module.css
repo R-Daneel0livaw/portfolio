@@ -96,6 +96,20 @@
     color: #4f4f4f;
 }
 
+.commentSubmit {
+    padding: 5px 1rem;
+    border-radius: 1.5rem;
+    background-color: #ff416c;
+    color: #FFF;
+    border: none;
+    filter: drop-shadow(0px 1px 1px #4f4f4f);
+    cursor: pointer;
+}
+
+.commentSubmit:hover {
+    background-color: #f19cbb;
+}
+
 .commentsViewContainer {
     display: flex;
     flex-direction: column;
