@@ -190,7 +190,9 @@ export default function BlogArticle() {
         <footer className={styles.commentsContainer}>
           <h2 className={styles.commentsTitle}>Comments</h2>
           <form className={styles.commentsSumbmissionContainer}>
-            <label className={styles.commentsSumbmissionLabel}>Add a comment:</label>
+            <label className={styles.commentsSumbmissionLabel}>
+              Add a comment:
+            </label>
             <br />
             <textarea></textarea>
             <br />
@@ -200,27 +202,32 @@ export default function BlogArticle() {
           <div className={styles.commentsViewContainer}>
             <h3 className={styles.commentsPostTitle}>Posted Comments</h3>
             <ul>
-              <li className={styles.commentsPostContent}>
-                <p>
-                  Great article! I found the explanation on how to use the
-                  useState hook really helpful. Looking forward to diving deeper
-                  into React hooks. Thanks for sharing!
-                </p>
+              <li className={styles.commentsPost}>
+                <div className={styles.commentsPostContent}>
+                  <p className={styles.comment}>
+                    Great article! I found the explanation on how to use the
+                    useState hook really helpful. Looking forward to diving
+                    deeper into React hooks. Thanks for sharing!
+                  </p>
+                </div>
                 <div className={styles.commentsPostEnding}>
                   <p>Anonymous Cat</p>
                   <p>17 Mar 2024</p>
                 </div>
               </li>
-              <li className={styles.commentsPostContent}>
-                <p>
-                  This article clarified a lot of things for me about React
-                  hooks. I particularly liked the section on custom hooks and
-                  how they can simplify code reuse.
-                </p>
+              <li className={styles.commentsPost}>
+                <div className={styles.commentsPostContent}>
+                  <p className={styles.comment}>
+                    This article clarified a lot of things for me about React
+                    hooks. I particularly liked the section on custom hooks and
+                    how they can simplify code reuse. This article clarified a
+                    lot of things for me about React hooks. I particularly liked
+                    the section on custom hooks and how they can simplify code
+                    reuse.
+                  </p>
 
-                <p>
-                  Keep up the good work!
-                </p>
+                  <p>Keep up the good work!</p>
+                </div>
                 <div className={styles.commentsPostEnding}>
                   <p>Frank Potter</p>
                   <p>15 Jan 2024</p>
