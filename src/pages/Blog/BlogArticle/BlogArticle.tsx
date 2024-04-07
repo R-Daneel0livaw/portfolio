@@ -191,21 +191,44 @@ export default function BlogArticle() {
           <h2 className={styles.commentsTitle}>Comments</h2>
           <form className={styles.commentsSumbmissionContainer}>
             <div className={styles.commentsSumbmissionContent}>
-              <label className={styles.commentsSumbmissionLabel}>
-                Add a comment
-              </label>
-              <br />
-              <textarea></textarea>
-              <br />
-              <input
-                className={styles.innerInput}
-                type="text"
-                name="name"
-                id="name"
-              />
-              <label className={styles.innerLabel} htmlFor="name">
-                Name
-              </label>
+              <div className={styles.commentsSumbmissionFieldHolder}>
+                <textarea
+                  className={styles.commentsSumbmissionField}
+                ></textarea>
+                <label className={styles.commentsSumbmissionLabel}>
+                  Add a comment
+                </label>
+              </div>
+              <div className={styles.commentsSumbmissionMultiFieldHolder}>
+                <div className={styles.commentsSumbmissionFieldHolder}>
+                  <input
+                    className={styles.commentsSumbmissionField}
+                    type="text"
+                    name="fname"
+                    id="fname"
+                  />
+                  <label
+                    className={styles.commentsSumbmissionLabel}
+                    htmlFor="fname"
+                  >
+                    First Name
+                  </label>
+                </div>
+                <div className={styles.commentsSumbmissionFieldHolder}>
+                  <input
+                    className={styles.commentsSumbmissionField}
+                    type="text"
+                    name="lname"
+                    id="lname"
+                  />
+                  <label
+                    className={styles.commentsSumbmissionLabel}
+                    htmlFor="lname"
+                  >
+                    Last Name
+                  </label>
+                </div>
+              </div>
             </div>
             <div className={styles.commentsSumbmission}>
               <button type="submit" className={styles.commentSubmit}>

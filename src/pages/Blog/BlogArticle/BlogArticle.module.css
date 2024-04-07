@@ -98,12 +98,39 @@
     width: fit-content;
 }
 
+.commentsSumbmissionFieldHolder {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.commentsSumbmissionMultiFieldHolder {
+    display: flex;
+    gap: 1rem;
+}
+
 .commentsSumbmissionLabel {
     color: #4f4f4f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    color: #aeb4ba;
+    font-weight: bold;
+    cursor: text;
+    transition: .3s ease-in-out;
 }
 
 .commentsSumbmission {
     align-self: flex-end;
+}
+
+.commentsSumbmissionField {
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    font-weight: normal;
+    width: 100%;
 }
 
 
