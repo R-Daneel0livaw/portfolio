@@ -196,7 +196,7 @@ export default function BlogArticle() {
                   className={styles.commentsSumbmissionField}
                 ></textarea>
                 <label className={styles.commentsSumbmissionLabel}>
-                  Add a comment
+                  Add a Comment
                 </label>
               </div>
               <div className={styles.commentsSumbmissionMultiFieldHolder}>
