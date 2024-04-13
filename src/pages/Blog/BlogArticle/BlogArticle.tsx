@@ -2,7 +2,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import styles from "./BlogArticle.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 export default function BlogArticle() {
   const [firstName, setFirstName] = useState("");
@@ -34,9 +34,9 @@ export default function BlogArticle() {
   const location = useLocation();
   const state = location.state as ArticleWithPageState;
 
-  // useLayoutEffect(() => {
-  //   window.scrollTo(0, 0);
-  // });
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
