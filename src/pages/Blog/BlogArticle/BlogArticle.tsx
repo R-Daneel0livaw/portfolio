@@ -194,6 +194,7 @@ export default function BlogArticle() {
               <div className={styles.commentsSumbmissionFieldHolder}>
                 <textarea
                   className={styles.commentsSumbmissionField}
+                  required
                 ></textarea>
                 <label className={styles.commentsSumbmissionLabel}>
                   Add a Comment
@@ -206,6 +207,7 @@ export default function BlogArticle() {
                     type="text"
                     name="fname"
                     id="fname"
+                    required
                   />
                   <label
                     className={styles.commentsSumbmissionLabel}
@@ -220,6 +222,7 @@ export default function BlogArticle() {
                     type="text"
                     name="lname"
                     id="lname"
+                    required
                   />
                   <label
                     className={styles.commentsSumbmissionLabel}
