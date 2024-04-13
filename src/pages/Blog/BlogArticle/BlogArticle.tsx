@@ -2,9 +2,13 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import styles from "./BlogArticle.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useLayoutEffect } from 'react';
+import { useState } from 'react';
 
 export default function BlogArticle() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [message, setMessage] = useState("");
+
   const { id } = useParams();
   const navigate = useNavigate();
   console.log(id);
@@ -30,9 +34,23 @@ export default function BlogArticle() {
   const location = useLocation();
   const state = location.state as ArticleWithPageState;
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
+  // useLayoutEffect(() => {
+  //   window.scrollTo(0, 0);
+  // });
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    console.log("Form submitted:", {
+      firstName,
+      lastName,
+      message,
+    });
+
+    setFirstName("");
+    setLastName("");
+    setMessage("");
+  };
 
   return (
     <section id="blog-article" className={styles.articleContainer}>
@@ -189,11 +207,13 @@ export default function BlogArticle() {
 
         <footer className={styles.commentsContainer}>
           <h2 className={styles.commentsTitle}>Comments</h2>
-          <form className={styles.commentsSumbmissionContainer}>
+          <form className={styles.commentsSumbmissionContainer} onSubmit={handleSubmit}>
             <div className={styles.commentsSumbmissionContent}>
               <div className={styles.commentsSumbmissionFieldHolder}>
                 <textarea
                   className={styles.commentsSumbmissionField}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   required
                 ></textarea>
                 <label className={styles.commentsSumbmissionLabel}>
@@ -207,6 +227,8 @@ export default function BlogArticle() {
                     type="text"
                     name="fname"
                     id="fname"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                     required
                   />
                   <label
@@ -222,6 +244,8 @@ export default function BlogArticle() {
                     type="text"
                     name="lname"
                     id="lname"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
                     required
                   />
                   <label
