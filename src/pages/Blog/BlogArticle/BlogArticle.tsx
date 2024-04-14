@@ -2,13 +2,15 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import styles from "./BlogArticle.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useLayoutEffect, useState } from 'react';
+import { ChangeEvent, useLayoutEffect, useRef, useState } from 'react';
 
 export default function BlogArticle() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [message, setMessage] = useState("");
   const [comments, setComments] = useState<Comment[]>(getComments());
+  const [textareaHeight, setTextareaHeight] = useState("1.85rem");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -66,6 +68,20 @@ export default function BlogArticle() {
     ];
     return comments;
   }
+  
+  const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const { scrollHeight } = event.target;
+    const maxHeight = 200;
+
+    setMessage(event.target.value);
+    if (event.target.value === "") {
+      setTextareaHeight("1.85rem");
+    } else {
+      setTextareaHeight(
+        scrollHeight < maxHeight ? scrollHeight + "px" : maxHeight + "px"
+      );
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -253,7 +269,9 @@ export default function BlogArticle() {
                 <textarea
                   className={styles.commentsSumbmissionField}
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={handleTextAreaChange}
+                  style={{ height: textareaHeight }}
+                  ref={textareaRef}
                   required
                 ></textarea>
                 <label className={styles.commentsSumbmissionLabel}>
