@@ -68,7 +68,7 @@ export default function BlogArticle() {
     ];
     return comments;
   }
-  
+
   const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const { scrollHeight } = event.target;
     const maxHeight = 200;
@@ -80,6 +80,12 @@ export default function BlogArticle() {
       setTextareaHeight(
         scrollHeight < maxHeight ? scrollHeight + "px" : maxHeight + "px"
       );
+    }
+  };
+
+  const handleLabelClick = () => {
+    if (textareaRef.current) {
+      textareaRef.current.focus();
     }
   };
 
@@ -274,7 +280,7 @@ export default function BlogArticle() {
                   ref={textareaRef}
                   required
                 ></textarea>
-                <label className={styles.commentsSumbmissionLabel}>
+                <label onClick={handleLabelClick} className={styles.commentsSumbmissionLabel}>
                   Add a Comment
                 </label>
               </div>
