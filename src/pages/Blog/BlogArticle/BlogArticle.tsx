@@ -8,10 +8,15 @@ export default function BlogArticle() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [message, setMessage] = useState("");
+  const [comments, setComments] = useState<Comment[]>(getComments());
 
   const { id } = useParams();
   const navigate = useNavigate();
-  console.log(id);
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   type Article = {
     id: string;
@@ -29,14 +34,38 @@ export default function BlogArticle() {
     sortBy: string;
   };
 
+  type Comment = {
+    id: string;
+    firstName: string;
+    lastName: string;
+    text: string;
+    date: string;
+  };
+
   type ArticleWithPageState = Article & PageState;
 
-  const location = useLocation();
+  console.log(id);
   const state = location.state as ArticleWithPageState;
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  function getComments() {
+    let comments: Comment[] = [
+      {
+        id: "2",
+        firstName: 'Anonymous',
+        lastName: 'Cat',
+        text: 'Great article! I found the explanation on how to use the useState hook really helpful. Looking forward to diving deeper into React hooks. Thanks for sharing!',
+        date: '17 Mar 2024'
+      },
+      {
+        id: "1",
+        firstName: 'Frank',
+        lastName: 'Potter',
+        text: 'This article clarified a lot of things for me about React hooks. I particularly liked the section on custom hooks and how they can simplify code reuse. This article clarified a lot of things for me about React hooks. I particularly liked the section on custom hooks and how they can simplify code reuse.',
+        date: '15 Jan 2024'
+      }
+    ];
+    return comments;
+  }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,9 +76,20 @@ export default function BlogArticle() {
       message,
     });
 
+    const latestComment = comments[0];
+    const commentId = Number.parseInt(latestComment.id) + 1;
+    setComments([{ id: commentId + "", firstName, lastName, text: message, date: formatDate(new Date()) }, ...comments])
     setFirstName("");
     setLastName("");
     setMessage("");
+  };
+
+  const formatDate = (date: Date) => {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+    const year = date.getFullYear().toString().slice(-2);
+    return `${day} ${month} ${year}`;
   };
 
   return (
@@ -267,37 +307,19 @@ export default function BlogArticle() {
           <div className={styles.commentsViewContainer}>
             <h3 className={styles.commentsPostTitle}>Posted Comments</h3>
             <ul>
-              <li className={styles.commentsPost}>
-                <div className={styles.commentsPostContent}>
-                  <p className={styles.comment}>
-                    Great article! I found the explanation on how to use the
-                    useState hook really helpful. Looking forward to diving
-                    deeper into React hooks. Thanks for sharing!
-                  </p>
-                </div>
-                <div className={styles.commentsPostEnding}>
-                  <p>Anonymous Cat</p>
-                  <p>17 Mar 2024</p>
-                </div>
-              </li>
-              <li className={styles.commentsPost}>
-                <div className={styles.commentsPostContent}>
-                  <p className={styles.comment}>
-                    This article clarified a lot of things for me about React
-                    hooks. I particularly liked the section on custom hooks and
-                    how they can simplify code reuse. This article clarified a
-                    lot of things for me about React hooks. I particularly liked
-                    the section on custom hooks and how they can simplify code
-                    reuse.
-                  </p>
-
-                  <p>Keep up the good work!</p>
-                </div>
-                <div className={styles.commentsPostEnding}>
-                  <p>Frank Potter</p>
-                  <p>15 Jan 2024</p>
-                </div>
-              </li>
+              {comments.map((comment) => (
+                <li key={comment.id} className={styles.commentsPost}>
+                  <div className={styles.commentsPostContent}>
+                    <p className={styles.comment}>
+                      {comment.text}
+                    </p>
+                  </div>
+                  <div className={styles.commentsPostEnding}>
+                    <p>{comment.firstName} {comment.lastName}</p>
+                    <p>{comment.date}</p>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </footer>
