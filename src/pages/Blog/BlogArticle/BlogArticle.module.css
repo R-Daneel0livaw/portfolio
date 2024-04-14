@@ -75,11 +75,15 @@
     color: #4f4f4f;
 }
 
+.separator {
+    margin: 4rem 0;
+    color: #fafafa;
+}
+
 .commentsContainer {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-top: 8rem;
 }
 
 .commentsSumbmissionContainer {

@@ -267,6 +267,8 @@ export default function BlogArticle() {
           </div>
         </section>
 
+        <hr className={styles.separator}/>
+
         <footer className={styles.commentsContainer}>
           <h2 className={styles.commentsTitle}>Comments</h2>
           <form className={styles.commentsSumbmissionContainer} onSubmit={handleSubmit}>
