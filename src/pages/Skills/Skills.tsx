@@ -6,7 +6,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Skills.module.css";
 import React, { useState } from "react";
-import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import CollapsibleSection from "../../components/CollapsibleSection/CollapsibleSection";
 
 export default function Skills() {
@@ -510,7 +509,6 @@ export default function Skills() {
           }
         </div>
       </div>
-      <SocialMedia />
     </section>
   );
 }

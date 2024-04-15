@@ -1,6 +1,5 @@
 import ContactForm from "../../components/ContactForm/ContactForm";
 import PageHeader from "../../components/PageHeader/PageHeader";
-import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import styles from "./Contact.module.css";
 
 export default function Contact() {
@@ -30,8 +29,6 @@ export default function Contact() {
 
         <ContactForm />
       </div>
-
-      <SocialMedia />
     </section>
   );
 }

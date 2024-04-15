@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./AboutMe.module.css";
 import SignatureWithButton from "../../components/SignatureWithButton/SignatureWithButton";
 import { useState } from "react";
-import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import CollapsibleSection from "../../components/CollapsibleSection/CollapsibleSection";
 
 type ToggleFunction = (sectionTitle: string | null) => void;
@@ -129,7 +128,6 @@ export default function AboutMe() {
           />
         </footer>
       </div>
-      <SocialMedia />
     </section>
   );
 }

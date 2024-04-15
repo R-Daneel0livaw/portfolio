@@ -1,6 +1,5 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
 import SignatureWithButton from "../../components/SignatureWithButton/SignatureWithButton";
-import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import styles from "./Home.module.css";
 
 export default function Home() {
@@ -42,7 +41,6 @@ export default function Home() {
         </div>
         <SignatureWithButton buttonText="Hire Me" includeSignature={true} enabled={true}/>
       </div>
-      <SocialMedia />
     </section>
   );
 }

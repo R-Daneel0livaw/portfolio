@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState } from "react";
 import Loading from "./Loading";
 import styles from "./MainLayout.module.css";
 import PathConstants from "../../routes/pathConstants";
+import SocialMedia from "../SocialMedia/SocialMedia";
 
 export default function Layout() {
   const [currentPage, setCurrentPage] = useState(PathConstants.HOME);
@@ -20,6 +21,7 @@ export default function Layout() {
         <Suspense fallback={<Loading />}>
           <Outlet />
         </Suspense>
+        <SocialMedia />
       </div>
     </>
   );
