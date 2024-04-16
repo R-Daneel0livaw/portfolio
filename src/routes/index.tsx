@@ -20,7 +20,7 @@ function getSkills() {
 }
 
 function getProjects() {
-  const Projects = lazy(() => import("../pages/Projects"));
+  const Projects = lazy(() => import("../pages/Project/Projects"));
   return <Projects />;
 }
 
