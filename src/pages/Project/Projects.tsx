@@ -7,7 +7,7 @@ export default function Projects() {
           <p>Description of the highlighted project.</p>
           <button>View Project</button>
         </div>
-        <img src="project1.jpg" alt="Project 1" />
+        <img src="highlight.jpg" alt="Highlighted Project" />
       </section>
 
       <section className="featured-projects">
