@@ -33,22 +33,22 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className="featuredProjects">
-        <h3>Featured Projects</h3>
+      <section className={styles.subProjects}>
+        <h3 className={styles.subProjectsTitle}>Featured Projects</h3>
         <div className="projectGrid">
           <div className="projectCard">
-            <img src="project1.jpg" alt="Project 1" />
-              <h4>Project 1</h4>
+            {/* <img src="project1.jpg" alt="Project 1" /> */}
+            <h4>Project 1</h4>
           </div>
         </div>
       </section>
 
-      <section className="allProjects">
-        <h3>All Projects</h3>
+      <section className={styles.subProjects}>
+        <h3 className={styles.subProjectsTitle}>All Projects</h3>
         <div className="projectGrid">
           <div className="projectCard">
-            <img src="project2.jpg" alt="Project 2" />
-              <h4>Project 2</h4>
+            {/* <img src="project2.jpg" alt="Project 2" /> */}
+            <h4>Project 2</h4>
           </div>
         </div>
       </section>

@@ -64,3 +64,18 @@
     background-position: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+
+.subProjectsTitle {
+    font-size: 1.2rem;
+    color: #5C748C;
+}
+
+.subProjects {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.subProjects:not(:last-child) {
+  margin-bottom: 4rem;
+}
