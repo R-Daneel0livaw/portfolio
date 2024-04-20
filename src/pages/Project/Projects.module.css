@@ -40,22 +40,26 @@
 
 
 .container {
-  position: relative;
-  width: 250px;
-  height: 250px;
-  background-color: #204b41;
-  border-radius: 10px;
-  margin-top: 4rem;
-  margin-left: auto;
-  margin-right: auto;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background-color: #204b41;
+    border-radius: 10px;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('/src/img/basketball.jpg');
 }
 
 .square {
-  position: absolute;
-  width: 250px; /* Adjust width as needed */
-  height: 250px; /* Adjust height as needed */
-  background-color: #f2b664; /* Adjust background color as needed */
-  border-radius: 10px; /* Adjust border radius for rounded corners */
-  top: 10%; /* Adjust distance from the top */
-  left: 15%; /* Adjust distance from the right */
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-color: #f2b664;
+    border-radius: 10px;
+    top: 10%;
+    left: 15%;
+    background-image:url('/src/img/detective.jpg');
+    background-size: cover;
+    background-position: center;
 }
