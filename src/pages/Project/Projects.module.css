@@ -1,6 +1,6 @@
 .highlightedProject {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: 2rem;
     margin-bottom: 6rem;
 }
@@ -37,7 +37,6 @@
 .projectDetailsButtonIcon {
     margin-right: .3rem;
 }
-
 
 .container {
     position: relative;
