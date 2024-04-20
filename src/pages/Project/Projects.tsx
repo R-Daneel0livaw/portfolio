@@ -1,12 +1,14 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Projects.module.css";
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export default function Projects() {
   return (
     <section>
       <section className={styles.highlightedProject}>
         <div className={styles.projectDetails}>
-          <h2>Sports Detective</h2>
-          <p>
+          <h2 className={styles.projectDetailsTitle}>Sports Detective</h2>
+          <p className={styles.projectDetailsText}>
             Sports Detective empowers users to harness the power of machine learning for in-depth sports analysis.
             Dive into historical sports data, build custom machine learning models, and leverage sophisticated algorithms
             to gain valuable insights into player performance, team dynamics, and game outcomes. Whether you're a seasoned
@@ -14,13 +16,14 @@ export default function Projects() {
             refining your models. 
             
           </p>
-          <p>
-            That's not all. Our platform also facilitates a vibrant marketplace where users can
+          <p className={styles.projectDetailsText}>
+
+            Our platform also facilitates a vibrant marketplace where users can
             buy and sell their models, fostering a community of collaboration and innovation. Follow top performers, discover
             winning strategies, and stay ahead of the game with real-time updates and betting line integration. Join Sports Detective
             today and elevate your sports analysis experience to new heights!
           </p>
-          <button>View Project</button>
+          <button className={styles.projectDetailsButton}><FontAwesomeIcon icon={faGithub} size="lg" className={styles.projectDetailsButtonIcon} />View Project</button>
         </div>
         <img src="highlight.jpg" alt="Highlighted Project" />
       </section>
