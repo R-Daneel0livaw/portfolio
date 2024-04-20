@@ -25,7 +25,12 @@ export default function Projects() {
           </p>
           <button className={styles.projectDetailsButton}><FontAwesomeIcon icon={faGithub} size="lg" className={styles.projectDetailsButtonIcon} />View Project</button>
         </div>
-        <img src="highlight.jpg" alt="Highlighted Project" />
+        <div>
+          <div className={styles.container}>
+            <div className={styles.square}></div>
+          </div>
+          {/* <img src="highlight.jpg" alt="Highlighted Project" /> */}
+        </div>
       </section>
 
       <section className="featuredProjects">
