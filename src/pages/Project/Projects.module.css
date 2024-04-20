@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 2rem;
-    margin-bottom: 6rem;
+    margin-bottom: 10rem;
 }
 
 .projectDetails {
@@ -68,17 +68,19 @@
 .subProjectsTitle {
     font-size: 1.2rem;
     color: #5C748C;
+    /* margin-left: 1.5rem; */
 }
 
 .subProjects {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     margin-bottom: 4rem;
 }
 
 .projectGrid {
     display: flex;
+    gap: 2rem;
 }
 
 .projectCard {
@@ -91,6 +93,7 @@
 .projectTitle {
     align-self: center;
     font-size: 1.1rem;
+    color: #604b2e;
 }
 
 .featureSquare {

@@ -40,6 +40,14 @@ export default function Projects() {
             <div className={styles.featureSquare}></div>
             <h4 className={styles.projectTitle}>Tidy Tuesday</h4>
           </div>
+          <div className={styles.projectCard}>
+            <div className={styles.featureSquare}></div>
+            <h4 className={styles.projectTitle}>Tidy Tuesday</h4>
+          </div>
+          <div className={styles.projectCard}>
+            <div className={styles.featureSquare}></div>
+            <h4 className={styles.projectTitle}>Tidy Tuesday</h4>
+          </div>
         </div>
       </section>
 
@@ -48,7 +56,19 @@ export default function Projects() {
         <div className={styles.projectGrid}>
           <div className={styles.projectCard}>
             <div className={styles.featureSquare}></div>
+            <h4 className={styles.projectTitle}>Project 1</h4>
+          </div>
+          <div className={styles.projectCard}>
+            <div className={styles.featureSquare}></div>
             <h4 className={styles.projectTitle}>Project 2</h4>
+          </div>
+          <div className={styles.projectCard}>
+            <div className={styles.featureSquare}></div>
+            <h4 className={styles.projectTitle}>Project 3</h4>
+          </div>
+          <div className={styles.projectCard}>
+            <div className={styles.featureSquare}></div>
+            <h4 className={styles.projectTitle}>Project 4</h4>
           </div>
         </div>
       </section>
