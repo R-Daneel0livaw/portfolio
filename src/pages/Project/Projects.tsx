@@ -35,20 +35,20 @@ export default function Projects() {
 
       <section className={styles.subProjects}>
         <h3 className={styles.subProjectsTitle}>Featured Projects</h3>
-        <div className="projectGrid">
-          <div className="projectCard">
-            {/* <img src="project1.jpg" alt="Project 1" /> */}
-            <h4>Project 1</h4>
+        <div className={styles.projectGrid}>
+          <div className={styles.projectCard}>
+            <div className={styles.featureSquare}></div>
+            <h4 className={styles.projectTitle}>Tidy Tuesday</h4>
           </div>
         </div>
       </section>
 
       <section className={styles.subProjects}>
         <h3 className={styles.subProjectsTitle}>All Projects</h3>
-        <div className="projectGrid">
-          <div className="projectCard">
-            {/* <img src="project2.jpg" alt="Project 2" /> */}
-            <h4>Project 2</h4>
+        <div className={styles.projectGrid}>
+          <div className={styles.projectCard}>
+            <div className={styles.featureSquare}></div>
+            <h4 className={styles.projectTitle}>Project 2</h4>
           </div>
         </div>
       </section>
