@@ -29,7 +29,6 @@ export default function Projects() {
           <div className={styles.container}>
             <div className={styles.square}></div>
           </div>
-          {/* <img src="highlight.jpg" alt="Highlighted Project" /> */}
         </div>
       </section>
 
@@ -69,6 +68,22 @@ export default function Projects() {
           <div className={styles.projectCard}>
             <div className={styles.featureSquare}></div>
             <h4 className={styles.projectTitle}>Project 4</h4>
+          </div>
+          <div className={styles.projectCard}>
+            <div className={styles.featureSquare}></div>
+            <h4 className={styles.projectTitle}>Project 5</h4>
+          </div>
+          <div className={styles.projectCard}>
+            <div className={styles.featureSquare}></div>
+            <h4 className={styles.projectTitle}>Project 6</h4>
+          </div>
+          <div className={styles.projectCard}>
+            <div className={styles.featureSquare}></div>
+            <h4 className={styles.projectTitle}>Project 7</h4>
+          </div>
+          <div className={styles.projectCard}>
+            <div className={styles.featureSquare}></div>
+            <h4 className={styles.projectTitle}>Project 8</h4>
           </div>
         </div>
       </section>
