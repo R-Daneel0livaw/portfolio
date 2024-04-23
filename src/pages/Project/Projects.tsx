@@ -36,6 +36,10 @@ export default function Projects() {
         <h3 className={styles.subProjectsTitle}>Featured Projects</h3>
         <div className={styles.projectGrid}>
           <div className={styles.projectCard}>
+            <div className={styles.featureSquare} style={{ backgroundImage: `url('/src/img/todo.jpg')` }}></div>
+            <h4 className={styles.projectTitle}>TODO</h4>
+          </div>
+          <div className={styles.projectCard}>
             <div className={styles.featureSquare} style={{ backgroundImage: `url('/src/img/tidy.jpg')` }}></div>
             <h4 className={styles.projectTitle}>Tidy Tuesday</h4>
           </div>
@@ -46,6 +50,10 @@ export default function Projects() {
           <div className={styles.projectCard}>
             <div className={styles.featureSquare} style={{ backgroundImage: `url('/src/img/knowledge.jpg')` }}></div>
             <h4 className={styles.projectTitle}>Knowledge Journey 365</h4>
+          </div>
+          <div className={styles.projectCard}>
+            <div className={styles.featureSquare} style={{ backgroundImage: `url('/src/img/portfolio.jpg')` }}></div>
+            <h4 className={styles.projectTitle}>Portfolio</h4>
           </div>
         </div>
       </section>
