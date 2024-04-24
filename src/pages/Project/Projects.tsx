@@ -25,6 +25,61 @@ export default function Projects() {
     window.scrollTo(0, 0);
   }
 
+  type Project = {
+    name: string;
+    description: string[];
+    image1: string;
+    image2: string;
+    featured: boolean;
+  };
+
+  const projectMap: Map<number, Project> = new Map([
+    [1, {
+      name: "Sports Detective",
+      description: ["Description for Project 1"],
+      image1: "src/img/detective.jpg",
+      image2: "src/img/basketball.jpg",
+      featured: true
+    }],
+    [2, {
+      name: "TODO",
+      description: ["Description for Project 2"],
+      image1: "src/img/todo.jpg",
+      image2: "",
+      featured: true
+    }],
+    [3, {
+      name: "Tidy Tuesday",
+      description: ["Description for Project 3"],
+      image1: "src/img/tidy.jpg",
+      image2: "",
+      featured: true
+    }],
+    [4, {
+      name: "Job Tracker",
+      description: ["Description for Project 4"],
+      image1: "src/img/job.jpg",
+      image2: "",
+      featured: true
+    }],
+    [5, {
+      name: "Knowledge Journey 365",
+      description: ["Description for Project 5"],
+      image1: "src/img/knowledge.jpg",
+      image2: "",
+      featured: true
+    }],
+    [6, {
+      name: "Protfolio",
+      description: ["Description for Project 6"],
+      image1: "src/img/portfolio.jpg",
+      image2: "",
+      featured: true
+    }],
+  ]);
+
+  console.log(projectMap);
+
   return (
     <section>
       <section className={styles.highlightedProject}>
