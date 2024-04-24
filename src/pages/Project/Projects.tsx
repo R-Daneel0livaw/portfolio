@@ -6,8 +6,17 @@ import { useState } from "react";
 export default function Projects() {
   const [backgroundImage, setBackgroundImage] = useState('/src/img/detective.jpg');
 
-  const handleProjectCardClick = (imageUrl: string) => {
-    setBackgroundImage(imageUrl);
+  const handleProjectCardClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    const clickedCard = event.currentTarget;
+    const featureSquare = clickedCard.querySelector(`.${styles.featureSquare}`) as HTMLElement;
+    const clickedBackgroundImage = window.getComputedStyle(featureSquare).getPropertyValue('background-image');
+    const relativeImagePath = clickedBackgroundImage.substring(clickedBackgroundImage.indexOf('/src')).replace(/["')]/g, '');
+    
+    setBackgroundImage(relativeImagePath);
+
+    if (featureSquare) {
+      featureSquare.style.backgroundImage = `url(${backgroundImage})`;
+    }
   };
 
   return (
@@ -42,23 +51,23 @@ export default function Projects() {
       <section className={styles.subProjects}>
         <h3 className={styles.subProjectsTitle}>Featured Projects</h3>
         <div className={styles.projectGrid}>
-          <div className={styles.projectCard} onClick={() => handleProjectCardClick('/src/img/todo.jpg')}>
+          <div className={styles.projectCard} onClick={handleProjectCardClick}>
             <div className={styles.featureSquare} style={{ backgroundImage: `url('/src/img/todo.jpg')` }}></div>
             <h4 className={styles.projectTitle}>TODO</h4>
           </div>
-          <div className={styles.projectCard} onClick={() => handleProjectCardClick('/src/img/tidy.jpg')}>
+          <div className={styles.projectCard} onClick={handleProjectCardClick}>
             <div className={styles.featureSquare} style={{ backgroundImage: `url('/src/img/tidy.jpg')` }}></div>
             <h4 className={styles.projectTitle}>Tidy Tuesday</h4>
           </div>
-          <div className={styles.projectCard} onClick={() => handleProjectCardClick('/src/img/job.jpg')}>
+          <div className={styles.projectCard} onClick={handleProjectCardClick}>
             <div className={styles.featureSquare} style={{ backgroundImage: `url('/src/img/job.jpg')` }}></div>
             <h4 className={styles.projectTitle}>Job Tracker</h4>
           </div>
-          <div className={styles.projectCard} onClick={() => handleProjectCardClick('/src/img/knowledge.jpg')}>
+          <div className={styles.projectCard} onClick={handleProjectCardClick}>
             <div className={styles.featureSquare} style={{ backgroundImage: `url('/src/img/knowledge.jpg')` }}></div>
             <h4 className={styles.projectTitle}>Knowledge Journey 365</h4>
           </div>
-          <div className={styles.projectCard} onClick={() => handleProjectCardClick('/src/img/portfolio.jpg')}>
+          <div className={styles.projectCard} onClick={handleProjectCardClick}>
             <div className={styles.featureSquare} style={{ backgroundImage: `url('/src/img/portfolio.jpg')` }}></div>
             <h4 className={styles.projectTitle}>Portfolio</h4>
           </div>
