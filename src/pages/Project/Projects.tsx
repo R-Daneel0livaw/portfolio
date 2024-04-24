@@ -17,7 +17,13 @@ export default function Projects() {
     if (featureSquare) {
       featureSquare.style.backgroundImage = `url(${backgroundImage})`;
     }
+
+    scrollToTop();
   };
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  }
 
   return (
     <section>
