@@ -124,7 +124,7 @@ export default function Projects() {
         </div>
         <div>
           <div className={styles.container} data-id={highlightedProject.id}>
-            <div className={styles.square} style={{ backgroundImage: `url(${backgroundImage})` }} ></div>
+            <div className={styles.square} style={{ backgroundImage: `url(${highlightedProject.image1})` }} ></div>
           </div>
         </div>
       </section>
