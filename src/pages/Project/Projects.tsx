@@ -97,6 +97,10 @@ export default function Projects() {
 
     setBackgroundImage(relativeImagePath);
 
+    const clickedCardId = parseInt(clickedCard.dataset.id || "", 10);
+    const highlight: Project = getProjects().get(clickedCardId) as Project;
+    setHighlightedProject(highlight);
+
     if (featureSquare) {
       featureSquare.style.backgroundImage = `url(${backgroundImage})`;
     }
