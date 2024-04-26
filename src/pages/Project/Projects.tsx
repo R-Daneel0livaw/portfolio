@@ -8,7 +8,6 @@ export default function Projects() {
   const [projects, setProjects] = useState<Map<Number, Project>>(getProjects());
   const [highlightedProject, setHighlightedProject] = useState<Project>(getHighlightedProject());
 
-
   type Project = {
     id: number;
     name: string;
