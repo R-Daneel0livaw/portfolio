@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export default function Projects() {
   const [backgroundImage, setBackgroundImage] = useState('/src/img/detective.jpg');
+  const [projects, setProjects] = useState<Map<Number, Project>>(getProjects());
 
   type Project = {
     name: string;
@@ -15,52 +16,69 @@ export default function Projects() {
     figmaURL?: string;
     webURL?: string;
     featured: boolean;
+    highlighted: boolean
   };
 
-  const projectMap: Map<number, Project> = new Map([
-    [1, {
-      name: "Sports Detective",
-      description: ["Sports Detective empowers users to harness the power of machine learning for in-depth sports analysis. Dive into historical sports data, build custom machine learning models, and leverage sophisticated algorithms to gain valuable insights into player performance, team dynamics, and game outcomes. Whether you're a seasoned sports analyst or a novice enthusiast, Sports Detective provides intuitive tools for creating, testing, and refining your models.",  "Our platform also facilitates a vibrant marketplace where users can buy and sell their models, fostering a community of collaboration and innovation. Follow top performers, discover winning strategies, and stay ahead of the game with real-time updates and betting line integration. Join Sports Detective today and elevate your sports analysis experience to new heights!"],
-      image1: "/src/img/detective.jpg",
-      image2: "/src/img/basketball.jpg",
-      featured: true
-    }],
-    [2, {
-      name: "TODO",
-      description: ["Description for Project 2"],
-      image1: "/src/img/todo.jpg",
-      image2: "/src/img/basketball.jpg",
-      featured: true
-    }],
-    [3, {
-      name: "Tidy Tuesday",
-      description: ["Description for Project 3"],
-      image1: "/src/img/tidy.jpg",
-      image2: "/src/img/basketball.jpg",
-      featured: true
-    }],
-    [4, {
-      name: "Job Tracker",
-      description: ["Description for Project 4"],
-      image1: "/src/img/job.jpg",
-      image2: "/src/img/basketball.jpg",
-      featured: true
-    }],
-    [5, {
-      name: "Knowledge Journey 365",
-      description: ["Description for Project 5"],
-      image1: "/src/img/knowledge.jpg",
-      image2: "/src/img/basketball.jpg",
-      featured: true
-    }],
-    [6, {
-      name: "Portfolio",
-      description: ["Description for Project 6"],
-      image1: "/src/img/portfolio.jpg",
-      image2: "/src/img/basketball.jpg",
-      featured: true
-    }],
-  ]);
+  function getProjects() {
+    return new Map([
+      [1, {
+        name: "Sports Detective",
+        description: ["Sports Detective empowers users to harness the power of machine learning for in-depth sports analysis. Dive into historical sports data, build custom machine learning models, and leverage sophisticated algorithms to gain valuable insights into player performance, team dynamics, and game outcomes. Whether you're a seasoned sports analyst or a novice enthusiast, Sports Detective provides intuitive tools for creating, testing, and refining your models.", "Our platform also facilitates a vibrant marketplace where users can buy and sell their models, fostering a community of collaboration and innovation. Follow top performers, discover winning strategies, and stay ahead of the game with real-time updates and betting line integration. Join Sports Detective today and elevate your sports analysis experience to new heights!"],
+        image1: "/src/img/detective.jpg",
+        image2: "/src/img/basketball.jpg",
+        featured: true,
+        highlighted: true
+      }],
+      [2, {
+        name: "TODO",
+        description: ["Description for Project 2"],
+        image1: "/src/img/todo.jpg",
+        image2: "/src/img/basketball.jpg",
+        featured: true,
+        highlighted: false
+      }],
+      [3, {
+        name: "Tidy Tuesday",
+        description: ["Description for Project 3"],
+        image1: "/src/img/tidy.jpg",
+        image2: "/src/img/basketball.jpg",
+        featured: true,
+        highlighted: false
+      }],
+      [4, {
+        name: "Job Tracker",
+        description: ["Description for Project 4"],
+        image1: "/src/img/job.jpg",
+        image2: "/src/img/basketball.jpg",
+        featured: true,
+        highlighted: false
+      }],
+      [5, {
+        name: "Knowledge Journey 365",
+        description: ["Description for Project 5"],
+        image1: "/src/img/knowledge.jpg",
+        image2: "/src/img/basketball.jpg",
+        featured: true,
+        highlighted: false
+      }],
+      [6, {
+        name: "Portfolio",
+        description: ["Description for Project 6"],
+        image1: "/src/img/portfolio.jpg",
+        image2: "/src/img/basketball.jpg",
+        featured: true,
+        highlighted: false
+      }],
+    ]);
+  }
+
+  const getFeaturedProjects = (): Project[] => {
+    return Array.from(projects.values()).slice(1).filter(p => p.featured);
+  }
+
+  const getHighlightedProject = (): Project => {
+    return Array.from(projects.values()).filter(p => p.highlighted)[0] || { name: "No Project Currently Available.", description: [], image1: "", image2: "", featured: false, highlighted: false };
+  };
 
   const handleProjectCardClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const clickedCard = event.currentTarget;
@@ -81,20 +99,12 @@ export default function Projects() {
     window.scrollTo(0, 0);
   }
 
-  const getFeaturedProjects = (): Project[] => {
-    return Array.from(projectMap.values()).slice(1).filter(p => p.featured);
-  }
-
-  const getFirstFeaturedProject = (): Project => {
-    return Array.from(projectMap.values()).filter(p => p.featured)[0] || { name: "No Project Currently Available.", description: [], image1: "", image2: "", featured: false };
-  };
-
   return (
     <section>
       <section className={styles.highlightedProject}>
         <div className={styles.projectDetails}>
-          <h2 className={styles.projectDetailsTitle}>{getFirstFeaturedProject().name}</h2>
-          {getFirstFeaturedProject().description.map((paragraph: string, index: number) => (
+          <h2 className={styles.projectDetailsTitle}>{getHighlightedProject().name}</h2>
+          {getHighlightedProject().description.map((paragraph: string, index: number) => (
             <p key={index} className={styles.projectDetailsText}>{paragraph}</p>
           ))}
           <button className={styles.projectDetailsButton}><FontAwesomeIcon icon={faGithub} size="lg" className={styles.projectDetailsButtonIcon} />Source Code</button>
