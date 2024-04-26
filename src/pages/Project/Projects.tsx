@@ -73,7 +73,7 @@ export default function Projects() {
   }
 
   const getFeaturedProjects = (): Project[] => {
-    return Array.from(projects.values()).slice(1).filter(p => p.featured);
+    return Array.from(projects.values()).filter(p => p.featured && !p.highlighted);
   }
 
   const getHighlightedProject = (): Project => {
