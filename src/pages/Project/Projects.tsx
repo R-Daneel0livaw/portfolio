@@ -76,14 +76,91 @@ export default function Projects() {
         featured: true,
         highlighted: false
       }],
+      [7, {
+        id: 7,
+        name: "Project 1",
+        description: [""],
+        image1: "",
+        image2: "",
+        featured: false,
+        highlighted: false
+      }],
+      [8, {
+        id: 8,
+        name: "Project 2",
+        description: [""],
+        image1: "",
+        image2: "",
+        featured: false,
+        highlighted: false
+      }],
+      [9, {
+        id: 9,
+        name: "Project 3",
+        description: [""],
+        image1: "",
+        image2: "",
+        featured: false,
+        highlighted: false
+      }],
+      [10, {
+        id: 10,
+        name: "Project 4",
+        description: [""],
+        image1: "",
+        image2: "",
+        featured: false,
+        highlighted: false
+      }],
+      [11, {
+        id: 11,
+        name: "Project 5",
+        description: [""],
+        image1: "",
+        image2: "",
+        featured: false,
+        highlighted: false
+      }],
+      [12, {
+        id: 12,
+        name: "Project 6",
+        description: [""],
+        image1: "",
+        image2: "",
+        featured: false,
+        highlighted: false
+      }],
+      [13, {
+        id: 13,
+        name: "Project 7",
+        description: [""],
+        image1: "",
+        image2: "",
+        featured: false,
+        highlighted: false
+      }],
+      [14, {
+        id: 14,
+        name: "Project 8",
+        description: [""],
+        image1: "",
+        image2: "",
+        featured: false,
+        highlighted: false
+      }],
     ]);
   }
 
-  function getFeaturedProjects(): Project[] {
+  function getFeaturedProjects() {
     return Array.from(projects.values()).filter(p => p.featured && !p.highlighted);
   }
 
-  function getHighlightedProject(): Project {
+  function getAllFeaturedProjects() {
+    const featuredEntries = Array.from(projects.entries()).filter(([_, value]) => value.featured);
+    return new Map(featuredEntries);
+  }
+
+  function getHighlightedProject() {
     return Array.from(projects.values()).filter(p => p.highlighted)[0] || { name: "No Project Currently Available.", description: [], image1: "", image2: "", featured: false, highlighted: false };
   }
 
@@ -93,7 +170,7 @@ export default function Projects() {
     const selectedProject: Project = projects.get(clickedCardId) as Project;
     selectedProject.highlighted = true;
 
-    const entriesArray = Array.from(projects.entries()).filter(([key, _]) => key !== highlightedProject.id);
+    const entriesArray = Array.from(getAllFeaturedProjects().entries()).filter(([key, _]) => key !== highlightedProject.id);
     const index = entriesArray.findIndex(([key, _]) => key === selectedProject.id);
     highlightedProject.highlighted = false;
     entriesArray[index] = [highlightedProject.id, highlightedProject];
