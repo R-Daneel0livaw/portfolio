@@ -4,7 +4,6 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useState } from "react";
 
 export default function Projects() {
-  const [backgroundImage, setBackgroundImage] = useState('/src/img/detective.jpg');
   const [projects, setProjects] = useState<Map<Number, Project>>(getProjects());
   const [highlightedProject, setHighlightedProject] = useState<Project>(getHighlightedProject());
 
@@ -21,7 +20,7 @@ export default function Projects() {
     highlighted: boolean
   };
 
-  function getProjects() {
+  function getProjects(): Map<Number, Project> {
     return new Map([
       [1, {
         id: 1,
@@ -90,19 +89,17 @@ export default function Projects() {
 
   const handleProjectCardClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const clickedCard = event.currentTarget;
-    const featureSquare = clickedCard.querySelector(`.${styles.featureSquare}`) as HTMLElement;
-    const clickedBackgroundImage = window.getComputedStyle(featureSquare).getPropertyValue('background-image');
-    const relativeImagePath = clickedBackgroundImage.substring(clickedBackgroundImage.indexOf('/src')).replace(/["')]/g, '');
-
-    setBackgroundImage(relativeImagePath);
-
     const clickedCardId = parseInt(clickedCard.dataset.id || "", 10);
-    const highlight: Project = getProjects().get(clickedCardId) as Project;
-    setHighlightedProject(highlight);
+    const selectedProject: Project = projects.get(clickedCardId) as Project;
+    selectedProject.highlighted = true;
 
-    if (featureSquare) {
-      featureSquare.style.backgroundImage = `url(${backgroundImage})`;
-    }
+    const indexToUpdate = Array.from(projects.keys()).indexOf(selectedProject.id);
+    const entriesArray = Array.from(projects.entries());
+    highlightedProject.highlighted = false;
+    entriesArray[indexToUpdate] = [highlightedProject.id, highlightedProject];
+
+    setHighlightedProject(selectedProject);
+    setProjects(new Map(entriesArray));
 
     scrollToTop();
   };
