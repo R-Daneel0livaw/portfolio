@@ -168,6 +168,11 @@ export default function Projects() {
     return Array.from(projects.values()).filter(p => !p.featured);
   }
 
+  function getAllBaseProjects() {
+    const baseEntries = Array.from(projects.entries()).filter(([_, value]) => !value.featured);
+    return new Map(baseEntries);
+  }
+
   const handleProjectCardClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const clickedCard = event.currentTarget;
     const clickedCardId = parseInt(clickedCard.dataset.id || "", 10);
@@ -175,12 +180,14 @@ export default function Projects() {
     selectedProject.highlighted = true;
 
     const entriesArray = Array.from(getAllFeaturedProjects().entries()).filter(([key, _]) => key !== highlightedProject.id);
+    const baseEntriesArray = Array.from(getAllBaseProjects().entries());
+
     const index = entriesArray.findIndex(([key, _]) => key === selectedProject.id);
     highlightedProject.highlighted = false;
     entriesArray[index] = [highlightedProject.id, highlightedProject];
 
     setHighlightedProject(selectedProject);
-    setProjects(new Map(entriesArray));
+    setProjects(new Map([...entriesArray, ...baseEntriesArray]));
 
     scrollToTop();
   };
