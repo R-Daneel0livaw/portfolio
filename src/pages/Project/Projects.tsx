@@ -93,10 +93,10 @@ export default function Projects() {
     const selectedProject: Project = projects.get(clickedCardId) as Project;
     selectedProject.highlighted = true;
 
-    const indexToUpdate = Array.from(projects.keys()).indexOf(selectedProject.id);
-    const entriesArray = Array.from(projects.entries());
+    const entriesArray = Array.from(projects.entries()).filter(([key, _]) => key !== highlightedProject.id);
+    const index = entriesArray.findIndex(([key, _]) => key === selectedProject.id);
     highlightedProject.highlighted = false;
-    entriesArray[indexToUpdate] = [highlightedProject.id, highlightedProject];
+    entriesArray[index] = [highlightedProject.id, highlightedProject];
 
     setHighlightedProject(selectedProject);
     setProjects(new Map(entriesArray));
