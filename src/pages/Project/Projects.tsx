@@ -164,6 +164,10 @@ export default function Projects() {
     return Array.from(projects.values()).filter(p => p.highlighted)[0] || { name: "No Project Currently Available.", description: [], image1: "", image2: "", featured: false, highlighted: false };
   }
 
+  function getBaseProjects() {
+    return Array.from(projects.values()).filter(p => !p.featured);
+  }
+
   const handleProjectCardClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const clickedCard = event.currentTarget;
     const clickedCardId = parseInt(clickedCard.dataset.id || "", 10);
@@ -217,38 +221,12 @@ export default function Projects() {
       <section className={styles.subProjects}>
         <h3 className={styles.subProjectsTitle}>All Projects</h3>
         <div className={styles.projectGrid}>
-          <div className={styles.projectCard}>
-            <div className={styles.featureSquare}></div>
-            <h4 className={styles.projectTitle}>Project 1</h4>
-          </div>
-          <div className={styles.projectCard}>
-            <div className={styles.featureSquare}></div>
-            <h4 className={styles.projectTitle}>Project 2</h4>
-          </div>
-          <div className={styles.projectCard}>
-            <div className={styles.featureSquare}></div>
-            <h4 className={styles.projectTitle}>Project 3</h4>
-          </div>
-          <div className={styles.projectCard}>
-            <div className={styles.featureSquare}></div>
-            <h4 className={styles.projectTitle}>Project 4</h4>
-          </div>
-          <div className={styles.projectCard}>
-            <div className={styles.featureSquare}></div>
-            <h4 className={styles.projectTitle}>Project 5</h4>
-          </div>
-          <div className={styles.projectCard}>
-            <div className={styles.featureSquare}></div>
-            <h4 className={styles.projectTitle}>Project 6</h4>
-          </div>
-          <div className={styles.projectCard}>
-            <div className={styles.featureSquare}></div>
-            <h4 className={styles.projectTitle}>Project 7</h4>
-          </div>
-          <div className={styles.projectCard}>
-            <div className={styles.featureSquare}></div>
-            <h4 className={styles.projectTitle}>Project 8</h4>
-          </div>
+          {getBaseProjects().map((project: Project, index: number) => (
+            <div key={index} data-id={project.id} className={styles.projectCard}>
+              <div className={styles.featureSquare}></div>
+              <h4 className={styles.projectTitle}>{project.name}</h4>
+            </div>
+          ))}
         </div>
       </section>
     </section>
