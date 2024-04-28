@@ -11,7 +11,7 @@ export default function Home() {
           description={
             <p>
               I'm a Dedicated{" "}
-              <span className={styles.highlight}>Full-Stack Developer</span>
+              <span className={styles.highlight}>Software Architect</span>
             </p>
           }
         />
@@ -22,7 +22,7 @@ export default function Home() {
         >
           <p>
             Welcome to the gateway of my professional narrative! With over a
-            decade of dedicated experience as a Full-Stack Developer, I bring an
+            decade of dedicated experience as a Software Architect, I bring an
             unwavering passion for transforming ideas into seamless digital
             experiences. This platform is not just a portfolio; it's a living
             testament to my journey—a dynamic canvas that illustrates the
