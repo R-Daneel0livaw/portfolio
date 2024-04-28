@@ -34,7 +34,7 @@ export default function Projects() {
       [2, {
         id: 2,
         name: "TODO",
-        description: ["Description for Project 2"],
+        description: ["'TODO' is a robust task management application built with Electron and React, designed to streamline daily productivity. With a sleek and intuitive user interface, users can easily add, edit, prioritize, and organize tasks according to their projects and deadlines. The application features a unique ranking system that considers both task priority and duration within the task list, ensuring optimal task prioritization.", "Additionally, the integrated recommendation engine utilizes machine learning algorithms to suggest daily tasks based on user behavior and preferences, enhancing productivity and efficiency. With seamless integration with VSCode, users can effortlessly create and sync tasks while coding, ensuring a seamless workflow. With its comprehensive features and innovative functionalities, 'TODO' empowers users to conquer their daily tasks and achieve their goals with ease."],
         image1: "/src/img/todo.jpg",
         image2: "/src/img/basketball.jpg",
         featured: true,
@@ -43,7 +43,7 @@ export default function Projects() {
       [3, {
         id: 3,
         name: "Tidy Tuesday",
-        description: ["Description for Project 3"],
+        description: ["This repository showcases a diverse collection of data visualizations which make up my contributions to the 'Tidy Tuesday', a weekly social data project that presents various datasets for the community to explore. Each visualization offers unique insights into complex datasets, highlighting trends, patterns, and correlations in an engaging and informative manner.", "From interactive charts to dynamic dashboards, these visualizations offer unique insights into complex datasets, spanning economic indicators, environmental data, social trends, and more. See how I use data visualization to uncover actionable insights and compelling stories from the world of social data."],
         image1: "/src/img/tidy.jpg",
         image2: "/src/img/basketball.jpg",
         featured: true,
