@@ -43,7 +43,7 @@ export default function Projects() {
       [3, {
         id: 3,
         name: "Tidy Tuesday",
-        description: ["This repository showcases a diverse collection of data visualizations which make up my contributions to the 'Tidy Tuesday', a weekly social data project that presents various datasets for the community to explore. Each visualization offers unique insights into complex datasets, highlighting trends, patterns, and correlations in an engaging and informative manner.", "From interactive charts to dynamic dashboards, these visualizations offer unique insights into complex datasets, spanning economic indicators, environmental data, social trends, and more. See how I use data visualization to uncover actionable insights and compelling stories from the world of social data."],
+        description: ["This repository showcases a diverse collection of data visualizations which make up my contributions to 'Tidy Tuesday', a weekly social data project that presents various datasets for the community to explore. Each visualization offers unique insights into complex datasets, highlighting trends, patterns, and correlations in an engaging and informative manner.", "From interactive charts to dynamic dashboards, these visualizations offer unique insights into complex datasets, spanning economic indicators, environmental data, social trends, and more. See how I use data visualization to uncover actionable insights and compelling stories from the world of social data."],
         image1: "/src/img/tidy.jpg",
         image2: "/src/img/basketball.jpg",
         featured: true,
