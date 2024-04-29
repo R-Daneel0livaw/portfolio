@@ -64,7 +64,7 @@ export default function AboutMe() {
           >
             <p className={styles.sectionContent}>
               I earned my Bachelor's degree in Computer Science, complemented by
-              a minor in Mathematics, from the accredited SUNY Brockport. With
+              a minor in Mathematics, from the ABET-accredited SUNY Brockport. With
               nearly 15 years of professional experience, my journey has been
               shaped by meaningful contributions to the Financial and Retirement
               industry. I've had the privilege of working with some of the
