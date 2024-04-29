@@ -207,8 +207,8 @@ export default function Projects() {
           <button className={styles.projectDetailsButton}><FontAwesomeIcon icon={faGithub} size="lg" className={styles.projectDetailsButtonIcon} />Source Code</button>
         </div>
         <div>
-          <div className={styles.container} data-id={highlightedProject.id}>
-            <div className={styles.square} style={{ backgroundImage: `url(${highlightedProject.image1})` }} ></div>
+          <div className={styles.container} data-id={highlightedProject.id} style={{ backgroundImage: `url(${highlightedProject.image2})`}} >
+            <div className={styles.square} style={{ backgroundImage: `url(${highlightedProject.image1})`}} ></div>
           </div>
         </div>
       </section>
