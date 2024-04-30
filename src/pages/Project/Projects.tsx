@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Projects.module.css";
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faFigma } from '@fortawesome/free-brands-svg-icons';
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 export default function Projects() {
@@ -204,7 +205,11 @@ export default function Projects() {
           {highlightedProject.description.map((paragraph: string, index: number) => (
             <p key={index} className={styles.projectDetailsText}>{paragraph}</p>
           ))}
-          <button className={styles.projectDetailsButton}><FontAwesomeIcon icon={faGithub} size="lg" className={styles.projectDetailsButtonIcon} />Source Code</button>
+          <div className={styles.buttonContainer}>
+            <button className={`${styles.projectDetailsButton} ${styles.gitButton}`}><FontAwesomeIcon icon={faGithub} size="lg" className={styles.projectDetailsButtonIcon} />Source Code</button>
+            <button className={`${styles.projectDetailsButton} ${styles.figmaButton}`}><FontAwesomeIcon icon={faFigma} size="lg" className={styles.projectDetailsButtonIcon} />Figma Files</button>
+            <button className={`${styles.projectDetailsButton} ${styles.webButton}`}><FontAwesomeIcon icon={faGlobe} size="lg" className={styles.projectDetailsButtonIcon} />Live View</button>
+          </div>
         </div>
         <div>
           <div className={styles.container} data-id={highlightedProject.id} style={{ backgroundImage: `url(${highlightedProject.image2})`}} >

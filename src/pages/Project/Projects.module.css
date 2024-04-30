@@ -21,9 +21,13 @@
     line-height: 1.7em;
 }
 
+.buttonContainer {
+    display: flex;
+    gap: 1rem;
+}
+
 .projectDetailsButton {
-    background-color: #f2b664;
-    color: #604b2e;
+    color: #FFF;
     width: fit-content;
     padding: 0.5rem 0.75rem;
     margin-top: 1.2rem;
@@ -34,8 +38,20 @@
     cursor: pointer;
 }
 
+.gitButton {
+    background-color: #010409;
+}
+
+.figmaButton {
+    background-color: #9d56f7;
+}
+
+.webButton {
+    background-color: #70a597;
+}
+
 .projectDetailsButtonIcon {
-    margin-right: .3rem;
+    margin-right: .4rem;
 }
 
 .container {
