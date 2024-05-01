@@ -176,7 +176,7 @@ export default function Projects() {
 
   const handleProjectCardClick = (event: React.MouseEvent<HTMLDivElement>, projectType: string) => {
     console.log(projectType);
-    if (projectType === "base") return;
+
     const clickedCard = event.currentTarget;
     const clickedCardId = parseInt(clickedCard.dataset.id || "", 10);
     const selectedProject: Project = projects.get(clickedCardId) as Project;
@@ -184,13 +184,18 @@ export default function Projects() {
 
     const entriesArray = Array.from(getAllFeaturedProjects().entries()).filter(([key, _]) => key !== highlightedProject.id);
     const baseEntriesArray = Array.from(getAllBaseProjects().entries());
-
-    const index = entriesArray.findIndex(([key, _]) => key === selectedProject.id);
     highlightedProject.highlighted = false;
-    entriesArray[index] = [highlightedProject.id, highlightedProject];
+
+    if(projectType === "featured") {
+      const index = entriesArray.findIndex(([key, _]) => key === selectedProject.id);
+      entriesArray.splice(index, 1);
+    } else {
+      const index = baseEntriesArray.findIndex(([key, _]) => key === selectedProject.id);
+      baseEntriesArray.splice(index, 1);
+    }
 
     setHighlightedProject(selectedProject);
-    setProjects(new Map([...entriesArray, ...baseEntriesArray]));
+    setProjects(new Map([...entriesArray, ...baseEntriesArray, [highlightedProject.id, highlightedProject]]));
 
     scrollToTop();
   };
