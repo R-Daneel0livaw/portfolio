@@ -174,7 +174,9 @@ export default function Projects() {
     return new Map(baseEntries);
   }
 
-  const handleProjectCardClick = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleProjectCardClick = (event: React.MouseEvent<HTMLDivElement>, projectType: string) => {
+    console.log(projectType);
+    if (projectType === "base") return;
     const clickedCard = event.currentTarget;
     const clickedCardId = parseInt(clickedCard.dataset.id || "", 10);
     const selectedProject: Project = projects.get(clickedCardId) as Project;
@@ -222,7 +224,7 @@ export default function Projects() {
         <h3 className={styles.subProjectsTitle}>Featured Projects</h3>
         <div className={styles.projectGrid}>
           {getFeaturedProjects().map((project: Project, index: number) => (
-            <div key={index} data-id={project.id} className={styles.projectCard} onClick={handleProjectCardClick}>
+            <div key={index} data-id={project.id} className={styles.projectCard} onClick={(event) => handleProjectCardClick(event, "featured")}>
               <div className={styles.featureSquare} style={{ backgroundImage: `url(${project.image1})` }}></div>
               <h4 className={styles.projectTitle}>{project.name}</h4>
             </div>
@@ -234,7 +236,7 @@ export default function Projects() {
         <h3 className={styles.subProjectsTitle}>All Projects</h3>
         <div className={styles.projectGrid}>
           {getBaseProjects().map((project: Project, index: number) => (
-            <div key={index} data-id={project.id} className={styles.projectCard}>
+            <div key={index} data-id={project.id} className={styles.projectCard} onClick={(event) => handleProjectCardClick(event, "base")}>
               <div className={styles.featureSquare}></div>
               <h4 className={styles.projectTitle}>{project.name}</h4>
             </div>
