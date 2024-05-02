@@ -61,7 +61,8 @@ export default function Projects() {
         image2: "/src/img/job-2.jpg",
         featured: true,
         highlighted: false,
-        gitURL: "https://github.com/R-Daneel0livaw"
+        gitURL: "https://github.com/R-Daneel0livaw",
+        figmaURL: "https://www.figma.com/"
       }],
       [5, {
         id: 5,
@@ -71,7 +72,8 @@ export default function Projects() {
         image2: "/src/img/knowledge-2.jpg",
         featured: true,
         highlighted: false,
-        gitURL: "https://github.com/R-Daneel0livaw"
+        gitURL: "https://github.com/R-Daneel0livaw",
+        figmaURL: "https://www.figma.com/"
       }],
       [6, {
         id: 6,
@@ -81,7 +83,9 @@ export default function Projects() {
         image2: "/src/img/portfolio-2.jpg",
         featured: true,
         highlighted: false,
-        gitURL: "https://github.com/R-Daneel0livaw"
+        gitURL: "https://github.com/R-Daneel0livaw",
+        figmaURL: "https://www.figma.com/",
+        webURL: "http://localhost:5173/"
       }],
       [7, {
         id: 7,
@@ -220,22 +224,22 @@ export default function Projects() {
           ))}
           <div className={styles.buttonContainer}>
             {highlightedProject.gitURL && (
-              <button className={`${styles.projectDetailsButton} ${styles.gitButton}`}>
+              <a href={highlightedProject.gitURL} target="_blank" rel="noopener noreferrer" className={`${styles.projectDetailsButton} ${styles.gitButton}`}>
                 <FontAwesomeIcon icon={faGithub} size="lg" className={styles.projectDetailsButtonIcon} />
                 Source Code
-              </button>
+              </a>
             )}
             {highlightedProject.figmaURL && (
-              <button className={`${styles.projectDetailsButton} ${styles.figmaButton}`}>
+              <a href={highlightedProject.figmaURL} target="_blank" rel="noopener noreferrer" className={`${styles.projectDetailsButton} ${styles.figmaButton}`}>
                 <FontAwesomeIcon icon={faFigma} size="lg" className={styles.projectDetailsButtonIcon} />
                 Figma Files
-              </button>
+              </a>
             )}
             {highlightedProject.webURL && (
-              <button className={`${styles.projectDetailsButton} ${styles.webButton}`}>
+              <a href={highlightedProject.webURL} target="_blank" rel="noopener noreferrer" className={`${styles.projectDetailsButton} ${styles.webButton}`}>
                 <FontAwesomeIcon icon={faGlobe} size="lg" className={styles.projectDetailsButtonIcon} />
                 Live View
-              </button>
+              </a>
             )}
           </div>
         </div>
