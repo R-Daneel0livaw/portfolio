@@ -30,7 +30,8 @@ export default function Projects() {
         image1: "/src/img/detective.jpg",
         image2: "/src/img/basketball.jpg",
         featured: true,
-        highlighted: true
+        highlighted: true,
+        gitURL: "https://github.com/R-Daneel0livaw"
       }],
       [2, {
         id: 2,
@@ -39,7 +40,8 @@ export default function Projects() {
         image1: "/src/img/todo.jpg",
         image2: "/src/img/todo-2.jpg",
         featured: true,
-        highlighted: false
+        highlighted: false,
+        gitURL: "https://github.com/R-Daneel0livaw"
       }],
       [3, {
         id: 3,
@@ -48,7 +50,8 @@ export default function Projects() {
         image1: "/src/img/tidy.jpg",
         image2: "/src/img/tidy-2.jpg",
         featured: true,
-        highlighted: false
+        highlighted: false,
+        gitURL: "https://github.com/R-Daneel0livaw"
       }],
       [4, {
         id: 4,
@@ -57,7 +60,8 @@ export default function Projects() {
         image1: "/src/img/job.jpg",
         image2: "/src/img/job-2.jpg",
         featured: true,
-        highlighted: false
+        highlighted: false,
+        gitURL: "https://github.com/R-Daneel0livaw"
       }],
       [5, {
         id: 5,
@@ -66,7 +70,8 @@ export default function Projects() {
         image1: "/src/img/knowledge.jpg",
         image2: "/src/img/knowledge-2.jpg",
         featured: true,
-        highlighted: false
+        highlighted: false,
+        gitURL: "https://github.com/R-Daneel0livaw"
       }],
       [6, {
         id: 6,
@@ -75,7 +80,8 @@ export default function Projects() {
         image1: "/src/img/portfolio.jpg",
         image2: "/src/img/portfolio-2.jpg",
         featured: true,
-        highlighted: false
+        highlighted: false,
+        gitURL: "https://github.com/R-Daneel0livaw"
       }],
       [7, {
         id: 7,
@@ -213,9 +219,24 @@ export default function Projects() {
             <p key={index} className={styles.projectDetailsText}>{paragraph}</p>
           ))}
           <div className={styles.buttonContainer}>
-            <button className={`${styles.projectDetailsButton} ${styles.gitButton}`}><FontAwesomeIcon icon={faGithub} size="lg" className={styles.projectDetailsButtonIcon} />Source Code</button>
-            <button className={`${styles.projectDetailsButton} ${styles.figmaButton}`}><FontAwesomeIcon icon={faFigma} size="lg" className={styles.projectDetailsButtonIcon} />Figma Files</button>
-            <button className={`${styles.projectDetailsButton} ${styles.webButton}`}><FontAwesomeIcon icon={faGlobe} size="lg" className={styles.projectDetailsButtonIcon} />Live View</button>
+            {highlightedProject.gitURL && (
+              <button className={`${styles.projectDetailsButton} ${styles.gitButton}`}>
+                <FontAwesomeIcon icon={faGithub} size="lg" className={styles.projectDetailsButtonIcon} />
+                Source Code
+              </button>
+            )}
+            {highlightedProject.figmaURL && (
+              <button className={`${styles.projectDetailsButton} ${styles.figmaButton}`}>
+                <FontAwesomeIcon icon={faFigma} size="lg" className={styles.projectDetailsButtonIcon} />
+                Figma Files
+              </button>
+            )}
+            {highlightedProject.webURL && (
+              <button className={`${styles.projectDetailsButton} ${styles.webButton}`}>
+                <FontAwesomeIcon icon={faGlobe} size="lg" className={styles.projectDetailsButtonIcon} />
+                Live View
+              </button>
+            )}
           </div>
         </div>
         <div>
