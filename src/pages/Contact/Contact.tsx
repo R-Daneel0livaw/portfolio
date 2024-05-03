@@ -18,7 +18,7 @@ export default function Contact() {
           />
         </section>
 
-        <section className={`${styles.sectionSpacer} ${styles.details}`}>
+        <section className={`${styles.details}`}>
           <p className={styles.seeMore}>
             Thank you for reaching out! Whether it's a project, collaboration,
             or just a friendly hello, I'm eager to hear from you. No task is too

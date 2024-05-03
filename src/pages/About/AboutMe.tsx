@@ -37,8 +37,8 @@ export default function AboutMe() {
             />
           </section>
 
-          <section className={`${styles.sectionSpacer} ${styles.details}`}>
-            <p className={styles.seeMore}>
+          <section className={`${styles.details}`}>
+            <p>
               If you're interested in the details of my professional journey,
               feel free to explore the rest of my portfolio, as well as my{" "}
               <a
