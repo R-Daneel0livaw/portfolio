@@ -87,78 +87,78 @@ export default function Projects() {
         figmaURL: "https://www.figma.com/",
         webURL: "http://localhost:5173/"
       }],
-      [7, {
-        id: 7,
-        name: "Project 1",
-        description: [""],
-        image1: "",
-        image2: "",
-        featured: false,
-        highlighted: false
-      }],
-      [8, {
-        id: 8,
-        name: "Project 2",
-        description: [""],
-        image1: "",
-        image2: "",
-        featured: false,
-        highlighted: false
-      }],
-      [9, {
-        id: 9,
-        name: "Project 3",
-        description: [""],
-        image1: "",
-        image2: "",
-        featured: false,
-        highlighted: false
-      }],
-      [10, {
-        id: 10,
-        name: "Project 4",
-        description: [""],
-        image1: "",
-        image2: "",
-        featured: false,
-        highlighted: false
-      }],
-      [11, {
-        id: 11,
-        name: "Project 5",
-        description: [""],
-        image1: "",
-        image2: "",
-        featured: false,
-        highlighted: false
-      }],
-      [12, {
-        id: 12,
-        name: "Project 6",
-        description: [""],
-        image1: "",
-        image2: "",
-        featured: false,
-        highlighted: false
-      }],
-      [13, {
-        id: 13,
-        name: "Project 7",
-        description: [""],
-        image1: "",
-        image2: "",
-        featured: false,
-        highlighted: false
-      }],
-      [14, {
-        id: 14,
-        name: "Project 8",
-        description: [""],
-        image1: "",
-        image2: "",
-        featured: false,
-        highlighted: false
-      }],
+      // [7, {
+      //   id: 7,
+      //   name: "Project 1",
+      //   description: [""],
+      //   image1: "",
+      //   image2: "",
+      //   featured: false,
+      //   highlighted: false
+      // }],
+      // [8, {
+      //   id: 8,
+      //   name: "Project 2",
+      //   description: [""],
+      //   image1: "",
+      //   image2: "",
+      //   featured: false,
+      //   highlighted: false
+      // }],
+      // [9, {
+      //   id: 9,
+      //   name: "Project 3",
+      //   description: [""],
+      //   image1: "",
+      //   image2: "",
+      //   featured: false,
+      //   highlighted: false
+      // }],
+      // [10, {
+      //   id: 10,
+      //   name: "Project 4",
+      //   description: [""],
+      //   image1: "",
+      //   image2: "",
+      //   featured: false,
+      //   highlighted: false
+      // }],
+      // [11, {
+      //   id: 11,
+      //   name: "Project 5",
+      //   description: [""],
+      //   image1: "",
+      //   image2: "",
+      //   featured: false,
+      //   highlighted: false
+      // }],
+      // [12, {
+      //   id: 12,
+      //   name: "Project 6",
+      //   description: [""],
+      //   image1: "",
+      //   image2: "",
+      //   featured: false,
+      //   highlighted: false
+      // }],
+      // [13, {
+      //   id: 13,
+      //   name: "Project 7",
+      //   description: [""],
+      //   image1: "",
+      //   image2: "",
+      //   featured: false,
+      //   highlighted: false
+      // }],
+      // [14, {
+      //   id: 14,
+      //   name: "Project 8",
+      //   description: [""],
+      //   image1: "",
+      //   image2: "",
+      //   featured: false,
+      //   highlighted: false
+      // }],
     ]);
   }
 
@@ -250,29 +250,33 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className={styles.subProjects}>
-        <h3 className={styles.subProjectsTitle}>Featured Projects</h3>
-        <div className={styles.projectGrid}>
-          {getFeaturedProjects().map((project: Project, index: number) => (
-            <div key={index} data-id={project.id} className={styles.projectCard} onClick={(event) => handleProjectCardClick(event, "featured")}>
-              <div className={styles.featureSquare} style={{ backgroundImage: `url(${project.image1})` }}></div>
-              <h4 className={styles.projectTitle}>{project.name}</h4>
-            </div>
-          ))}
-        </div>
-      </section>
+      {getFeaturedProjects().length > 0 && (
+        <section className={styles.subProjects}>
+          <h3 className={styles.subProjectsTitle}>Featured Projects</h3>
+          <div className={styles.projectGrid}>
+            {getFeaturedProjects().map((project: Project, index: number) => (
+              <div key={index} data-id={project.id} className={styles.projectCard} onClick={(event) => handleProjectCardClick(event, "featured")}>
+                <div className={styles.featureSquare} style={{ backgroundImage: `url(${project.image1})` }}></div>
+                <h4 className={styles.projectTitle}>{project.name}</h4>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
-      <section className={styles.subProjects}>
-        <h3 className={styles.subProjectsTitle}>All Projects</h3>
-        <div className={styles.projectGrid}>
-          {getBaseProjects().map((project: Project, index: number) => (
-            <div key={index} data-id={project.id} className={styles.projectCard} onClick={(event) => handleProjectCardClick(event, "base")}>
-              <div className={styles.featureSquare}></div>
-              <h4 className={styles.projectTitle}>{project.name}</h4>
-            </div>
-          ))}
-        </div>
-      </section>
+      {getBaseProjects().length > 0 && (
+        <section className={styles.subProjects}>
+          <h3 className={styles.subProjectsTitle}>All Projects</h3>
+          <div className={styles.projectGrid}>
+            {getBaseProjects().map((project: Project, index: number) => (
+              <div key={index} data-id={project.id} className={styles.projectCard} onClick={(event) => handleProjectCardClick(event, "base")}>
+                <div className={styles.featureSquare}></div>
+                <h4 className={styles.projectTitle}>{project.name}</h4>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </section>
   );
 }
