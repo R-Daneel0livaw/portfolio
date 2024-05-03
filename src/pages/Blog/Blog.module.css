@@ -113,13 +113,13 @@
 }
 
 .blogListHeader {
-    font-size: 1.2rem;
     font-weight: 600;
+    color: #5C748C;
 }
 
 .blogListDescription {
     margin-top: 0.5rem;
-    color: #a5a8b0;
+    color: #4f4f4f;
     font-size: 0.85rem;
 }
 

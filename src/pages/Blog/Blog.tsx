@@ -220,7 +220,7 @@ export default function Blog() {
 
       <section className={styles.blogList}>
         <header>
-          <h2 className={styles.blogPostHeader}>All Blog Posts</h2>
+          <h2 className={styles.blogListHeader}>All Blog Posts</h2>
           <p className={styles.blogListDescription}>
             All thoughts are my own and do not reflect the opinions of any past,
             present or future employers.
