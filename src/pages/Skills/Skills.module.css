@@ -47,10 +47,16 @@
   margin-bottom: 1rem;
 }
 
+.identifier {
+  color: #5C748C;
+  font-weight: bold;
+}
+
 .personaContainer {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-bottom: 2.5rem;
 }
 
 .personaReset {
@@ -65,30 +71,29 @@
   border: none;
   padding: 5px 16px;
   margin: 5px;
-  background-color: #e5ecec;
+  background-color: #FFF;
+  /* background-color: #e5ecec; */
   color: #778787;
   font-weight: bold;
   font-size: 0.75rem;
-  border-radius: 20px 20px 2px 20px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  /* transition: background-color 0.3s; */
   text-transform: capitalize;
 }
 
 .selected {
-  background-color: #d3f2e4;
   color: #1b835e;
   font-size: 0.85rem;
+  font-weight: bold;
 }
 
 .skillButton:hover {
-  background-color: #d3f2e4;
-  color: #1b835e;
-  filter: brightness(90%);
+  font-size: .85rem;
 }
 
-.skillButton.selected:hover {
-  filter: brightness(100%);
+.iconBorder {
+  padding: .35rem .5rem;
+  background-color: #d3f2e4;;
 }
 
 .skillsGrid {

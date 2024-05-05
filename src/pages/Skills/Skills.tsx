@@ -147,6 +147,7 @@ export default function Skills() {
         </p>
 
         <div className={styles.personaContainer}>
+          <p className={styles.identifier}>I'm a </p>
           <div className={styles.buttonList}>
             <button
               className={`${styles.skillButton} ${
@@ -165,7 +166,7 @@ export default function Skills() {
               }
             >
               {activePersonaButton === "full" && (
-                <FontAwesomeIcon icon={faCheck} />
+                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
               )}
               Full-Stack
             </button>
@@ -184,7 +185,7 @@ export default function Skills() {
               }
             >
               {activePersonaButton === "front" && (
-                <FontAwesomeIcon icon={faCheck} />
+                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
               )}
               Frontend
             </button>
@@ -196,7 +197,7 @@ export default function Skills() {
               onClick={() => handlePersonaButtonClick("design", ["UX", "web"])}
             >
               {activePersonaButton === "design" && (
-                <FontAwesomeIcon icon={faCheck} />
+                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
               )}
               Design
             </button>
@@ -216,7 +217,7 @@ export default function Skills() {
               }
             >
               {activePersonaButton === "data" && (
-                <FontAwesomeIcon icon={faCheck} />
+                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
               )}
               Data Analysis
             </button>
@@ -233,7 +234,7 @@ export default function Skills() {
               }
             >
               {activePersonaButton === "management" && (
-                <FontAwesomeIcon icon={faCheck} />
+                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
               )}
               Management
             </button>
@@ -260,7 +261,7 @@ export default function Skills() {
               }
             >
               {activePersonaButton === "all" && (
-                <FontAwesomeIcon icon={faCheck} />
+                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
               )}
               All
             </button>
@@ -279,9 +280,10 @@ export default function Skills() {
           </i>
         </div>
 
-        <hr className={styles.buttonSectionSplit} />
+        {/* <hr className={styles.buttonSectionSplit} /> */}
 
         <div className={styles.buttonList}>
+          <p className={styles.identifier}>Highly experienced in</p>
           {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             Object.entries(activeSections).map(([section, _]) => (
