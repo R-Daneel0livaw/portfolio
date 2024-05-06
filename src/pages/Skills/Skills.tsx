@@ -23,6 +23,41 @@ export default function Skills() {
 
   const [expandedActivities, setExpandedActivities] = useState<string[]>([Object.keys(getDefaultActiveState())[0]]);
 
+  type Skill = string;
+
+  interface Experience {
+    shortName: string;
+    longName: string;
+    skills: Skill[];
+  }
+
+  type Persona = string;
+
+  const experienceMap: Map<Persona, Experience[]> = new Map([
+    [
+      "Full-Stack Developer",
+      [
+        { shortName: "Programming", longName: "Programming Languages", skills: ["Java", "C/C++/C#", "Python", "R", "Go", "Groovy", "PHP", "JavaScript", "TypeScript"] },
+        { shortName: "Backend", longName: "Backend Technologies", skills: ["Spring", ".NET", "NodeJS"] },
+        { shortName: "Web", longName: "Web Technologies", skills: ["React", "Angular", "Vue", "Webpack", "Vite", "HTML5/CSS3"] },
+        { shortName: "Database", longName: "Database Management", skills: ["SQL", "NoSQL", "Vector", "Oracle", "PostgreSQL", "MySQL", "MongoDB", "Neo4j", "Cassandra"] },
+        { shortName: "Cloud", longName: "Cloud Platforms", skills: ["AWS", "Azure"] },
+        { shortName: "DevOps", longName: "DevOps", skills: ["Docker", "Kubernetes", "OpenShift", "Jenkins", "CI/CD Pipelines", "Git"] },
+      ],
+    ],
+    [
+      "Frontend Developer",
+      [
+        { shortName: "Web", longName: "Web Technologies", skills: ["React", "Angular", "Vue", "Webpack", "Vite", "HTML5/CSS3"] },
+        { shortName: "Database", longName: "Database Management", skills: ["SQL", "NoSQL", "Vector", "Oracle", "PostgreSQL", "MySQL", "MongoDB", "Neo4j", "Cassandra"] },
+        { shortName: "UI/UX", longName: "UI/UX", skills: ["Figma", "Sketch", "Adobe Photoshop", "Tailwind", "Bootstrap", "Material UI", "Accessibility"] },
+        { shortName: "Cloud", longName: "Cloud Platforms", skills: ["AWS", "Azure"] },
+      ],
+    ],
+  ]);
+  console.log(experienceMap);
+
+
   const handlePersonaButtonClick = (
     target: string,
     buttonsToEnable: string[]
