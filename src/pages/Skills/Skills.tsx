@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import CollapsibleSection from "../../components/CollapsibleSection/CollapsibleSection";
 
 export default function Skills() {
+  const [currentPersona, setCurrentPersona] = useState<string>("Full-Stack Developer");
   const [activePersonaButton, setActivePersonaButton] = useState("full");
 
   const [activeSections, setActiveSections] = useState<{
@@ -96,7 +97,6 @@ export default function Skills() {
       ],
     ],
   ]);
-  console.log(experienceMap);
 
 
   const handlePersonaButtonClick = (
@@ -226,10 +226,10 @@ export default function Skills() {
           <p className={styles.identifier}>I'm a </p>
           <div className={styles.buttonList}>
           {Array.from(experienceMap.keys()).map((persona: string, index: number) => (
-             <button className={`${styles.skillButton}`}>
-              {/* {activePersonaButton === "full" && (
+             <button className={`${styles.skillButton}`} onClick={() => setCurrentPersona(persona)}>
+              {currentPersona === persona && (
                 <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
-              )} */}
+              )}
               {persona}
             </button>
           ))}
