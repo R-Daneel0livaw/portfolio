@@ -194,6 +194,7 @@ export default function Skills() {
     setActiveSections(getDefaultActiveState());
     setInactiveSections(getDefaultInactiveState());
     setActivePersonaButton("full");
+    setCurrentPersona("Full-Stack Developer")
     setExpandedActivities([Object.keys(getDefaultActiveState())[0]]);
   };
 
@@ -226,129 +227,13 @@ export default function Skills() {
           <p className={styles.identifier}>I'm a </p>
           <div className={styles.buttonList}>
           {Array.from(experienceMap.keys()).map((persona: string, index: number) => (
-             <button className={`${styles.skillButton}`} onClick={() => setCurrentPersona(persona)}>
+             <button key={index} className={`${styles.skillButton}`} onClick={() => setCurrentPersona(persona)}>
               {currentPersona === persona && (
                 <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
               )}
               {persona}
             </button>
           ))}
-            {/* <button
-              className={`${styles.skillButton} ${
-                activePersonaButton === "full" && styles.selected
-              }`}
-              data-target="full"
-              onClick={() =>
-                handlePersonaButtonClick("full", [
-                  "programming",
-                  "backend",
-                  "web",
-                  "database",
-                  "cloud",
-                  "devops",
-                ])
-              }
-            >
-              {activePersonaButton === "full" && (
-                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
-              )}
-              Full-Stack
-            </button>
-            <button
-              className={`${styles.skillButton} ${
-                activePersonaButton === "front" && styles.selected
-              }`}
-              data-target="front"
-              onClick={() =>
-                handlePersonaButtonClick("front", [
-                  "web",
-                  "database",
-                  "UX",
-                  "cloud",
-                ])
-              }
-            >
-              {activePersonaButton === "front" && (
-                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
-              )}
-              Frontend
-            </button>
-            <button
-              className={`${styles.skillButton} ${
-                activePersonaButton === "design" && styles.selected
-              }`}
-              data-target="design"
-              onClick={() => handlePersonaButtonClick("design", ["UX", "web"])}
-            >
-              {activePersonaButton === "design" && (
-                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
-              )}
-              Design
-            </button>
-            <button
-              className={`${styles.skillButton} ${
-                activePersonaButton === "data" && styles.selected
-              }`}
-              data-target="data"
-              onClick={() =>
-                handlePersonaButtonClick("data", [
-                  "programming",
-                  "data visualization",
-                  "big data",
-                  "machine learning",
-                  "database",
-                ])
-              }
-            >
-              {activePersonaButton === "data" && (
-                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
-              )}
-              Data Analysis
-            </button>
-            <button
-              className={`${styles.skillButton} ${
-                activePersonaButton === "management" && styles.selected
-              }`}
-              data-target="management"
-              onClick={() =>
-                handlePersonaButtonClick("management", [
-                  "leadership",
-                  "soft skills",
-                ])
-              }
-            >
-              {activePersonaButton === "management" && (
-                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
-              )}
-              Management
-            </button>
-            <button
-              className={`${styles.skillButton} ${
-                activePersonaButton === "all" && styles.selected
-              }`}
-              data-target="all"
-              onClick={() =>
-                handlePersonaButtonClick("all", [
-                  "programming",
-                  "backend",
-                  "web",
-                  "database",
-                  "cloud",
-                  "devops",
-                  "data visualization",
-                  "big data",
-                  "machine learning",
-                  "UX",
-                  "leadership",
-                  "soft skills",
-                ])
-              }
-            >
-              {activePersonaButton === "all" && (
-                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
-              )}
-              All
-            </button> */}
           </div>
           <i className={styles.personaReset}>
             <FontAwesomeIcon
