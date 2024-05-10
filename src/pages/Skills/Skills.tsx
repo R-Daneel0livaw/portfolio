@@ -225,7 +225,15 @@ export default function Skills() {
         <div className={styles.personaContainer}>
           <p className={styles.identifier}>I'm a </p>
           <div className={styles.buttonList}>
-            <button
+          {Array.from(experienceMap.keys()).map((persona: string, index: number) => (
+             <button className={`${styles.skillButton}`}>
+              {/* {activePersonaButton === "full" && (
+                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
+              )} */}
+              {persona}
+            </button>
+          ))}
+            {/* <button
               className={`${styles.skillButton} ${
                 activePersonaButton === "full" && styles.selected
               }`}
@@ -340,7 +348,7 @@ export default function Skills() {
                 <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
               )}
               All
-            </button>
+            </button> */}
           </div>
           <i className={styles.personaReset}>
             <FontAwesomeIcon
