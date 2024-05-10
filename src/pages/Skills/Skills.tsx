@@ -54,6 +54,47 @@ export default function Skills() {
         { shortName: "Cloud", longName: "Cloud Platforms", skills: ["AWS", "Azure"] },
       ],
     ],
+    [
+      "Designer",
+      [
+        { shortName: "UI/UX", longName: "UI/UX", skills: ["Figma", "Sketch", "Adobe Photoshop", "Tailwind", "Bootstrap", "Material UI", "Accessibility"] },
+        { shortName: "Web", longName: "Web Technologies", skills: ["React", "Angular", "Vue", "Webpack", "Vite", "HTML5/CSS3"] },
+      ],
+    ],
+    [
+      "Data Analyst",
+      [
+        { shortName: "Programming", longName: "Programming Languages", skills: ["Java", "C/C++/C#", "Python", "R", "Go", "Groovy", "PHP", "JavaScript", "TypeScript"] },
+        { shortName: "Data Visualization", longName: "Data Visualization", skills: ["Tableau", "Power BI", "Seaborn"] },
+        { shortName: "Big Data", longName: "Big Data Technologies", skills: ["Hadoop", "Spark"] },
+        { shortName: "Machine Learning", longName: "Machine Learning", skills: ["Scikit-learn", "Amazon SageMaker", "Tensor-Flow", "Keras", "CARET"] },
+        { shortName: "Database", longName: "Database Management", skills: ["SQL", "NoSQL", "Vector", "Oracle", "PostgreSQL", "MySQL", "MongoDB", "Neo4j", "Cassandra"] },
+      ],
+    ],
+    [
+      "Manager",
+      [
+        { shortName: "Leadership", longName: "Leadership and Commnuication", skills: ["Team Leadership", "Mentorship", "Effective Commnuication", "Analytical Thinking"] },
+        { shortName: "Soft Skills", longName: "Soft Skills", skills: ["Collaboration", "Time Management", "Adaptability", "Resource Planning"] },
+      ],
+    ],
+    [
+      "All",
+      [
+        { shortName: "Programming", longName: "Programming Languages", skills: ["Java", "C/C++/C#", "Python", "R", "Go", "Groovy", "PHP", "JavaScript", "TypeScript"] },
+        { shortName: "Backend", longName: "Backend Technologies", skills: ["Spring", ".NET", "NodeJS"] },
+        { shortName: "Web", longName: "Web Technologies", skills: ["React", "Angular", "Vue", "Webpack", "Vite", "HTML5/CSS3"] },
+        { shortName: "Database", longName: "Database Management", skills: ["SQL", "NoSQL", "Vector", "Oracle", "PostgreSQL", "MySQL", "MongoDB", "Neo4j", "Cassandra"] },
+        { shortName: "Cloud", longName: "Cloud Platforms", skills: ["AWS", "Azure"] },
+        { shortName: "DevOps", longName: "DevOps", skills: ["Docker", "Kubernetes", "OpenShift", "Jenkins", "CI/CD Pipelines", "Git"] },
+        { shortName: "Data Visualization", longName: "Data Visualization", skills: ["Tableau", "Power BI", "Seaborn"] },
+        { shortName: "Big Data", longName: "Big Data Technologies", skills: ["Hadoop", "Spark"] },
+        { shortName: "Machine Learning", longName: "Machine Learning", skills: ["Scikit-learn", "Amazon SageMaker", "Tensor-Flow", "Keras", "CARET"] },
+        { shortName: "UI/UX", longName: "UI/UX", skills: ["Figma", "Sketch", "Adobe Photoshop", "Tailwind", "Bootstrap", "Material UI", "Accessibility"] },
+        { shortName: "Leadership", longName: "Leadership and Commnuication", skills: ["Team Leadership", "Mentorship", "Effective Commnuication", "Analytical Thinking"] },
+        { shortName: "Soft Skills", longName: "Soft Skills", skills: ["Collaboration", "Time Management", "Adaptability", "Resource Planning"] },
+      ],
+    ],
   ]);
   console.log(experienceMap);
 
