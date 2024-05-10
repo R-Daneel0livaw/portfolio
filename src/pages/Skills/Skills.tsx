@@ -253,31 +253,12 @@ export default function Skills() {
 
         <div className={styles.buttonList}>
           <p className={styles.identifier}>Highly experienced in</p>
-          {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            Object.entries(activeSections).map(([section, _]) => (
-              <button
-                className={`${styles.skillButton} ${styles.selected}`}
-                data-target={section}
-                onClick={() => handleActiveButtonClick(section)}
-              >
+          {experienceMap.get(currentPersona)?.map((experience: Experience, index: number) => (
+              <button key={index} className={`${styles.skillButton} ${styles.selected}`} >
                 <FontAwesomeIcon icon={faCheck} />
-                {section}
+                {experience.shortName}
               </button>
-            ))
-          }
-          {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            Object.entries(inactiveSections).map(([section, _]) => (
-              <button
-                className={styles.skillButton}
-                data-target={section}
-                onClick={() => handleInactiveButtonClick(section)}
-              >
-                {section}
-              </button>
-            ))
-          }
+          ))}
         </div>
 
         <div className={styles.activityCotainer}>
