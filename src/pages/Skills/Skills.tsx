@@ -213,18 +213,6 @@ export default function Skills() {
                 </button>
               ))}
             </div>
-            {/* <i className={styles.personaReset}>
-              <FontAwesomeIcon
-                icon={faArrowsRotate}
-                size="lg"
-                style={{
-                  transform: `rotate(${rotation}deg)`,
-                  transition: "transform 0.3s ease",
-                  color: "#3d5268",
-                }}
-                onClick={handleReset}
-              />
-            </i> */}
           </div>
 
           {/* <hr className={styles.buttonSectionSplit} /> */}
