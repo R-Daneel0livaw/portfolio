@@ -205,9 +205,9 @@ export default function Skills() {
             <p className={styles.identifier}>Many Key Roles</p>
             <div className={styles.buttonList}>
               {Array.from(experienceMap.keys()).map((persona: string, index: number) => (
-                <button key={index} className={`${styles.skillButton}`} onClick={() => setCurrentPersona(persona)}>
+                <button key={index} className={`${styles.skillButton} ${currentPersona === persona ? styles.selected : ''}`} onClick={() => setCurrentPersona(persona)}>
                   {currentPersona === persona && (
-                    <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
+                    <FontAwesomeIcon icon={faCheck} />
                   )}
                   {persona}
                 </button>
@@ -230,7 +230,7 @@ export default function Skills() {
           {/* <hr className={styles.buttonSectionSplit} /> */}
 
           <div className={styles.experienceContainer}>
-            <p className={styles.identifier}>Highly experienced in</p>
+            <p className={styles.identifier}>Highly Experienced In</p>
             <div className={styles.buttonList}>
               {experienceMap.get(currentPersona)?.map((experience: Experience, index: number) => (
                 <p key={index} className={`${styles.skillButton} ${styles.selected}`} >

@@ -108,11 +108,6 @@
   font-size: .85rem;
 }
 
-.iconBorder {
-  padding: .35rem .5rem;
-  background-color: #d3f2e4;;
-}
-
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
