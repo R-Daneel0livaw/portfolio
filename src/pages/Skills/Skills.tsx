@@ -165,30 +165,6 @@ export default function Skills() {
     };
   }
 
-  const handleActiveButtonClick = (target: string) => {
-    if (activeSections[target] !== undefined) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { [target]: _, ...rest } = activeSections;
-      setActiveSections(rest);
-      setInactiveSections({
-        ...inactiveSections,
-        [target]: Object.keys(inactiveSections).length,
-      });
-    }
-  };
-
-  const handleInactiveButtonClick = (target: string) => {
-    if (inactiveSections[target] !== undefined) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { [target]: _, ...rest } = inactiveSections;
-      setInactiveSections(rest);
-      setActiveSections({
-        ...activeSections,
-        [target]: Object.keys(activeSections).length,
-      });
-    }
-  };
-
   const handleReset = () => {
     setRotation(rotation + 360);
     setActiveSections(getDefaultActiveState());
