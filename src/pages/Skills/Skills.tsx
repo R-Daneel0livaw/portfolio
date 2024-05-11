@@ -199,42 +199,47 @@ export default function Skills() {
           effectively to any project.
         </p>
 
-        <div className={styles.personaContainer}>
-          <p className={styles.identifier}>I'm a </p>
-          <div className={styles.buttonList}>
-          {Array.from(experienceMap.keys()).map((persona: string, index: number) => (
-             <button key={index} className={`${styles.skillButton}`} onClick={() => setCurrentPersona(persona)}>
-              {currentPersona === persona && (
-                <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
-              )}
-              {persona}
-            </button>
-          ))}
+
+        <div className={styles.personaExperienceContainer}>
+          <div className={styles.personaContainer}>
+            <p className={styles.identifier}>Many Key Roles</p>
+            <div className={styles.buttonList}>
+              {Array.from(experienceMap.keys()).map((persona: string, index: number) => (
+                <button key={index} className={`${styles.skillButton}`} onClick={() => setCurrentPersona(persona)}>
+                  {currentPersona === persona && (
+                    <FontAwesomeIcon className={styles.iconBorder} icon={faCheck} />
+                  )}
+                  {persona}
+                </button>
+              ))}
+            </div>
+            {/* <i className={styles.personaReset}>
+              <FontAwesomeIcon
+                icon={faArrowsRotate}
+                size="lg"
+                style={{
+                  transform: `rotate(${rotation}deg)`,
+                  transition: "transform 0.3s ease",
+                  color: "#3d5268",
+                }}
+                onClick={handleReset}
+              />
+            </i> */}
           </div>
-          <i className={styles.personaReset}>
-            <FontAwesomeIcon
-              icon={faArrowsRotate}
-              size="lg"
-              style={{
-                transform: `rotate(${rotation}deg)`,
-                transition: "transform 0.3s ease",
-                color: "#3d5268",
-              }}
-              onClick={handleReset}
-            />
-          </i>
-        </div>
 
-        {/* <hr className={styles.buttonSectionSplit} /> */}
+          {/* <hr className={styles.buttonSectionSplit} /> */}
 
-        <div className={styles.buttonList}>
-          <p className={styles.identifier}>Highly experienced in</p>
-          {experienceMap.get(currentPersona)?.map((experience: Experience, index: number) => (
-              <button key={index} className={`${styles.skillButton} ${styles.selected}`} >
-                <FontAwesomeIcon icon={faCheck} />
-                {experience.shortName}
-              </button>
-          ))}
+          <div className={styles.experienceContainer}>
+            <p className={styles.identifier}>Highly experienced in</p>
+            <div className={styles.buttonList}>
+              {experienceMap.get(currentPersona)?.map((experience: Experience, index: number) => (
+                <button key={index} className={`${styles.skillButton} ${styles.selected}`} >
+                  <FontAwesomeIcon icon={faCheck} />
+                  {experience.shortName}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className={styles.activityCotainer}>
