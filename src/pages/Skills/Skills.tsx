@@ -233,10 +233,10 @@ export default function Skills() {
             <p className={styles.identifier}>Highly experienced in</p>
             <div className={styles.buttonList}>
               {experienceMap.get(currentPersona)?.map((experience: Experience, index: number) => (
-                <button key={index} className={`${styles.skillButton} ${styles.selected}`} >
+                <p key={index} className={`${styles.skillButton} ${styles.selected}`} >
                   <FontAwesomeIcon icon={faCheck} />
                   {experience.shortName}
-                </button>
+                </p>
               ))}
             </div>
           </div>
