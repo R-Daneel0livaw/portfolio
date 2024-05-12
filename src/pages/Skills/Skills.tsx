@@ -151,7 +151,7 @@ export default function Skills() {
 
         <div className={styles.activityCotainer}>
           {experienceMap.get(currentPersona)!.map((experience: Experience, index: number) => (
-            <p key={index}><b>{experience.longName}:</b> {experience.skills.join(", ")}</p>
+            <p key={index} className={styles.experienceDescription}><b className={styles.experienceHeading}>{experience.longName}:</b> {experience.skills.join(", ")}</p>
           ))}
         </div>
       </div>
