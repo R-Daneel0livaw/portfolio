@@ -128,12 +128,12 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem;
+  /* padding: 2rem; */
   margin-left: 1rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
 
-  background:
+  /* background:
     linear-gradient(to right, #189ad3 4px, transparent 4px) 0 0,
     linear-gradient(to right, #ff416c 4px, transparent 4px) 0 100%,
     linear-gradient(to left, #ff416c 4px, transparent 4px) 100% 0,
@@ -144,7 +144,7 @@
     linear-gradient(to top, #189ad3 4px, transparent 4px) 100% 100%;
 
   background-repeat: no-repeat;
-  background-size: 20px 20px;
+  background-size: 20px 20px; */
 }
 
 .skillHeadingContainer {
