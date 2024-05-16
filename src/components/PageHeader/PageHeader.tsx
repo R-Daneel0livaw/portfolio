@@ -1,10 +1,5 @@
-import { ReactNode } from "react";
 import styles from "./PageHeader.module.css";
-
-interface PageHeaderProps {
-  title: string;
-  description: ReactNode;
-}
+import { PageHeaderProps } from "../../types";
 
 export default function PageHeader({ title, description }: PageHeaderProps) {
   return (

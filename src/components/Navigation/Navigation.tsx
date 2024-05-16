@@ -2,10 +2,7 @@ import PathConstants from "../../routes/pathConstants";
 import styles from "./Navigation.module.css";
 import { faHouse, faUser, faCheck, faDiagramProject, faBook, faMessage } from "@fortawesome/free-solid-svg-icons";
 import NavItem from "./NavItem/NavItem";
-
-interface LayoutProps {
-  currentPage: string;
-}
+import { LayoutProps } from "../../types";
 
 export default function Navigation({ currentPage }: LayoutProps) {
   currentPage = currentPage.startsWith("/blog/") ? PathConstants.BLOG : currentPage;

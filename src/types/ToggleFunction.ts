@@ -1,0 +1,1 @@
+export type ToggleFunction = (sectionTitle: string | null) => void;

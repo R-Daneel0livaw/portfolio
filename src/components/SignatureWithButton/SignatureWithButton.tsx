@@ -1,12 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./SignatureWithButton.module.css";
 import PathConstants from "../../routes/pathConstants";
-
-interface ButtonProps {
-  buttonText: string;
-  includeSignature: boolean;
-  enabled: boolean;
-}
+import { ButtonProps } from "../../types";
 
 export default function SignatureWithButton({ buttonText, includeSignature, enabled }: ButtonProps) {
   const navigate = useNavigate();

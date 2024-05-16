@@ -3,6 +3,7 @@ import styles from "./BlogArticle.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { ChangeEvent, useLayoutEffect, useRef, useState } from 'react';
+import { ArticleWithPageState, Comment } from '../../../types';
 
 export default function BlogArticle() {
   const [firstName, setFirstName] = useState("");
@@ -19,32 +20,6 @@ export default function BlogArticle() {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  type Article = {
-    id: string;
-    topic: string;
-    title: string;
-    description: string;
-    date: string;
-    readTime: string;
-    topics: string[];
-    comments: number;
-  };
-
-  type PageState = {
-    selectedFilter: string;
-    sortBy: string;
-  };
-
-  type Comment = {
-    id: string;
-    firstName: string;
-    lastName: string;
-    text: string;
-    date: string;
-  };
-
-  type ArticleWithPageState = Article & PageState;
 
   console.log(id);
   const state = location.state as ArticleWithPageState;

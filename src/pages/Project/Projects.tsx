@@ -3,23 +3,12 @@ import styles from "./Projects.module.css";
 import { faGithub, faFigma } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { Project } from "../../types";
 
 export default function Projects() {
   const [projects, setProjects] = useState<Map<Number, Project>>(getProjects());
   const [highlightedProject, setHighlightedProject] = useState<Project>(getHighlightedProject());
 
-  type Project = {
-    id: number;
-    name: string;
-    description: string[];
-    image1: string;
-    image2: string;
-    gitURL?: string;
-    figmaURL?: string;
-    webURL?: string;
-    featured: boolean;
-    highlighted: boolean
-  };
 
   function getProjects(): Map<Number, Project> {
     return new Map([

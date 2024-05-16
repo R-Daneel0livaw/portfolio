@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./Blog.module.css";
 import { Link, useLocation } from "react-router-dom";
+import { Article, FeaturedArticle } from "../../types";
 
 
 export default function Blog() {
@@ -48,22 +49,6 @@ export default function Blog() {
     return featuredArticles.filter((article) => article.rank !== 1);
   }
   
-  type Article = {
-    id: string;
-    topic: string;
-    title: string;
-    description: string;
-    date: string;
-    readTime: string;
-    topics: string[];
-    comments: number
-  };
-
-  type FeaturedArticle = Article & {
-    image: string;
-    rank: number;
-  };
-
   const articles: Article[] = [
     {
       id: "post1",

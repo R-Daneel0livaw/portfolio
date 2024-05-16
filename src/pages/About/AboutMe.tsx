@@ -5,8 +5,7 @@ import styles from "./AboutMe.module.css";
 import SignatureWithButton from "../../components/SignatureWithButton/SignatureWithButton";
 import { useState } from "react";
 import CollapsibleSection from "../../components/CollapsibleSection/CollapsibleSection";
-
-type ToggleFunction = (sectionTitle: string | null) => void;
+import { ToggleFunction } from "../../types";
 
 export default function AboutMe() {
   const [expandedSection, setExpandedSection] = useState<string | null>(
