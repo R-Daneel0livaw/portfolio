@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./Blog.module.css";
 import { Link, useLocation } from "react-router-dom";
-import { Article, FeaturedArticle } from "../../types";
+import { Article, FeaturedArticle } from "./types";
 
 
 export default function Blog() {

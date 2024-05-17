@@ -3,7 +3,7 @@ import styles from "./BlogArticle.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { ChangeEvent, useLayoutEffect, useRef, useState } from 'react';
-import { ArticleWithPageState, Comment } from '../../../types';
+import { ArticleWithPageState, Comment } from '../types';
 
 export default function BlogArticle() {
   const [firstName, setFirstName] = useState("");
