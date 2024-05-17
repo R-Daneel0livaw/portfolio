@@ -2,13 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { PropsWithChildren } from 'react';
 import styles from "./CollapsibleSection.module.css";
-
-interface CollapsibleSectionProps {
-  title: string;
-  isExpanded: boolean;
-  onToggle: () => void;
-  containerClassName?: string; 
-}
+import { CollapsibleSectionProps } from './types';
 
 export default function CollapsibleSection({title,
   isExpanded,

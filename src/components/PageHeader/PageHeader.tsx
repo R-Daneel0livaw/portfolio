@@ -1,5 +1,5 @@
 import styles from "./PageHeader.module.css";
-import { PageHeaderProps } from "../../types";
+import { PageHeaderProps } from "./types";
 
 export default function PageHeader({ title, description }: PageHeaderProps) {
   return (
