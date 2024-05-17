@@ -1,6 +1,3 @@
-export * from './Persona';
-export * from './Skill';
-export * from './Experience';
 export * from './LayoutProps';
 export * from './NavItemProps';
 export * from './PageHeaderProps';
@@ -11,4 +8,3 @@ export * from './FeaturedArticle';
 export * from './PageState';
 export * from './ArticleWithPageState';
 export * from './Comment';
-export * from './Project';

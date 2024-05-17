@@ -5,7 +5,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Skills.module.css";
 import { useState } from "react";
-import { Experience, Persona } from "../../types";
+import { Experience, Persona } from "./types";
 
 export default function Skills() {
   const [currentPersona, setCurrentPersona] = useState<string>("Full-Stack Developer");

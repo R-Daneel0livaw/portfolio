@@ -3,7 +3,7 @@ import styles from "./Projects.module.css";
 import { faGithub, faFigma } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { Project } from "../../types";
+import { Project } from "./types";
 
 export default function Projects() {
   const [projects, setProjects] = useState<Map<Number, Project>>(getProjects());
