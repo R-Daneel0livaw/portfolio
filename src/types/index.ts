@@ -1,5 +1,3 @@
-export * from './LayoutProps';
-export * from './NavItemProps';
 export * from './PageHeaderProps';
 export * from './ButtonProps';
 export * from './ToggleFunction';

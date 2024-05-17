@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import styles from "./NavItem.module.css";
-import { NavItemProps } from "../../../types";
+import { NavItemProps } from "../types";
 
 export default function NavItem({
   icon,
