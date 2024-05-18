@@ -1,7 +1,6 @@
 import { Project } from "../types";
 
-
-export function getProjects(): Map<Number, Project> {
+function getProjects(): Map<Number, Project> {
     return new Map([
       [1, {
         id: 1,
@@ -141,3 +140,5 @@ export function getProjects(): Map<Number, Project> {
       // }],
     ]);
   }
+
+export { getProjects };
