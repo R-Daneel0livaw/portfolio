@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { ChangeEvent, useLayoutEffect, useRef, useState } from 'react';
 import { ArticleWithPageState, Comment } from '../types';
+import { getComments } from '../services/BlogSeervice';
 
 export default function BlogArticle() {
   const [firstName, setFirstName] = useState("");
@@ -23,26 +24,6 @@ export default function BlogArticle() {
 
   console.log(id);
   const state = location.state as ArticleWithPageState;
-
-  function getComments() {
-    let comments: Comment[] = [
-      {
-        id: "2",
-        firstName: 'Anonymous',
-        lastName: 'Cat',
-        text: 'Great article! I found the explanation on how to use the useState hook really helpful. Looking forward to diving deeper into React hooks. Thanks for sharing!',
-        date: '17 Mar 2024'
-      },
-      {
-        id: "1",
-        firstName: 'Frank',
-        lastName: 'Potter',
-        text: 'This article clarified a lot of things for me about React hooks. I particularly liked the section on custom hooks and how they can simplify code reuse. This article clarified a lot of things for me about React hooks. I particularly liked the section on custom hooks and how they can simplify code reuse.',
-        date: '15 Jan 2024'
-      }
-    ];
-    return comments;
-  }
 
   const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const { scrollHeight } = event.target;
