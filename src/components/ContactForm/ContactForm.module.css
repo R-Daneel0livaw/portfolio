@@ -58,16 +58,48 @@ input, select, textarea {
 
 .innerInput:focus + label,
 .innerInput:valid + label {
-    color: #ff416c;
     font-size: .75rem;
     top: -25px;
     pointer-events: none;
 }
 
-.innerInput:focus,
 .innerInput:valid {
+    border-bottom: 2px solid #00684a;
+}
+
+.innerInput:valid + label {
+    color: #00684a;
+}
+
+.innerInput.touched:invalid {
     border-bottom: 2px solid #ff416c;
 }
+
+.innerInput.touched:invalid + label {
+    color: #ff416c;
+}
+
+/* .innerInput:focus + label,
+.innerInput:valid + label {
+    font-size: .75rem;
+    top: -25px;
+    pointer-events: none;
+}
+
+.innerInput:valid {
+    border-bottom: 2px solid #00684a;
+}
+.innerInput:valid + label {
+    color: #00684a;
+}
+
+.innerInput:invalid {
+    border-bottom: 2px solid #ff416c;
+}
+
+.innerInput:invalid + label {
+    color: #ff416c;
+} */
 
 .fieldHolder {
     position: relative;

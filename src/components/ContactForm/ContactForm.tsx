@@ -15,6 +15,11 @@ const ContactForm = () => {
   const [textareaHeight, setTextareaHeight] = useState("1.85rem");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [touchedFields, setTouchedFields] = useState<TouchedFields>({});
+
+  interface TouchedFields {
+    [key: string]: boolean;
+  }
 
   const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const { scrollHeight } = event.target;
@@ -34,6 +39,13 @@ const ContactForm = () => {
     if (textareaRef.current) {
       textareaRef.current.focus();
     }
+  };
+
+  const handleBlur = (field: string) => {
+    setTouchedFields({
+      ...touchedFields,
+      [field]: true,
+    });
   };
 
   const isFormFilled = (): boolean => {
@@ -75,6 +87,7 @@ const ContactForm = () => {
     setEmail("");
     setTopic("");
     setMessage("");
+    setTouchedFields({});
 
     setShowConfirmation(true);
     setTimeout(() => {
@@ -88,8 +101,9 @@ const ContactForm = () => {
         <select
           value={contactType}
           id="contactType"
-          className={styles.innerInput}
+          className={`${styles.innerInput} ${touchedFields.contactType ? styles.touched : ''}`}
           onChange={(e) => setContactType(e.target.value)}
+          onBlur={() => handleBlur('contactType')}
           required
         >
           <option disabled value="" className={styles.displayNone}></option>
@@ -110,12 +124,13 @@ const ContactForm = () => {
             className={`${styles.fieldHolder} ${styles.identificationChild}`}
           >
             <input
-              className={styles.innerInput}
+              className={`${styles.innerInput} ${touchedFields.name ? styles.touched : ''}`}
               type="text"
               name="name"
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              onBlur={() => handleBlur('name')}
               required
             />
             <label className={styles.innerLabel} htmlFor="name">
@@ -129,12 +144,13 @@ const ContactForm = () => {
             className={`${styles.fieldHolder} ${styles.identificationChild}`}
           >
             <input
-              className={styles.innerInput}
+              className={`${styles.innerInput} ${touchedFields.firstName ? styles.touched : ''}`}
               type="text"
               name="firstName"
               id="firstName"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
+              onBlur={() => handleBlur('firstName')}
               required
             />
             <label className={styles.innerLabel} htmlFor="firstName">
@@ -148,12 +164,13 @@ const ContactForm = () => {
             className={`${styles.fieldHolder} ${styles.identificationChild}`}
           >
             <input
-              className={styles.innerInput}
+              className={`${styles.innerInput} ${touchedFields.lastName ? styles.touched : ''}`}
               type="text"
               name="lastName"
               id="lastName"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
+              onBlur={() => handleBlur('lastName')}
               required
             />
             <label className={styles.innerLabel} htmlFor="lastName">
@@ -164,12 +181,13 @@ const ContactForm = () => {
 
         <div className={`${styles.fieldHolder} ${styles.identificationChild}`}>
           <input
-            className={styles.innerInput}
+            className={`${styles.innerInput} ${touchedFields.email ? styles.touched : ''}`}
             type="email"
             name="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onBlur={() => handleBlur('email')}
             required
           />
           <label className={styles.innerLabel} htmlFor="email">
@@ -182,8 +200,9 @@ const ContactForm = () => {
         <select
           value={topic}
           id="topic"
-          className={styles.innerInput}
+          className={`${styles.innerInput} ${touchedFields.topic ? styles.touched : ''}`}
           onChange={(e) => setTopic(e.target.value)}
+          onBlur={() => handleBlur('topic')}
           required
         >
           <option disabled value="" className={styles.displayNone}></option>
@@ -201,9 +220,10 @@ const ContactForm = () => {
 
       <div className={`${styles.fieldHolder} ${styles.identificationChild}`}>
         <textarea
-          className={`${styles.autoHeightTextarea} ${styles.innerInput}`}
+          className={`${styles.autoHeightTextarea} ${styles.innerInput} ${touchedFields.message ? styles.touched : ''}`}
           value={message}
           onChange={handleTextAreaChange}
+          onBlur={() => handleBlur('message')}
           style={{ height: textareaHeight }}
           ref={textareaRef}
           required
