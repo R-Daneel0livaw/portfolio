@@ -244,9 +244,11 @@ const ContactForm = () => {
       />
 
       {showConfirmation && (
-        <div>
-          Thank You! I've received your message, and you'll be hearing from me
-          soon!{" "}
+        <div className={styles.confirmationContainer}>
+          <p className={styles.confirmationMessage}>
+            <strong>Thank You!</strong> I've received your message, and you'll be hearing from me
+            soon!{" "}
+          </p>
           <FontAwesomeIcon
             icon={faThumbsUp}
             size="xl"
