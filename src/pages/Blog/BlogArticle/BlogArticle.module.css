@@ -127,20 +127,28 @@
     transition: .3s ease-in-out;
 }
 
-.commentsSumbmissionField:focus + .commentsSumbmissionLabel,
-.commentsSumbmissionField:valid + .commentsSumbmissionLabel {
-    color: #ff416c;
+.commentsSumbmissionField:focus + label,
+.commentsSumbmissionField:valid + label {
     font-size: .75rem;
     top: -25px;
     pointer-events: none;
 }
 
-.commentsSumbmissionField:focus,
 .commentsSumbmissionField:valid {
-    border-bottom: 2px solid #ff416c;
+    border-bottom: 2px solid #00684a;
 }
 
+.commentsSumbmissionField:valid + label {
+    color: #00684a;
+}
 
+.commentsSumbmissionField.touched:invalid {
+    border-bottom: 2px solid #EF5350;
+}
+
+.commentsSumbmissionField.touched:invalid + label {
+    color: #EF5350;
+}
 
 .commentsSumbmission {
     align-self: flex-end;

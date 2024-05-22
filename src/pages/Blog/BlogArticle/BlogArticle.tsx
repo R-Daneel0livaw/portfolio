@@ -13,6 +13,11 @@ export default function BlogArticle() {
   const [comments, setComments] = useState<Comment[]>(getComments());
   const [textareaHeight, setTextareaHeight] = useState("1.85rem");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [touchedFields, setTouchedFields] = useState<TouchedFields>({});
+
+  interface TouchedFields {
+    [key: string]: boolean;
+  }
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -45,6 +50,13 @@ export default function BlogArticle() {
     }
   };
 
+  const handleBlur = (field: string) => {
+    setTouchedFields({
+      ...touchedFields,
+      [field]: true,
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -60,6 +72,7 @@ export default function BlogArticle() {
     setFirstName("");
     setLastName("");
     setMessage("");
+    setTouchedFields({});
   };
 
   const formatDate = (date: Date) => {
@@ -231,9 +244,10 @@ export default function BlogArticle() {
             <div className={styles.commentsSumbmissionContent}>
               <div className={styles.commentsSumbmissionFieldHolder}>
                 <textarea
-                  className={styles.commentsSumbmissionField}
+                  className={`${styles.commentsSumbmissionField} ${touchedFields.message ? styles.touched : ''}`}
                   value={message}
                   onChange={handleTextAreaChange}
+                  onBlur={() => handleBlur('message')}
                   style={{ height: textareaHeight }}
                   ref={textareaRef}
                   required
@@ -245,12 +259,13 @@ export default function BlogArticle() {
               <div className={styles.commentsSumbmissionMultiFieldHolder}>
                 <div className={styles.commentsSumbmissionFieldHolder}>
                   <input
-                    className={styles.commentsSumbmissionField}
+                    className={`${styles.commentsSumbmissionField} ${touchedFields.fname ? styles.touched : ''}`}
                     type="text"
                     name="fname"
                     id="fname"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
+                    onBlur={() => handleBlur('fname')}
                     required
                   />
                   <label
@@ -262,12 +277,13 @@ export default function BlogArticle() {
                 </div>
                 <div className={styles.commentsSumbmissionFieldHolder}>
                   <input
-                    className={styles.commentsSumbmissionField}
+                    className={`${styles.commentsSumbmissionField} ${touchedFields.lname ? styles.touched : ''}`}
                     type="text"
                     name="lname"
                     id="lname"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
+                    onBlur={() => handleBlur('lname')}
                     required
                   />
                   <label
