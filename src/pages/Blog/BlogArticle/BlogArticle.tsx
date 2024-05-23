@@ -83,6 +83,10 @@ export default function BlogArticle() {
     return `${day} ${month} ${year}`;
   };
 
+  const isFormFilled = (): boolean => {
+    return message.length > 0 && firstName.length > 0 && lastName.length > 0;
+  };
+
   return (
     <section id="blog-article" className={styles.articleContainer}>
       <div className={styles.navContainer}>
@@ -296,7 +300,7 @@ export default function BlogArticle() {
               </div>
             </div>
             <div className={styles.commentsSumbmission}>
-              <button type="submit" className={styles.commentSubmit}>
+              <button type="submit" className={`${styles.commentSubmit} ${!isFormFilled() ? styles.disabled : ''} `} disabled={!isFormFilled()}>
                 Post
               </button>
             </div>

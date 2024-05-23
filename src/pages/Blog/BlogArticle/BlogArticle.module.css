@@ -179,6 +179,11 @@
     background-color: #f19cbb;
 }
 
+.disabled {
+    background-color: #f19cbb;
+    cursor: none;
+}
+
 .commentsViewContainer {
     display: flex;
     flex-direction: column;
